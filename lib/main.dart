@@ -7,8 +7,8 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(
-    ProviderScope(
-      child: const PiThing(),
+    const ProviderScope(
+      child: PiThing(),
     ),
   );
 }

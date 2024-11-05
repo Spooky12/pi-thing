@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class PiThing extends StatelessWidget {
+import 'core/router/app_router.dart';
+
+class PiThing extends ConsumerWidget {
   const PiThing({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('PiThing'),
-        ),
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(appRouterProvider);
+
+    return MaterialApp.router(
+      title: 'PiThing',
+      routerConfig: router,
     );
   }
 }
