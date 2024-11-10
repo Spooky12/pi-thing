@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../presentation/pages/error_page.dart';
-import '../../presentation/pages/home_page.dart';
-import '../../presentation/pages/login_page.dart';
-import '../../presentation/pages/splash_page.dart';
+import '../../features/auth/presentation/pages/login_page.dart';
+import '../../features/common/presentation/pages/error_page.dart';
+import '../../features/common/presentation/pages/splash_page.dart';
+import '../../features/home/presentation/pages/home_page.dart';
 
 part 'app_routes.g.dart';
 

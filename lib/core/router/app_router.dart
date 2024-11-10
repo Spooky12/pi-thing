@@ -23,8 +23,5 @@ GoRouter appRouter(Ref ref) {
     debugLogDiagnostics: kDebugMode,
     routes: $appRoutes,
     errorBuilder: const ErrorRoute().build,
-    redirect: (context, state) {
-      return null;
-    },
   );
 }
