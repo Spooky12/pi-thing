@@ -15,4 +15,6 @@ sealed class Failure with _$Failure {
   const factory Failure.timeout() = TimeoutFailure;
 
   const factory Failure.sessionExpired() = SessionExpiredFailure;
+
+  const factory Failure.tooManyRequests() = TooManyRequestsFailure;
 }

@@ -18,6 +18,10 @@ class TimeoutException extends ServerException {
   const TimeoutException();
 }
 
+class TooManyRequestsException extends ServerException {
+  const TooManyRequestsException();
+}
+
 class SessionExpiredException extends ServerException {
   const SessionExpiredException();
 }

@@ -25,7 +25,7 @@ _$TrackModelImpl _$$TrackModelImplFromJson(Map<String, dynamic> json) =>
       discNumber: (json['disc_number'] as num).toInt(),
       trackNumber: (json['track_number'] as num).toInt(),
       explicit: json['explicit'] as bool,
-      isPlayable: json['is_playable'] as bool,
+      isPlayable: json['is_playable'] as bool?,
       isLocal: json['is_local'] as bool,
       popularity: (json['popularity'] as num).toInt(),
     );

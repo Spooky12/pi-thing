@@ -38,7 +38,7 @@ mixin _$TrackModel {
   int get trackNumber => throw _privateConstructorUsedError;
   bool get explicit => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_playable')
-  bool get isPlayable => throw _privateConstructorUsedError;
+  bool? get isPlayable => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_local')
   bool get isLocal => throw _privateConstructorUsedError;
   int get popularity => throw _privateConstructorUsedError;
@@ -72,7 +72,7 @@ abstract class $TrackModelCopyWith<$Res> {
       @JsonKey(name: 'disc_number') int discNumber,
       @JsonKey(name: 'track_number') int trackNumber,
       bool explicit,
-      @JsonKey(name: 'is_playable') bool isPlayable,
+      @JsonKey(name: 'is_playable') bool? isPlayable,
       @JsonKey(name: 'is_local') bool isLocal,
       int popularity});
 
@@ -107,7 +107,7 @@ class _$TrackModelCopyWithImpl<$Res, $Val extends TrackModel>
     Object? discNumber = null,
     Object? trackNumber = null,
     Object? explicit = null,
-    Object? isPlayable = null,
+    Object? isPlayable = freezed,
     Object? isLocal = null,
     Object? popularity = null,
   }) {
@@ -160,10 +160,10 @@ class _$TrackModelCopyWithImpl<$Res, $Val extends TrackModel>
           ? _value.explicit
           : explicit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPlayable: null == isPlayable
+      isPlayable: freezed == isPlayable
           ? _value.isPlayable
           : isPlayable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       isLocal: null == isLocal
           ? _value.isLocal
           : isLocal // ignore: cast_nullable_to_non_nullable
@@ -217,7 +217,7 @@ abstract class _$$TrackModelImplCopyWith<$Res>
       @JsonKey(name: 'disc_number') int discNumber,
       @JsonKey(name: 'track_number') int trackNumber,
       bool explicit,
-      @JsonKey(name: 'is_playable') bool isPlayable,
+      @JsonKey(name: 'is_playable') bool? isPlayable,
       @JsonKey(name: 'is_local') bool isLocal,
       int popularity});
 
@@ -252,7 +252,7 @@ class __$$TrackModelImplCopyWithImpl<$Res>
     Object? discNumber = null,
     Object? trackNumber = null,
     Object? explicit = null,
-    Object? isPlayable = null,
+    Object? isPlayable = freezed,
     Object? isLocal = null,
     Object? popularity = null,
   }) {
@@ -305,10 +305,10 @@ class __$$TrackModelImplCopyWithImpl<$Res>
           ? _value.explicit
           : explicit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPlayable: null == isPlayable
+      isPlayable: freezed == isPlayable
           ? _value.isPlayable
           : isPlayable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       isLocal: null == isLocal
           ? _value.isLocal
           : isLocal // ignore: cast_nullable_to_non_nullable
@@ -392,7 +392,7 @@ class _$TrackModelImpl extends _TrackModel {
   final bool explicit;
   @override
   @JsonKey(name: 'is_playable')
-  final bool isPlayable;
+  final bool? isPlayable;
   @override
   @JsonKey(name: 'is_local')
   final bool isLocal;
@@ -486,7 +486,7 @@ abstract class _TrackModel extends TrackModel {
       @JsonKey(name: 'disc_number') required final int discNumber,
       @JsonKey(name: 'track_number') required final int trackNumber,
       required final bool explicit,
-      @JsonKey(name: 'is_playable') required final bool isPlayable,
+      @JsonKey(name: 'is_playable') required final bool? isPlayable,
       @JsonKey(name: 'is_local') required final bool isLocal,
       required final int popularity}) = _$TrackModelImpl;
   const _TrackModel._() : super._();
@@ -525,7 +525,7 @@ abstract class _TrackModel extends TrackModel {
   bool get explicit;
   @override
   @JsonKey(name: 'is_playable')
-  bool get isPlayable;
+  bool? get isPlayable;
   @override
   @JsonKey(name: 'is_local')
   bool get isLocal;

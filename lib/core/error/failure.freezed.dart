@@ -296,3 +296,49 @@ class _$SessionExpiredFailureImpl implements SessionExpiredFailure {
 abstract class SessionExpiredFailure implements Failure {
   const factory SessionExpiredFailure() = _$SessionExpiredFailureImpl;
 }
+
+/// @nodoc
+abstract class _$$TooManyRequestsFailureImplCopyWith<$Res> {
+  factory _$$TooManyRequestsFailureImplCopyWith(
+          _$TooManyRequestsFailureImpl value,
+          $Res Function(_$TooManyRequestsFailureImpl) then) =
+      __$$TooManyRequestsFailureImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$TooManyRequestsFailureImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$TooManyRequestsFailureImpl>
+    implements _$$TooManyRequestsFailureImplCopyWith<$Res> {
+  __$$TooManyRequestsFailureImplCopyWithImpl(
+      _$TooManyRequestsFailureImpl _value,
+      $Res Function(_$TooManyRequestsFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$TooManyRequestsFailureImpl implements TooManyRequestsFailure {
+  const _$TooManyRequestsFailureImpl();
+
+  @override
+  String toString() {
+    return 'Failure.tooManyRequests()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TooManyRequestsFailureImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+}
+
+abstract class TooManyRequestsFailure implements Failure {
+  const factory TooManyRequestsFailure() = _$TooManyRequestsFailureImpl;
+}

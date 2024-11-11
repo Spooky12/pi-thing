@@ -16,8 +16,8 @@ class ExternalUrlsModel with _$ExternalUrlsModel {
   factory ExternalUrlsModel.fromJson(Map<String, dynamic> json) =>
       _$ExternalUrlsModelFromJson(json);
 
-  factory ExternalUrlsModel.fromDomain(ExternalUrlsEntity domain) {
-    return ExternalUrlsModel(spotify: domain.spotify);
+  factory ExternalUrlsModel.fromDomain(ExternalUrlsEntity entity) {
+    return ExternalUrlsModel(spotify: entity.spotify);
   }
 
   ExternalUrlsEntity toDomain() {

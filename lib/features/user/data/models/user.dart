@@ -36,32 +36,32 @@ sealed class UserModel with _$UserModel {
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       _$UserModelFromJson(json);
 
-  factory UserModel.fromDomain(UserEntity domain) => switch (domain) {
+  factory UserModel.fromDomain(UserEntity entity) => switch (entity) {
         CurrentUserEntity() => CurrentUserModel(
-            id: domain.id,
-            country: domain.country,
-            displayName: domain.displayName,
+            id: entity.id,
+            country: entity.country,
+            displayName: entity.displayName,
             images: List.generate(
-              domain.images.length,
-              (i) => ImageModel.fromDomain(domain.images[i]),
+              entity.images.length,
+              (i) => ImageModel.fromDomain(entity.images[i]),
             ),
-            externalUrls: ExternalUrlsModel.fromDomain(domain.externalUrls),
+            externalUrls: ExternalUrlsModel.fromDomain(entity.externalUrls),
             explicitContent: ExplicitContentModel.fromDomain(
-              domain.explicitContent,
+              entity.explicitContent,
             ),
-            uri: domain.uri,
-            href: domain.href,
+            uri: entity.uri,
+            href: entity.href,
           ),
         PublicUserEntity() => PublicUserModel(
-            id: domain.id,
-            displayName: domain.displayName,
+            id: entity.id,
+            displayName: entity.displayName,
             images: List.generate(
-              domain.images.length,
-              (i) => ImageModel.fromDomain(domain.images[i]),
+              entity.images.length,
+              (i) => ImageModel.fromDomain(entity.images[i]),
             ),
-            externalUrls: ExternalUrlsModel.fromDomain(domain.externalUrls),
-            uri: domain.uri,
-            href: domain.href,
+            externalUrls: ExternalUrlsModel.fromDomain(entity.externalUrls),
+            uri: entity.uri,
+            href: entity.href,
           ),
       };
 

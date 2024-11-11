@@ -32,25 +32,25 @@ class AlbumModel with _$AlbumModel {
   factory AlbumModel.fromJson(Map<String, dynamic> json) =>
       _$AlbumModelFromJson(json);
 
-  factory AlbumModel.fromDomain(AlbumEntity domain) => AlbumModel(
-        id: domain.id,
-        name: domain.name,
-        type: domain.type,
-        uri: domain.uri,
-        href: domain.href,
-        availableMarkets: domain.availableMarkets,
+  factory AlbumModel.fromDomain(AlbumEntity entity) => AlbumModel(
+        id: entity.id,
+        name: entity.name,
+        type: entity.type,
+        uri: entity.uri,
+        href: entity.href,
+        availableMarkets: entity.availableMarkets,
         images: List.generate(
-          domain.images.length,
-          (i) => ImageModel.fromDomain(domain.images[i]),
+          entity.images.length,
+          (i) => ImageModel.fromDomain(entity.images[i]),
         ),
-        externalUrls: ExternalUrlsModel.fromDomain(domain.externalUrls),
+        externalUrls: ExternalUrlsModel.fromDomain(entity.externalUrls),
         artists: List.generate(
-          domain.artists.length,
-          (i) => ArtistModel.fromDomain(domain.artists[i]) as SimpleArtistModel,
+          entity.artists.length,
+          (i) => ArtistModel.fromDomain(entity.artists[i]) as SimpleArtistModel,
         ),
-        totalTracks: domain.totalTracks,
-        releaseDate: domain.releaseDate,
-        releaseDatePrecision: domain.releaseDatePrecision,
+        totalTracks: entity.totalTracks,
+        releaseDate: entity.releaseDate,
+        releaseDatePrecision: entity.releaseDatePrecision,
       );
 
   AlbumEntity toDomain() => AlbumEntity(

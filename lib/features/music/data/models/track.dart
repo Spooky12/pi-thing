@@ -24,7 +24,7 @@ class TrackModel with _$TrackModel {
     @JsonKey(name: 'disc_number') required int discNumber,
     @JsonKey(name: 'track_number') required int trackNumber,
     required bool explicit,
-    @JsonKey(name: 'is_playable') required bool isPlayable,
+    @JsonKey(name: 'is_playable') required bool? isPlayable,
     @JsonKey(name: 'is_local') required bool isLocal,
     required int popularity,
   }) = _TrackModel;
@@ -34,25 +34,25 @@ class TrackModel with _$TrackModel {
   factory TrackModel.fromJson(Map<String, dynamic> json) =>
       _$TrackModelFromJson(json);
 
-  factory TrackModel.fromDomain(TrackEntity domain) => TrackModel(
-        id: domain.id,
-        name: domain.name,
-        uri: domain.uri,
-        href: domain.href,
-        durationMs: domain.durationMs,
-        externalUrls: ExternalUrlsModel.fromDomain(domain.externalUrls),
+  factory TrackModel.fromDomain(TrackEntity entity) => TrackModel(
+        id: entity.id,
+        name: entity.name,
+        uri: entity.uri,
+        href: entity.href,
+        durationMs: entity.durationMs,
+        externalUrls: ExternalUrlsModel.fromDomain(entity.externalUrls),
         artists: List.generate(
-          domain.artists.length,
-          (i) => ArtistModel.fromDomain(domain.artists[i]) as SimpleArtistModel,
+          entity.artists.length,
+          (i) => ArtistModel.fromDomain(entity.artists[i]) as SimpleArtistModel,
         ),
-        album: AlbumModel.fromDomain(domain.album),
-        availableMarkets: domain.availableMarkets,
-        discNumber: domain.discNumber,
-        trackNumber: domain.trackNumber,
-        explicit: domain.explicit,
-        isPlayable: domain.isPlayable,
-        isLocal: domain.isLocal,
-        popularity: domain.popularity,
+        album: AlbumModel.fromDomain(entity.album),
+        availableMarkets: entity.availableMarkets,
+        discNumber: entity.discNumber,
+        trackNumber: entity.trackNumber,
+        explicit: entity.explicit,
+        isPlayable: entity.isPlayable,
+        isLocal: entity.isLocal,
+        popularity: entity.popularity,
       );
 
   TrackEntity toDomain() => TrackEntity(

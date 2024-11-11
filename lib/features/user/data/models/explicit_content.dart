@@ -17,10 +17,10 @@ class ExplicitContentModel with _$ExplicitContentModel {
   factory ExplicitContentModel.fromJson(Map<String, dynamic> json) =>
       _$ExplicitContentModelFromJson(json);
 
-  factory ExplicitContentModel.fromDomain(ExplicitContentEntity domain) =>
+  factory ExplicitContentModel.fromDomain(ExplicitContentEntity entity) =>
       ExplicitContentModel(
-        filterEnabled: domain.filterEnabled,
-        filterLocked: domain.filterLocked,
+        filterEnabled: entity.filterEnabled,
+        filterLocked: entity.filterLocked,
       );
 
   ExplicitContentEntity toDomain() => ExplicitContentEntity(

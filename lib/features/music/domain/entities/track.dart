@@ -21,7 +21,7 @@ class TrackEntity with _$TrackEntity {
     required int discNumber,
     required int trackNumber,
     required bool explicit,
-    required bool isPlayable,
+    required bool? isPlayable,
     required bool isLocal,
     required int popularity,
   }) = _TrackEntity;

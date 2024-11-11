@@ -28,7 +28,7 @@ mixin _$TrackEntity {
   int get discNumber => throw _privateConstructorUsedError;
   int get trackNumber => throw _privateConstructorUsedError;
   bool get explicit => throw _privateConstructorUsedError;
-  bool get isPlayable => throw _privateConstructorUsedError;
+  bool? get isPlayable => throw _privateConstructorUsedError;
   bool get isLocal => throw _privateConstructorUsedError;
   int get popularity => throw _privateConstructorUsedError;
 
@@ -58,7 +58,7 @@ abstract class $TrackEntityCopyWith<$Res> {
       int discNumber,
       int trackNumber,
       bool explicit,
-      bool isPlayable,
+      bool? isPlayable,
       bool isLocal,
       int popularity});
 
@@ -93,7 +93,7 @@ class _$TrackEntityCopyWithImpl<$Res, $Val extends TrackEntity>
     Object? discNumber = null,
     Object? trackNumber = null,
     Object? explicit = null,
-    Object? isPlayable = null,
+    Object? isPlayable = freezed,
     Object? isLocal = null,
     Object? popularity = null,
   }) {
@@ -146,10 +146,10 @@ class _$TrackEntityCopyWithImpl<$Res, $Val extends TrackEntity>
           ? _value.explicit
           : explicit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPlayable: null == isPlayable
+      isPlayable: freezed == isPlayable
           ? _value.isPlayable
           : isPlayable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       isLocal: null == isLocal
           ? _value.isLocal
           : isLocal // ignore: cast_nullable_to_non_nullable
@@ -203,7 +203,7 @@ abstract class _$$TrackEntityImplCopyWith<$Res>
       int discNumber,
       int trackNumber,
       bool explicit,
-      bool isPlayable,
+      bool? isPlayable,
       bool isLocal,
       int popularity});
 
@@ -238,7 +238,7 @@ class __$$TrackEntityImplCopyWithImpl<$Res>
     Object? discNumber = null,
     Object? trackNumber = null,
     Object? explicit = null,
-    Object? isPlayable = null,
+    Object? isPlayable = freezed,
     Object? isLocal = null,
     Object? popularity = null,
   }) {
@@ -291,10 +291,10 @@ class __$$TrackEntityImplCopyWithImpl<$Res>
           ? _value.explicit
           : explicit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPlayable: null == isPlayable
+      isPlayable: freezed == isPlayable
           ? _value.isPlayable
           : isPlayable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       isLocal: null == isLocal
           ? _value.isLocal
           : isLocal // ignore: cast_nullable_to_non_nullable
@@ -368,7 +368,7 @@ class _$TrackEntityImpl extends _TrackEntity {
   @override
   final bool explicit;
   @override
-  final bool isPlayable;
+  final bool? isPlayable;
   @override
   final bool isLocal;
   @override
@@ -451,7 +451,7 @@ abstract class _TrackEntity extends TrackEntity {
       required final int discNumber,
       required final int trackNumber,
       required final bool explicit,
-      required final bool isPlayable,
+      required final bool? isPlayable,
       required final bool isLocal,
       required final int popularity}) = _$TrackEntityImpl;
   const _TrackEntity._() : super._();
@@ -481,7 +481,7 @@ abstract class _TrackEntity extends TrackEntity {
   @override
   bool get explicit;
   @override
-  bool get isPlayable;
+  bool? get isPlayable;
   @override
   bool get isLocal;
   @override

@@ -18,10 +18,10 @@ class ImageModel with _$ImageModel {
   factory ImageModel.fromJson(Map<String, dynamic> json) =>
       _$ImageModelFromJson(json);
 
-  factory ImageModel.fromDomain(ImageEntity domain) => ImageModel(
-        url: domain.url,
-        height: domain.height,
-        width: domain.width,
+  factory ImageModel.fromDomain(ImageEntity entity) => ImageModel(
+        url: entity.url,
+        height: entity.height,
+        width: entity.width,
       );
 
   ImageEntity toDomain() => ImageEntity(

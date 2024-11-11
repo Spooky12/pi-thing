@@ -32,7 +32,6 @@ abstract class SpotifyRemoteDataSource extends RemoteDataSource {
   Future<T> performDeleteRequestApi<T>({
     required String apiEndpoint,
     Options? options,
-    bool needToken = false,
     Map<String, dynamic>? queryParameters,
   }) {
     final optns = _addToken(options);
@@ -48,7 +47,6 @@ abstract class SpotifyRemoteDataSource extends RemoteDataSource {
     required String apiEndpoint,
     dynamic data,
     Options? options,
-    bool needToken = false,
     Map<String, dynamic>? queryParameters,
   }) {
     final optns = _addToken(options);
@@ -65,7 +63,6 @@ abstract class SpotifyRemoteDataSource extends RemoteDataSource {
     required String apiEndpoint,
     String? body,
     Options? options,
-    bool needToken = false,
   }) {
     final optns = _addToken(options);
     return super.performPatchRequestApi(
@@ -81,7 +78,6 @@ abstract class SpotifyRemoteDataSource extends RemoteDataSource {
     Map<String, dynamic>? queryParameters,
     dynamic data,
     Options? options,
-    bool needToken = false,
   }) {
     final optns = _addToken(options);
     return super.performPutRequestApi(
@@ -97,7 +93,6 @@ abstract class SpotifyRemoteDataSource extends RemoteDataSource {
     required String apiEndpoint,
     Map<String, dynamic>? queryParameters,
     Options? options,
-    bool needToken = false,
   }) {
     final optns = _addToken(options);
     return super.performGetRequestApi(
@@ -113,7 +108,6 @@ abstract class SpotifyRemoteDataSource extends RemoteDataSource {
     dynamic savePath,
     Map<String, dynamic>? queryParameters,
     Options? options,
-    bool needToken = false,
   }) {
     final optns = _addToken(options);
     return super.performDownloadRequestApi(

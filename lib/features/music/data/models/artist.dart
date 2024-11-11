@@ -33,26 +33,26 @@ sealed class ArtistModel with _$ArtistModel {
   factory ArtistModel.fromJson(Map<String, dynamic> json) =>
       _$ArtistModelFromJson(json);
 
-  factory ArtistModel.fromDomain(ArtistEntity domain) => switch (domain) {
+  factory ArtistModel.fromDomain(ArtistEntity entity) => switch (entity) {
         SimpleArtistEntity() => SimpleArtistModel(
-            id: domain.id,
-            name: domain.name,
-            uri: domain.uri,
-            href: domain.href,
-            externalUrls: ExternalUrlsModel.fromDomain(domain.externalUrls),
+            id: entity.id,
+            name: entity.name,
+            uri: entity.uri,
+            href: entity.href,
+            externalUrls: ExternalUrlsModel.fromDomain(entity.externalUrls),
           ),
         FullArtistEntity() => FullArtistModel(
-            id: domain.id,
-            name: domain.name,
-            genres: domain.genres,
+            id: entity.id,
+            name: entity.name,
+            genres: entity.genres,
             images: List.generate(
-              domain.images.length,
-              (i) => ImageModel.fromDomain(domain.images[i]),
+              entity.images.length,
+              (i) => ImageModel.fromDomain(entity.images[i]),
             ),
-            popularity: domain.popularity,
-            uri: domain.uri,
-            href: domain.href,
-            externalUrls: ExternalUrlsModel.fromDomain(domain.externalUrls),
+            popularity: entity.popularity,
+            uri: entity.uri,
+            href: entity.href,
+            externalUrls: ExternalUrlsModel.fromDomain(entity.externalUrls),
           ),
       };
 
