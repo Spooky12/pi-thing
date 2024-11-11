@@ -1,8 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../common/data/models/external_urls.dart';
+import '../../../common/data/models/image.dart';
 import '../../domain/entities/user.dart';
 import 'explicit_content.dart';
-import 'image.dart';
 
 part 'user.freezed.dart';
 part 'user.g.dart';
@@ -14,6 +15,7 @@ sealed class UserModel with _$UserModel {
     required String country,
     @JsonKey(name: 'display_name') required String? displayName,
     required List<ImageModel> images,
+    @JsonKey(name: 'external_urls') required ExternalUrlsModel externalUrls,
     @JsonKey(name: 'explicit_content')
     required ExplicitContentModel explicitContent,
     required String uri,
@@ -21,9 +23,10 @@ sealed class UserModel with _$UserModel {
   }) = CurrentUserModel;
 
   const factory UserModel.public({
-    required String? id,
+    required String id,
     @JsonKey(name: 'display_name') required String? displayName,
     required List<ImageModel> images,
+    @JsonKey(name: 'external_urls') required ExternalUrlsModel externalUrls,
     required String uri,
     required String href,
   }) = PublicUserModel;
@@ -42,6 +45,7 @@ sealed class UserModel with _$UserModel {
               domain.images.length,
               (i) => ImageModel.fromDomain(domain.images[i]),
             ),
+            externalUrls: ExternalUrlsModel.fromDomain(domain.externalUrls),
             explicitContent: ExplicitContentModel.fromDomain(
               domain.explicitContent,
             ),
@@ -55,6 +59,7 @@ sealed class UserModel with _$UserModel {
               domain.images.length,
               (i) => ImageModel.fromDomain(domain.images[i]),
             ),
+            externalUrls: ExternalUrlsModel.fromDomain(domain.externalUrls),
             uri: domain.uri,
             href: domain.href,
           ),
@@ -62,34 +67,24 @@ sealed class UserModel with _$UserModel {
 
   UserEntity toDomain() => switch (this) {
         CurrentUserModel(
-          :final id,
           :final country,
-          :final displayName,
-          :final images,
           :final explicitContent,
-          :final uri,
-          :final href,
         ) =>
           CurrentUserEntity(
             id: id,
             country: country,
             displayName: displayName,
             images: List.generate(images.length, (i) => images[i].toDomain()),
+            externalUrls: externalUrls.toDomain(),
             explicitContent: explicitContent.toDomain(),
             uri: uri,
             href: href,
           ),
-        PublicUserModel(
-          :final id,
-          :final displayName,
-          :final images,
-          :final uri,
-          :final href,
-        ) =>
-          PublicUserEntity(
+        PublicUserModel() => PublicUserEntity(
             id: id,
             displayName: displayName,
             images: List.generate(images.length, (i) => images[i].toDomain()),
+            externalUrls: externalUrls.toDomain(),
             uri: uri,
             href: href,
           ),

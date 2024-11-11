@@ -29,10 +29,12 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'display_name')
   String? get displayName => throw _privateConstructorUsedError;
   List<ImageModel> get images => throw _privateConstructorUsedError;
+  @JsonKey(name: 'external_urls')
+  ExternalUrlsModel get externalUrls => throw _privateConstructorUsedError;
   String get uri => throw _privateConstructorUsedError;
   String get href => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,15 +44,17 @@ mixin _$UserModel {
             String country,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             @JsonKey(name: 'explicit_content')
             ExplicitContentModel explicitContent,
             String uri,
             String href)
         current,
     required TResult Function(
-            String? id,
+            String id,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             String uri,
             String href)
         public,
@@ -63,15 +67,17 @@ mixin _$UserModel {
             String country,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             @JsonKey(name: 'explicit_content')
             ExplicitContentModel explicitContent,
             String uri,
             String href)?
         current,
     TResult? Function(
-            String? id,
+            String id,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             String uri,
             String href)?
         public,
@@ -84,15 +90,17 @@ mixin _$UserModel {
             String country,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             @JsonKey(name: 'explicit_content')
             ExplicitContentModel explicitContent,
             String uri,
             String href)?
         current,
     TResult Function(
-            String? id,
+            String id,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             String uri,
             String href)?
         public,
@@ -138,8 +146,11 @@ abstract class $UserModelCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'display_name') String? displayName,
       List<ImageModel> images,
+      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
       String uri,
       String href});
+
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
 }
 
 /// @nodoc
@@ -160,12 +171,13 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? id = null,
     Object? displayName = freezed,
     Object? images = null,
+    Object? externalUrls = null,
     Object? uri = null,
     Object? href = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
-          ? _value.id!
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       displayName: freezed == displayName
@@ -176,6 +188,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageModel>,
+      externalUrls: null == externalUrls
+          ? _value.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsModel,
       uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -185,6 +201,16 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           : href // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
+  }
+
+  /// Create a copy of UserModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsModelCopyWith<$Res>(_value.externalUrls, (value) {
+      return _then(_value.copyWith(externalUrls: value) as $Val);
+    });
   }
 }
 
@@ -201,10 +227,13 @@ abstract class _$$CurrentUserModelImplCopyWith<$Res>
       String country,
       @JsonKey(name: 'display_name') String? displayName,
       List<ImageModel> images,
+      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
       @JsonKey(name: 'explicit_content') ExplicitContentModel explicitContent,
       String uri,
       String href});
 
+  @override
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
   $ExplicitContentModelCopyWith<$Res> get explicitContent;
 }
 
@@ -225,6 +254,7 @@ class __$$CurrentUserModelImplCopyWithImpl<$Res>
     Object? country = null,
     Object? displayName = freezed,
     Object? images = null,
+    Object? externalUrls = null,
     Object? explicitContent = null,
     Object? uri = null,
     Object? href = null,
@@ -246,6 +276,10 @@ class __$$CurrentUserModelImplCopyWithImpl<$Res>
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageModel>,
+      externalUrls: null == externalUrls
+          ? _value.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsModel,
       explicitContent: null == explicitContent
           ? _value.explicitContent
           : explicitContent // ignore: cast_nullable_to_non_nullable
@@ -280,6 +314,7 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
       required this.country,
       @JsonKey(name: 'display_name') required this.displayName,
       required final List<ImageModel> images,
+      @JsonKey(name: 'external_urls') required this.externalUrls,
       @JsonKey(name: 'explicit_content') required this.explicitContent,
       required this.uri,
       required this.href,
@@ -307,6 +342,9 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
   }
 
   @override
+  @JsonKey(name: 'external_urls')
+  final ExternalUrlsModel externalUrls;
+  @override
   @JsonKey(name: 'explicit_content')
   final ExplicitContentModel explicitContent;
   @override
@@ -319,7 +357,7 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
 
   @override
   String toString() {
-    return 'UserModel.current(id: $id, country: $country, displayName: $displayName, images: $images, explicitContent: $explicitContent, uri: $uri, href: $href)';
+    return 'UserModel.current(id: $id, country: $country, displayName: $displayName, images: $images, externalUrls: $externalUrls, explicitContent: $explicitContent, uri: $uri, href: $href)';
   }
 
   @override
@@ -332,6 +370,8 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls) &&
             (identical(other.explicitContent, explicitContent) ||
                 other.explicitContent == explicitContent) &&
             (identical(other.uri, uri) || other.uri == uri) &&
@@ -340,8 +380,16 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, country, displayName,
-      const DeepCollectionEquality().hash(_images), explicitContent, uri, href);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      country,
+      displayName,
+      const DeepCollectionEquality().hash(_images),
+      externalUrls,
+      explicitContent,
+      uri,
+      href);
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.
@@ -360,21 +408,23 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
             String country,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             @JsonKey(name: 'explicit_content')
             ExplicitContentModel explicitContent,
             String uri,
             String href)
         current,
     required TResult Function(
-            String? id,
+            String id,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             String uri,
             String href)
         public,
   }) {
-    return current(
-        id, country, displayName, images, explicitContent, uri, href);
+    return current(id, country, displayName, images, externalUrls,
+        explicitContent, uri, href);
   }
 
   @override
@@ -385,21 +435,23 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
             String country,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             @JsonKey(name: 'explicit_content')
             ExplicitContentModel explicitContent,
             String uri,
             String href)?
         current,
     TResult? Function(
-            String? id,
+            String id,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             String uri,
             String href)?
         public,
   }) {
-    return current?.call(
-        id, country, displayName, images, explicitContent, uri, href);
+    return current?.call(id, country, displayName, images, externalUrls,
+        explicitContent, uri, href);
   }
 
   @override
@@ -410,23 +462,25 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
             String country,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             @JsonKey(name: 'explicit_content')
             ExplicitContentModel explicitContent,
             String uri,
             String href)?
         current,
     TResult Function(
-            String? id,
+            String id,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             String uri,
             String href)?
         public,
     required TResult orElse(),
   }) {
     if (current != null) {
-      return current(
-          id, country, displayName, images, explicitContent, uri, href);
+      return current(id, country, displayName, images, externalUrls,
+          explicitContent, uri, href);
     }
     return orElse();
   }
@@ -476,6 +530,8 @@ abstract class CurrentUserModel extends UserModel {
       required final String country,
       @JsonKey(name: 'display_name') required final String? displayName,
       required final List<ImageModel> images,
+      @JsonKey(name: 'external_urls')
+      required final ExternalUrlsModel externalUrls,
       @JsonKey(name: 'explicit_content')
       required final ExplicitContentModel explicitContent,
       required final String uri,
@@ -493,6 +549,9 @@ abstract class CurrentUserModel extends UserModel {
   String? get displayName;
   @override
   List<ImageModel> get images;
+  @override
+  @JsonKey(name: 'external_urls')
+  ExternalUrlsModel get externalUrls;
   @JsonKey(name: 'explicit_content')
   ExplicitContentModel get explicitContent;
   @override
@@ -517,11 +576,15 @@ abstract class _$$PublicUserModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? id,
+      {String id,
       @JsonKey(name: 'display_name') String? displayName,
       List<ImageModel> images,
+      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
       String uri,
       String href});
+
+  @override
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
 }
 
 /// @nodoc
@@ -537,17 +600,18 @@ class __$$PublicUserModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? displayName = freezed,
     Object? images = null,
+    Object? externalUrls = null,
     Object? uri = null,
     Object? href = null,
   }) {
     return _then(_$PublicUserModelImpl(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       displayName: freezed == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -556,6 +620,10 @@ class __$$PublicUserModelImplCopyWithImpl<$Res>
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageModel>,
+      externalUrls: null == externalUrls
+          ? _value.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsModel,
       uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -575,6 +643,7 @@ class _$PublicUserModelImpl extends PublicUserModel {
       {required this.id,
       @JsonKey(name: 'display_name') required this.displayName,
       required final List<ImageModel> images,
+      @JsonKey(name: 'external_urls') required this.externalUrls,
       required this.uri,
       required this.href,
       final String? $type})
@@ -586,7 +655,7 @@ class _$PublicUserModelImpl extends PublicUserModel {
       _$$PublicUserModelImplFromJson(json);
 
   @override
-  final String? id;
+  final String id;
   @override
   @JsonKey(name: 'display_name')
   final String? displayName;
@@ -599,6 +668,9 @@ class _$PublicUserModelImpl extends PublicUserModel {
   }
 
   @override
+  @JsonKey(name: 'external_urls')
+  final ExternalUrlsModel externalUrls;
+  @override
   final String uri;
   @override
   final String href;
@@ -608,7 +680,7 @@ class _$PublicUserModelImpl extends PublicUserModel {
 
   @override
   String toString() {
-    return 'UserModel.public(id: $id, displayName: $displayName, images: $images, uri: $uri, href: $href)';
+    return 'UserModel.public(id: $id, displayName: $displayName, images: $images, externalUrls: $externalUrls, uri: $uri, href: $href)';
   }
 
   @override
@@ -620,6 +692,8 @@ class _$PublicUserModelImpl extends PublicUserModel {
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls) &&
             (identical(other.uri, uri) || other.uri == uri) &&
             (identical(other.href, href) || other.href == href));
   }
@@ -627,7 +701,7 @@ class _$PublicUserModelImpl extends PublicUserModel {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, displayName,
-      const DeepCollectionEquality().hash(_images), uri, href);
+      const DeepCollectionEquality().hash(_images), externalUrls, uri, href);
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.
@@ -646,20 +720,22 @@ class _$PublicUserModelImpl extends PublicUserModel {
             String country,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             @JsonKey(name: 'explicit_content')
             ExplicitContentModel explicitContent,
             String uri,
             String href)
         current,
     required TResult Function(
-            String? id,
+            String id,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             String uri,
             String href)
         public,
   }) {
-    return public(id, displayName, images, uri, href);
+    return public(id, displayName, images, externalUrls, uri, href);
   }
 
   @override
@@ -670,20 +746,22 @@ class _$PublicUserModelImpl extends PublicUserModel {
             String country,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             @JsonKey(name: 'explicit_content')
             ExplicitContentModel explicitContent,
             String uri,
             String href)?
         current,
     TResult? Function(
-            String? id,
+            String id,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             String uri,
             String href)?
         public,
   }) {
-    return public?.call(id, displayName, images, uri, href);
+    return public?.call(id, displayName, images, externalUrls, uri, href);
   }
 
   @override
@@ -694,22 +772,24 @@ class _$PublicUserModelImpl extends PublicUserModel {
             String country,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             @JsonKey(name: 'explicit_content')
             ExplicitContentModel explicitContent,
             String uri,
             String href)?
         current,
     TResult Function(
-            String? id,
+            String id,
             @JsonKey(name: 'display_name') String? displayName,
             List<ImageModel> images,
+            @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
             String uri,
             String href)?
         public,
     required TResult orElse(),
   }) {
     if (public != null) {
-      return public(id, displayName, images, uri, href);
+      return public(id, displayName, images, externalUrls, uri, href);
     }
     return orElse();
   }
@@ -755,9 +835,11 @@ class _$PublicUserModelImpl extends PublicUserModel {
 
 abstract class PublicUserModel extends UserModel {
   const factory PublicUserModel(
-      {required final String? id,
+      {required final String id,
       @JsonKey(name: 'display_name') required final String? displayName,
       required final List<ImageModel> images,
+      @JsonKey(name: 'external_urls')
+      required final ExternalUrlsModel externalUrls,
       required final String uri,
       required final String href}) = _$PublicUserModelImpl;
   const PublicUserModel._() : super._();
@@ -766,12 +848,15 @@ abstract class PublicUserModel extends UserModel {
       _$PublicUserModelImpl.fromJson;
 
   @override
-  String? get id;
+  String get id;
   @override
   @JsonKey(name: 'display_name')
   String? get displayName;
   @override
   List<ImageModel> get images;
+  @override
+  @JsonKey(name: 'external_urls')
+  ExternalUrlsModel get externalUrls;
   @override
   String get uri;
   @override

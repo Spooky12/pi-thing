@@ -15,7 +15,7 @@ flutterpi_tool build --release --cpu=pi3 --dart-define-from-file=.env
 Then to transfer it :
 
 ```sh
-rsync -a ./build/flutter_assets/ pi@raspberrypi:/home/pi/pi_thing
+rsync -avzh --progress --stats ./build/flutter_assets/ pi@raspberrypi:/home/pi/pi_thing
 ```
 
 Finally to run it on the Raspberry Pi :

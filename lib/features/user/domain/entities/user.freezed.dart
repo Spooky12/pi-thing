@@ -16,9 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UserEntity {
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String? get displayName => throw _privateConstructorUsedError;
   List<ImageEntity> get images => throw _privateConstructorUsedError;
+  ExternalUrlsEntity get externalUrls => throw _privateConstructorUsedError;
   String get uri => throw _privateConstructorUsedError;
   String get href => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,12 +29,18 @@ mixin _$UserEntity {
             String country,
             String? displayName,
             List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
             ExplicitContentEntity explicitContent,
             String uri,
             String href)
         current,
-    required TResult Function(String? id, String? displayName,
-            List<ImageEntity> images, String uri, String href)
+    required TResult Function(
+            String id,
+            String? displayName,
+            List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
+            String uri,
+            String href)
         public,
   }) =>
       throw _privateConstructorUsedError;
@@ -44,12 +51,13 @@ mixin _$UserEntity {
             String country,
             String? displayName,
             List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
             ExplicitContentEntity explicitContent,
             String uri,
             String href)?
         current,
-    TResult? Function(String? id, String? displayName, List<ImageEntity> images,
-            String uri, String href)?
+    TResult? Function(String id, String? displayName, List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls, String uri, String href)?
         public,
   }) =>
       throw _privateConstructorUsedError;
@@ -60,12 +68,13 @@ mixin _$UserEntity {
             String country,
             String? displayName,
             List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
             ExplicitContentEntity explicitContent,
             String uri,
             String href)?
         current,
-    TResult Function(String? id, String? displayName, List<ImageEntity> images,
-            String uri, String href)?
+    TResult Function(String id, String? displayName, List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls, String uri, String href)?
         public,
     required TResult orElse(),
   }) =>
@@ -107,8 +116,11 @@ abstract class $UserEntityCopyWith<$Res> {
       {String id,
       String? displayName,
       List<ImageEntity> images,
+      ExternalUrlsEntity externalUrls,
       String uri,
       String href});
+
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
 }
 
 /// @nodoc
@@ -129,12 +141,13 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
     Object? id = null,
     Object? displayName = freezed,
     Object? images = null,
+    Object? externalUrls = null,
     Object? uri = null,
     Object? href = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
-          ? _value.id!
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       displayName: freezed == displayName
@@ -145,6 +158,10 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageEntity>,
+      externalUrls: null == externalUrls
+          ? _value.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsEntity,
       uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -154,6 +171,16 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
           : href // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
+  }
+
+  /// Create a copy of UserEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsEntityCopyWith<$Res>(_value.externalUrls, (value) {
+      return _then(_value.copyWith(externalUrls: value) as $Val);
+    });
   }
 }
 
@@ -170,10 +197,13 @@ abstract class _$$CurrentUserEntityImplCopyWith<$Res>
       String country,
       String? displayName,
       List<ImageEntity> images,
+      ExternalUrlsEntity externalUrls,
       ExplicitContentEntity explicitContent,
       String uri,
       String href});
 
+  @override
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
   $ExplicitContentEntityCopyWith<$Res> get explicitContent;
 }
 
@@ -194,6 +224,7 @@ class __$$CurrentUserEntityImplCopyWithImpl<$Res>
     Object? country = null,
     Object? displayName = freezed,
     Object? images = null,
+    Object? externalUrls = null,
     Object? explicitContent = null,
     Object? uri = null,
     Object? href = null,
@@ -215,6 +246,10 @@ class __$$CurrentUserEntityImplCopyWithImpl<$Res>
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageEntity>,
+      externalUrls: null == externalUrls
+          ? _value.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsEntity,
       explicitContent: null == explicitContent
           ? _value.explicitContent
           : explicitContent // ignore: cast_nullable_to_non_nullable
@@ -250,6 +285,7 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
       required this.country,
       required this.displayName,
       required final List<ImageEntity> images,
+      required this.externalUrls,
       required this.explicitContent,
       required this.uri,
       required this.href})
@@ -270,6 +306,8 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
   }
 
   @override
+  final ExternalUrlsEntity externalUrls;
+  @override
   final ExplicitContentEntity explicitContent;
   @override
   final String uri;
@@ -278,7 +316,7 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
 
   @override
   String toString() {
-    return 'UserEntity.current(id: $id, country: $country, displayName: $displayName, images: $images, explicitContent: $explicitContent, uri: $uri, href: $href)';
+    return 'UserEntity.current(id: $id, country: $country, displayName: $displayName, images: $images, externalUrls: $externalUrls, explicitContent: $explicitContent, uri: $uri, href: $href)';
   }
 
   @override
@@ -291,6 +329,8 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls) &&
             (identical(other.explicitContent, explicitContent) ||
                 other.explicitContent == explicitContent) &&
             (identical(other.uri, uri) || other.uri == uri) &&
@@ -298,8 +338,16 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, country, displayName,
-      const DeepCollectionEquality().hash(_images), explicitContent, uri, href);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      country,
+      displayName,
+      const DeepCollectionEquality().hash(_images),
+      externalUrls,
+      explicitContent,
+      uri,
+      href);
 
   /// Create a copy of UserEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -318,16 +366,22 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
             String country,
             String? displayName,
             List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
             ExplicitContentEntity explicitContent,
             String uri,
             String href)
         current,
-    required TResult Function(String? id, String? displayName,
-            List<ImageEntity> images, String uri, String href)
+    required TResult Function(
+            String id,
+            String? displayName,
+            List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
+            String uri,
+            String href)
         public,
   }) {
-    return current(
-        id, country, displayName, images, explicitContent, uri, href);
+    return current(id, country, displayName, images, externalUrls,
+        explicitContent, uri, href);
   }
 
   @override
@@ -338,16 +392,17 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
             String country,
             String? displayName,
             List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
             ExplicitContentEntity explicitContent,
             String uri,
             String href)?
         current,
-    TResult? Function(String? id, String? displayName, List<ImageEntity> images,
-            String uri, String href)?
+    TResult? Function(String id, String? displayName, List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls, String uri, String href)?
         public,
   }) {
-    return current?.call(
-        id, country, displayName, images, explicitContent, uri, href);
+    return current?.call(id, country, displayName, images, externalUrls,
+        explicitContent, uri, href);
   }
 
   @override
@@ -358,18 +413,19 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
             String country,
             String? displayName,
             List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
             ExplicitContentEntity explicitContent,
             String uri,
             String href)?
         current,
-    TResult Function(String? id, String? displayName, List<ImageEntity> images,
-            String uri, String href)?
+    TResult Function(String id, String? displayName, List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls, String uri, String href)?
         public,
     required TResult orElse(),
   }) {
     if (current != null) {
-      return current(
-          id, country, displayName, images, explicitContent, uri, href);
+      return current(id, country, displayName, images, externalUrls,
+          explicitContent, uri, href);
     }
     return orElse();
   }
@@ -412,6 +468,7 @@ abstract class CurrentUserEntity implements UserEntity {
       required final String country,
       required final String? displayName,
       required final List<ImageEntity> images,
+      required final ExternalUrlsEntity externalUrls,
       required final ExplicitContentEntity explicitContent,
       required final String uri,
       required final String href}) = _$CurrentUserEntityImpl;
@@ -423,6 +480,8 @@ abstract class CurrentUserEntity implements UserEntity {
   String? get displayName;
   @override
   List<ImageEntity> get images;
+  @override
+  ExternalUrlsEntity get externalUrls;
   ExplicitContentEntity get explicitContent;
   @override
   String get uri;
@@ -446,11 +505,15 @@ abstract class _$$PublicUserEntityImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? id,
+      {String id,
       String? displayName,
       List<ImageEntity> images,
+      ExternalUrlsEntity externalUrls,
       String uri,
       String href});
+
+  @override
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
 }
 
 /// @nodoc
@@ -466,17 +529,18 @@ class __$$PublicUserEntityImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? displayName = freezed,
     Object? images = null,
+    Object? externalUrls = null,
     Object? uri = null,
     Object? href = null,
   }) {
     return _then(_$PublicUserEntityImpl(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       displayName: freezed == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -485,6 +549,10 @@ class __$$PublicUserEntityImplCopyWithImpl<$Res>
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageEntity>,
+      externalUrls: null == externalUrls
+          ? _value.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsEntity,
       uri: null == uri
           ? _value.uri
           : uri // ignore: cast_nullable_to_non_nullable
@@ -504,12 +572,13 @@ class _$PublicUserEntityImpl implements PublicUserEntity {
       {required this.id,
       required this.displayName,
       required final List<ImageEntity> images,
+      required this.externalUrls,
       required this.uri,
       required this.href})
       : _images = images;
 
   @override
-  final String? id;
+  final String id;
   @override
   final String? displayName;
   final List<ImageEntity> _images;
@@ -521,13 +590,15 @@ class _$PublicUserEntityImpl implements PublicUserEntity {
   }
 
   @override
+  final ExternalUrlsEntity externalUrls;
+  @override
   final String uri;
   @override
   final String href;
 
   @override
   String toString() {
-    return 'UserEntity.public(id: $id, displayName: $displayName, images: $images, uri: $uri, href: $href)';
+    return 'UserEntity.public(id: $id, displayName: $displayName, images: $images, externalUrls: $externalUrls, uri: $uri, href: $href)';
   }
 
   @override
@@ -539,13 +610,15 @@ class _$PublicUserEntityImpl implements PublicUserEntity {
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls) &&
             (identical(other.uri, uri) || other.uri == uri) &&
             (identical(other.href, href) || other.href == href));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, displayName,
-      const DeepCollectionEquality().hash(_images), uri, href);
+      const DeepCollectionEquality().hash(_images), externalUrls, uri, href);
 
   /// Create a copy of UserEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -564,15 +637,21 @@ class _$PublicUserEntityImpl implements PublicUserEntity {
             String country,
             String? displayName,
             List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
             ExplicitContentEntity explicitContent,
             String uri,
             String href)
         current,
-    required TResult Function(String? id, String? displayName,
-            List<ImageEntity> images, String uri, String href)
+    required TResult Function(
+            String id,
+            String? displayName,
+            List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
+            String uri,
+            String href)
         public,
   }) {
-    return public(id, displayName, images, uri, href);
+    return public(id, displayName, images, externalUrls, uri, href);
   }
 
   @override
@@ -583,15 +662,16 @@ class _$PublicUserEntityImpl implements PublicUserEntity {
             String country,
             String? displayName,
             List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
             ExplicitContentEntity explicitContent,
             String uri,
             String href)?
         current,
-    TResult? Function(String? id, String? displayName, List<ImageEntity> images,
-            String uri, String href)?
+    TResult? Function(String id, String? displayName, List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls, String uri, String href)?
         public,
   }) {
-    return public?.call(id, displayName, images, uri, href);
+    return public?.call(id, displayName, images, externalUrls, uri, href);
   }
 
   @override
@@ -602,17 +682,18 @@ class _$PublicUserEntityImpl implements PublicUserEntity {
             String country,
             String? displayName,
             List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls,
             ExplicitContentEntity explicitContent,
             String uri,
             String href)?
         current,
-    TResult Function(String? id, String? displayName, List<ImageEntity> images,
-            String uri, String href)?
+    TResult Function(String id, String? displayName, List<ImageEntity> images,
+            ExternalUrlsEntity externalUrls, String uri, String href)?
         public,
     required TResult orElse(),
   }) {
     if (public != null) {
-      return public(id, displayName, images, uri, href);
+      return public(id, displayName, images, externalUrls, uri, href);
     }
     return orElse();
   }
@@ -651,18 +732,21 @@ class _$PublicUserEntityImpl implements PublicUserEntity {
 
 abstract class PublicUserEntity implements UserEntity {
   const factory PublicUserEntity(
-      {required final String? id,
+      {required final String id,
       required final String? displayName,
       required final List<ImageEntity> images,
+      required final ExternalUrlsEntity externalUrls,
       required final String uri,
       required final String href}) = _$PublicUserEntityImpl;
 
   @override
-  String? get id;
+  String get id;
   @override
   String? get displayName;
   @override
   List<ImageEntity> get images;
+  @override
+  ExternalUrlsEntity get externalUrls;
   @override
   String get uri;
   @override
