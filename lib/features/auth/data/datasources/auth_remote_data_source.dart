@@ -30,8 +30,8 @@ class AuthRemoteDataSourceImpl extends RemoteDataSource
     final response = await performPostRequestApi(
       apiEndpoint: ApiConstants.tokenEndpoint,
       options: Options(
+        contentType: Headers.formUrlEncodedContentType,
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
           'Authorization':
               'Basic ${base64.encode('${ApiConstants.clientId}:${ApiConstants.clientSecret}'.codeUnits)}',
         },
@@ -127,8 +127,27 @@ class AuthRemoteDataSourceImpl extends RemoteDataSource
   }
 
   @override
-  Future<TokenModel?> refreshToken(String refreshToken) {
-    // TODO: implement refreshToken
-    throw UnimplementedError();
+  Future<TokenModel?> refreshToken(String refreshToken) async {
+    final response = await performPostRequestApi(
+      apiEndpoint: ApiConstants.tokenEndpoint,
+      options: Options(
+        contentType: Headers.formUrlEncodedContentType,
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Authorization':
+              'Basic ${base64.encode('${ApiConstants.clientId}:${ApiConstants.clientSecret}'.codeUnits)}',
+        },
+      ),
+      data: {
+        'grant_type': 'refresh_token',
+        'refresh_token': refreshToken,
+      },
+    ) as Map<String, dynamic>;
+
+    return TokenModel.fromJson(
+      response
+        // When a refresh token is not returned, continue using the existing token.
+        ..putIfAbsent('refresh_token', () => refreshToken),
+    );
   }
 }
