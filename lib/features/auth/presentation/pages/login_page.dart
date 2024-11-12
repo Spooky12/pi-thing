@@ -16,7 +16,6 @@ class LoginPage extends ConsumerWidget {
         LoginStateError(:final message) =>
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              duration: const Duration(seconds: 5),
               backgroundColor: Colors.red,
               content: Text(message),
             ),

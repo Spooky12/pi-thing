@@ -36,8 +36,9 @@ class PlayerRepositoryImpl implements PlayerRepository {
   );
 
   void _initPlaybackLongPolling() {
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) async {
-      _controller.add(await getPlaybackState());
+    _fetchPlaybackState();
+    _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      _fetchPlaybackState();
     });
   }
 
@@ -45,6 +46,9 @@ class PlayerRepositoryImpl implements PlayerRepository {
     _timer?.cancel();
     _timer = null;
   }
+
+  Future<void> _fetchPlaybackState() async =>
+      _controller.add(await getPlaybackState());
 
   @override
   Future<Result<void>> pause({required String? deviceId}) async {
@@ -60,6 +64,28 @@ class PlayerRepositoryImpl implements PlayerRepository {
   Future<Result<void>> resume({required String? deviceId}) async {
     try {
       await playerRemoteDataSource.resume(deviceId: deviceId);
+      return const Result.success(null);
+    } on ServerException {
+      return const Result.failure(Failure.server());
+    }
+  }
+
+  @override
+  Future<Result<void>> skipToNext({required String? deviceId}) async {
+    try {
+      await playerRemoteDataSource.skipToNext(deviceId: deviceId);
+      _fetchPlaybackState();
+      return const Result.success(null);
+    } on ServerException {
+      return const Result.failure(Failure.server());
+    }
+  }
+
+  @override
+  Future<Result<void>> skipToPrevious({required String? deviceId}) async {
+    try {
+      await playerRemoteDataSource.skipToPrevious(deviceId: deviceId);
+      _fetchPlaybackState();
       return const Result.success(null);
     } on ServerException {
       return const Result.failure(Failure.server());

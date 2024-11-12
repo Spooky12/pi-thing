@@ -7,6 +7,7 @@ environment:
   sdk: ^3.5.4
 
 dependencies:
+  cached_network_image: ^3.4.1
   clock: ^1.1.1
   dio: ^5.7.0
   ffi: ^2.1.3
@@ -14,6 +15,7 @@ dependencies:
     sdk: flutter
   flutter_riverpod: ^2.6.1
   freezed_annotation: ^2.4.4
+  gap: ^3.0.1
   go_router: ^14.4.1
   json_annotation: ^4.9.0
   riverpod_annotation: ^2.6.1

@@ -30,7 +30,10 @@ abstract class ApiConstants {
   static const String tokenEndpoint = 'api/token';
 
   static const String currentUserEndpoint = 'v1/me';
+
   static const String playbackEndpoint = 'v1/me/player';
   static const String playerPauseEndpoint = 'v1/me/player/pause';
   static const String playerStartResumeEndpoint = 'v1/me/player/play';
+  static const String playerSkipToNextEndpoint = 'v1/me/player/next';
+  static const String playerSkipToPreviousEndpoint = 'v1/me/player/previous';
 }

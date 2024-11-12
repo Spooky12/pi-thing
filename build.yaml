@@ -1,0 +1,9 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+          # `when` and `map` can be enabled/disabled entirely by setting them to `true`/`false`
+          map: false
+          when: false
+          

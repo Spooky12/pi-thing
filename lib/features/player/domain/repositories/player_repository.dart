@@ -9,4 +9,8 @@ abstract class PlayerRepository {
   Future<Result<void>> pause({required String? deviceId});
 
   Future<Result<void>> resume({required String? deviceId});
+
+  Future<Result<void>> skipToNext({required String? deviceId});
+
+  Future<Result<void>> skipToPrevious({required String? deviceId});
 }

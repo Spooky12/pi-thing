@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/common/presentation/pages/error_page.dart';
 import '../../features/common/presentation/pages/splash_page.dart';
-import '../../features/home/presentation/pages/home_page.dart';
+import '../../features/player/presentation/pages/player_page.dart';
 
 part 'app_routes.g.dart';
 
@@ -13,7 +13,7 @@ class HomeRoute extends GoRouteData {
   const HomeRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => const HomePage();
+  Widget build(BuildContext context, GoRouterState state) => const PlayerPage();
 }
 
 @TypedGoRoute<LoginRoute>(path: '/login', name: 'login')

@@ -8,6 +8,10 @@ abstract class PlayerRemoteDataSource {
   Future<void> pause({required String? deviceId});
 
   Future<void> resume({required String? deviceId});
+
+  Future<void> skipToNext({required String? deviceId});
+
+  Future<void> skipToPrevious({required String? deviceId});
 }
 
 class PlayerRemoteDataSourceImpl extends SpotifyRemoteDataSource
@@ -30,22 +34,35 @@ class PlayerRemoteDataSourceImpl extends SpotifyRemoteDataSource
   }
 
   @override
-  Future<void> pause({required String? deviceId}) async {
-    await performPutRequestApi(
-      apiEndpoint: ApiConstants.playerPauseEndpoint,
-      queryParameters: {
-        if (deviceId != null) 'device_id': deviceId,
-      },
-    );
-  }
+  Future<void> pause({required String? deviceId}) => performPutRequestApi(
+        apiEndpoint: ApiConstants.playerPauseEndpoint,
+        queryParameters: {
+          if (deviceId != null) 'device_id': deviceId,
+        },
+      );
 
   @override
-  Future<void> resume({required String? deviceId}) async {
-    await performPutRequestApi(
-      apiEndpoint: ApiConstants.playerStartResumeEndpoint,
-      queryParameters: {
-        if (deviceId != null) 'device_id': deviceId,
-      },
-    );
-  }
+  Future<void> resume({required String? deviceId}) => performPutRequestApi(
+        apiEndpoint: ApiConstants.playerStartResumeEndpoint,
+        queryParameters: {
+          if (deviceId != null) 'device_id': deviceId,
+        },
+      );
+
+  @override
+  Future<void> skipToNext({required String? deviceId}) => performPostRequestApi(
+        apiEndpoint: ApiConstants.playerSkipToNextEndpoint,
+        queryParameters: {
+          if (deviceId != null) 'device_id': deviceId,
+        },
+      );
+
+  @override
+  Future<void> skipToPrevious({required String? deviceId}) =>
+      performPostRequestApi(
+        apiEndpoint: ApiConstants.playerSkipToPreviousEndpoint,
+        queryParameters: {
+          if (deviceId != null) 'device_id': deviceId,
+        },
+      );
 }

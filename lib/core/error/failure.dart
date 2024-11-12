@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'failure.freezed.dart';
 
-@Freezed(when: FreezedWhenOptions.none, map: FreezedMapOptions.none)
+@freezed
 sealed class Failure with _$Failure {
   const factory Failure.cache() = CacheFailure;
 

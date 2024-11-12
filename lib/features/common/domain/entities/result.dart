@@ -4,7 +4,7 @@ import '../../../../core/error/failure.dart';
 
 part 'result.freezed.dart';
 
-@Freezed(when: FreezedWhenOptions.none, map: FreezedMapOptions.none)
+@freezed
 sealed class Result<T> with _$Result<T> {
   const Result._();
 
