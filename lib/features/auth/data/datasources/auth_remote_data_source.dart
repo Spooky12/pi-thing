@@ -117,7 +117,8 @@ class AuthRemoteDataSourceImpl extends RemoteDataSource
   Future<(String, int)> _getIpPort() async {
     final ip = (await NetworkInterface.list(type: InternetAddressType.IPv4))
         .firstWhere(
-          (element) => ['Ethernet', 'Wi-Fi', 'wlan0'].contains(element.name),
+          (element) =>
+              ['Ethernet', 'Wi-Fi', 'wlan0', 'en0'].contains(element.name),
         )
         .addresses
         .first
