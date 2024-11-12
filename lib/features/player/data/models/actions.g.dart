@@ -8,16 +8,24 @@ part of 'actions.dart';
 
 _$ActionsModelImpl _$$ActionsModelImplFromJson(Map<String, dynamic> json) =>
     _$ActionsModelImpl(
-      interruptingPlayback: json['interrupting_playback'] as bool? ?? false,
-      pausing: json['pausing'] as bool? ?? false,
-      resuming: json['resuming'] as bool? ?? false,
-      seeking: json['seeking'] as bool? ?? false,
-      skippingNext: json['skipping_next'] as bool? ?? false,
-      skippingPrev: json['skipping_prev'] as bool? ?? false,
-      togglingRepeatContext: json['toggling_repeat_context'] as bool? ?? false,
-      togglingShuffle: json['toggling_shuffle'] as bool? ?? false,
-      togglingRepeatTrack: json['toggling_repeat_track'] as bool? ?? false,
-      transferringPlayback: json['transferring_playback'] as bool? ?? false,
+      interruptingPlayback:
+          _readDisallowedValue(json, 'interrupting_playback') as bool? ?? true,
+      pausing: _readDisallowedValue(json, 'pausing') as bool? ?? true,
+      resuming: _readDisallowedValue(json, 'resuming') as bool? ?? true,
+      seeking: _readDisallowedValue(json, 'seeking') as bool? ?? true,
+      skippingNext:
+          _readDisallowedValue(json, 'skipping_next') as bool? ?? true,
+      skippingPrev:
+          _readDisallowedValue(json, 'skipping_prev') as bool? ?? true,
+      togglingRepeatContext:
+          _readDisallowedValue(json, 'toggling_repeat_context') as bool? ??
+              true,
+      togglingShuffle:
+          _readDisallowedValue(json, 'toggling_shuffle') as bool? ?? true,
+      togglingRepeatTrack:
+          _readDisallowedValue(json, 'toggling_repeat_track') as bool? ?? true,
+      transferringPlayback:
+          _readDisallowedValue(json, 'transferring_playback') as bool? ?? true,
     );
 
 Map<String, dynamic> _$$ActionsModelImplToJson(_$ActionsModelImpl instance) =>

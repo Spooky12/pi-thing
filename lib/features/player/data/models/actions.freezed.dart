@@ -20,22 +20,25 @@ ActionsModel _$ActionsModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ActionsModel {
-  @JsonKey(name: 'interrupting_playback')
+  @JsonKey(name: 'interrupting_playback', readValue: _readDisallowedValue)
   bool get interruptingPlayback => throw _privateConstructorUsedError;
+  @JsonKey(name: 'pausing', readValue: _readDisallowedValue)
   bool get pausing => throw _privateConstructorUsedError;
+  @JsonKey(name: 'resuming', readValue: _readDisallowedValue)
   bool get resuming => throw _privateConstructorUsedError;
+  @JsonKey(name: 'seeking', readValue: _readDisallowedValue)
   bool get seeking => throw _privateConstructorUsedError;
-  @JsonKey(name: 'skipping_next')
+  @JsonKey(name: 'skipping_next', readValue: _readDisallowedValue)
   bool get skippingNext => throw _privateConstructorUsedError;
-  @JsonKey(name: 'skipping_prev')
+  @JsonKey(name: 'skipping_prev', readValue: _readDisallowedValue)
   bool get skippingPrev => throw _privateConstructorUsedError;
-  @JsonKey(name: 'toggling_repeat_context')
+  @JsonKey(name: 'toggling_repeat_context', readValue: _readDisallowedValue)
   bool get togglingRepeatContext => throw _privateConstructorUsedError;
-  @JsonKey(name: 'toggling_shuffle')
+  @JsonKey(name: 'toggling_shuffle', readValue: _readDisallowedValue)
   bool get togglingShuffle => throw _privateConstructorUsedError;
-  @JsonKey(name: 'toggling_repeat_track')
+  @JsonKey(name: 'toggling_repeat_track', readValue: _readDisallowedValue)
   bool get togglingRepeatTrack => throw _privateConstructorUsedError;
-  @JsonKey(name: 'transferring_playback')
+  @JsonKey(name: 'transferring_playback', readValue: _readDisallowedValue)
   bool get transferringPlayback => throw _privateConstructorUsedError;
 
   /// Serializes this ActionsModel to a JSON map.
@@ -55,16 +58,23 @@ abstract class $ActionsModelCopyWith<$Res> {
       _$ActionsModelCopyWithImpl<$Res, ActionsModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'interrupting_playback') bool interruptingPlayback,
-      bool pausing,
-      bool resuming,
-      bool seeking,
-      @JsonKey(name: 'skipping_next') bool skippingNext,
-      @JsonKey(name: 'skipping_prev') bool skippingPrev,
-      @JsonKey(name: 'toggling_repeat_context') bool togglingRepeatContext,
-      @JsonKey(name: 'toggling_shuffle') bool togglingShuffle,
-      @JsonKey(name: 'toggling_repeat_track') bool togglingRepeatTrack,
-      @JsonKey(name: 'transferring_playback') bool transferringPlayback});
+      {@JsonKey(name: 'interrupting_playback', readValue: _readDisallowedValue)
+      bool interruptingPlayback,
+      @JsonKey(name: 'pausing', readValue: _readDisallowedValue) bool pausing,
+      @JsonKey(name: 'resuming', readValue: _readDisallowedValue) bool resuming,
+      @JsonKey(name: 'seeking', readValue: _readDisallowedValue) bool seeking,
+      @JsonKey(name: 'skipping_next', readValue: _readDisallowedValue)
+      bool skippingNext,
+      @JsonKey(name: 'skipping_prev', readValue: _readDisallowedValue)
+      bool skippingPrev,
+      @JsonKey(name: 'toggling_repeat_context', readValue: _readDisallowedValue)
+      bool togglingRepeatContext,
+      @JsonKey(name: 'toggling_shuffle', readValue: _readDisallowedValue)
+      bool togglingShuffle,
+      @JsonKey(name: 'toggling_repeat_track', readValue: _readDisallowedValue)
+      bool togglingRepeatTrack,
+      @JsonKey(name: 'transferring_playback', readValue: _readDisallowedValue)
+      bool transferringPlayback});
 }
 
 /// @nodoc
@@ -147,16 +157,23 @@ abstract class _$$ActionsModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'interrupting_playback') bool interruptingPlayback,
-      bool pausing,
-      bool resuming,
-      bool seeking,
-      @JsonKey(name: 'skipping_next') bool skippingNext,
-      @JsonKey(name: 'skipping_prev') bool skippingPrev,
-      @JsonKey(name: 'toggling_repeat_context') bool togglingRepeatContext,
-      @JsonKey(name: 'toggling_shuffle') bool togglingShuffle,
-      @JsonKey(name: 'toggling_repeat_track') bool togglingRepeatTrack,
-      @JsonKey(name: 'transferring_playback') bool transferringPlayback});
+      {@JsonKey(name: 'interrupting_playback', readValue: _readDisallowedValue)
+      bool interruptingPlayback,
+      @JsonKey(name: 'pausing', readValue: _readDisallowedValue) bool pausing,
+      @JsonKey(name: 'resuming', readValue: _readDisallowedValue) bool resuming,
+      @JsonKey(name: 'seeking', readValue: _readDisallowedValue) bool seeking,
+      @JsonKey(name: 'skipping_next', readValue: _readDisallowedValue)
+      bool skippingNext,
+      @JsonKey(name: 'skipping_prev', readValue: _readDisallowedValue)
+      bool skippingPrev,
+      @JsonKey(name: 'toggling_repeat_context', readValue: _readDisallowedValue)
+      bool togglingRepeatContext,
+      @JsonKey(name: 'toggling_shuffle', readValue: _readDisallowedValue)
+      bool togglingShuffle,
+      @JsonKey(name: 'toggling_repeat_track', readValue: _readDisallowedValue)
+      bool togglingRepeatTrack,
+      @JsonKey(name: 'transferring_playback', readValue: _readDisallowedValue)
+      bool transferringPlayback});
 }
 
 /// @nodoc
@@ -232,53 +249,60 @@ class __$$ActionsModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ActionsModelImpl extends _ActionsModel {
   const _$ActionsModelImpl(
-      {@JsonKey(name: 'interrupting_playback')
-      this.interruptingPlayback = false,
-      this.pausing = false,
-      this.resuming = false,
-      this.seeking = false,
-      @JsonKey(name: 'skipping_next') this.skippingNext = false,
-      @JsonKey(name: 'skipping_prev') this.skippingPrev = false,
-      @JsonKey(name: 'toggling_repeat_context')
-      this.togglingRepeatContext = false,
-      @JsonKey(name: 'toggling_shuffle') this.togglingShuffle = false,
-      @JsonKey(name: 'toggling_repeat_track') this.togglingRepeatTrack = false,
-      @JsonKey(name: 'transferring_playback')
-      this.transferringPlayback = false})
+      {@JsonKey(name: 'interrupting_playback', readValue: _readDisallowedValue)
+      this.interruptingPlayback = true,
+      @JsonKey(name: 'pausing', readValue: _readDisallowedValue)
+      this.pausing = true,
+      @JsonKey(name: 'resuming', readValue: _readDisallowedValue)
+      this.resuming = true,
+      @JsonKey(name: 'seeking', readValue: _readDisallowedValue)
+      this.seeking = true,
+      @JsonKey(name: 'skipping_next', readValue: _readDisallowedValue)
+      this.skippingNext = true,
+      @JsonKey(name: 'skipping_prev', readValue: _readDisallowedValue)
+      this.skippingPrev = true,
+      @JsonKey(name: 'toggling_repeat_context', readValue: _readDisallowedValue)
+      this.togglingRepeatContext = true,
+      @JsonKey(name: 'toggling_shuffle', readValue: _readDisallowedValue)
+      this.togglingShuffle = true,
+      @JsonKey(name: 'toggling_repeat_track', readValue: _readDisallowedValue)
+      this.togglingRepeatTrack = true,
+      @JsonKey(name: 'transferring_playback', readValue: _readDisallowedValue)
+      this.transferringPlayback = true})
       : super._();
 
   factory _$ActionsModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ActionsModelImplFromJson(json);
 
   @override
-  @JsonKey(name: 'interrupting_playback')
+  @JsonKey(name: 'interrupting_playback', readValue: _readDisallowedValue)
   final bool interruptingPlayback;
   @override
-  @JsonKey()
+  @JsonKey(name: 'pausing', readValue: _readDisallowedValue)
   final bool pausing;
   @override
-  @JsonKey()
+  @JsonKey(name: 'resuming', readValue: _readDisallowedValue)
   final bool resuming;
   @override
-  @JsonKey()
+  @JsonKey(name: 'seeking', readValue: _readDisallowedValue)
   final bool seeking;
   @override
-  @JsonKey(name: 'skipping_next')
+  @JsonKey(name: 'skipping_next', readValue: _readDisallowedValue)
   final bool skippingNext;
   @override
-  @JsonKey(name: 'skipping_prev')
+  @JsonKey(name: 'skipping_prev', readValue: _readDisallowedValue)
   final bool skippingPrev;
   @override
-  @JsonKey(name: 'toggling_repeat_context')
+  @JsonKey(name: 'toggling_repeat_context', readValue: _readDisallowedValue)
   final bool togglingRepeatContext;
   @override
-  @JsonKey(name: 'toggling_shuffle')
+  @JsonKey(name: 'toggling_shuffle', readValue: _readDisallowedValue)
   final bool togglingShuffle;
   @override
-  @JsonKey(name: 'toggling_repeat_track')
+  @JsonKey(name: 'toggling_repeat_track', readValue: _readDisallowedValue)
   final bool togglingRepeatTrack;
   @override
-  @JsonKey(name: 'transferring_playback')
+  @JsonKey(name: 'transferring_playback', readValue: _readDisallowedValue)
   final bool transferringPlayback;
 
   @override
@@ -344,17 +368,25 @@ class _$ActionsModelImpl extends _ActionsModel {
 
 abstract class _ActionsModel extends ActionsModel {
   const factory _ActionsModel(
-      {@JsonKey(name: 'interrupting_playback') final bool interruptingPlayback,
+      {@JsonKey(name: 'interrupting_playback', readValue: _readDisallowedValue)
+      final bool interruptingPlayback,
+      @JsonKey(name: 'pausing', readValue: _readDisallowedValue)
       final bool pausing,
+      @JsonKey(name: 'resuming', readValue: _readDisallowedValue)
       final bool resuming,
+      @JsonKey(name: 'seeking', readValue: _readDisallowedValue)
       final bool seeking,
-      @JsonKey(name: 'skipping_next') final bool skippingNext,
-      @JsonKey(name: 'skipping_prev') final bool skippingPrev,
-      @JsonKey(name: 'toggling_repeat_context')
+      @JsonKey(name: 'skipping_next', readValue: _readDisallowedValue)
+      final bool skippingNext,
+      @JsonKey(name: 'skipping_prev', readValue: _readDisallowedValue)
+      final bool skippingPrev,
+      @JsonKey(name: 'toggling_repeat_context', readValue: _readDisallowedValue)
       final bool togglingRepeatContext,
-      @JsonKey(name: 'toggling_shuffle') final bool togglingShuffle,
-      @JsonKey(name: 'toggling_repeat_track') final bool togglingRepeatTrack,
-      @JsonKey(name: 'transferring_playback')
+      @JsonKey(name: 'toggling_shuffle', readValue: _readDisallowedValue)
+      final bool togglingShuffle,
+      @JsonKey(name: 'toggling_repeat_track', readValue: _readDisallowedValue)
+      final bool togglingRepeatTrack,
+      @JsonKey(name: 'transferring_playback', readValue: _readDisallowedValue)
       final bool transferringPlayback}) = _$ActionsModelImpl;
   const _ActionsModel._() : super._();
 
@@ -362,31 +394,34 @@ abstract class _ActionsModel extends ActionsModel {
       _$ActionsModelImpl.fromJson;
 
   @override
-  @JsonKey(name: 'interrupting_playback')
+  @JsonKey(name: 'interrupting_playback', readValue: _readDisallowedValue)
   bool get interruptingPlayback;
   @override
+  @JsonKey(name: 'pausing', readValue: _readDisallowedValue)
   bool get pausing;
   @override
+  @JsonKey(name: 'resuming', readValue: _readDisallowedValue)
   bool get resuming;
   @override
+  @JsonKey(name: 'seeking', readValue: _readDisallowedValue)
   bool get seeking;
   @override
-  @JsonKey(name: 'skipping_next')
+  @JsonKey(name: 'skipping_next', readValue: _readDisallowedValue)
   bool get skippingNext;
   @override
-  @JsonKey(name: 'skipping_prev')
+  @JsonKey(name: 'skipping_prev', readValue: _readDisallowedValue)
   bool get skippingPrev;
   @override
-  @JsonKey(name: 'toggling_repeat_context')
+  @JsonKey(name: 'toggling_repeat_context', readValue: _readDisallowedValue)
   bool get togglingRepeatContext;
   @override
-  @JsonKey(name: 'toggling_shuffle')
+  @JsonKey(name: 'toggling_shuffle', readValue: _readDisallowedValue)
   bool get togglingShuffle;
   @override
-  @JsonKey(name: 'toggling_repeat_track')
+  @JsonKey(name: 'toggling_repeat_track', readValue: _readDisallowedValue)
   bool get togglingRepeatTrack;
   @override
-  @JsonKey(name: 'transferring_playback')
+  @JsonKey(name: 'transferring_playback', readValue: _readDisallowedValue)
   bool get transferringPlayback;
 
   /// Create a copy of ActionsModel

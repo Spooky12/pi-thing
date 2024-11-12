@@ -48,6 +48,7 @@ class PlayerPage extends StatelessWidget {
                           .url,
                       width: 200,
                       height: 200,
+                      useOldImageOnUrlChange: true,
                     ),
                     const Gap(2),
                     Text(
@@ -59,9 +60,11 @@ class PlayerPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: ref
-                            .read(playerControllerProvider.notifier)
-                            .skipToPrevious,
+                        onPressed: playback.actions.skippingPrev
+                            ? ref
+                                .read(playerControllerProvider.notifier)
+                                .skipToPrevious
+                            : null,
                         child: const Text('|◁'),
                       ),
                       const Gap(4),
@@ -80,9 +83,11 @@ class PlayerPage extends StatelessWidget {
                         ),
                       const Gap(4),
                       ElevatedButton(
-                        onPressed: ref
-                            .read(playerControllerProvider.notifier)
-                            .skipToNext,
+                        onPressed: playback.actions.skippingNext
+                            ? ref
+                                .read(playerControllerProvider.notifier)
+                                .skipToNext
+                            : null,
                         child: const Text('▷|'),
                       ),
                     ],

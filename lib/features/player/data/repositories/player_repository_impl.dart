@@ -74,6 +74,7 @@ class PlayerRepositoryImpl implements PlayerRepository {
   Future<Result<void>> skipToNext({required String? deviceId}) async {
     try {
       await playerRemoteDataSource.skipToNext(deviceId: deviceId);
+      await Future.delayed(const Duration(milliseconds: 150));
       _fetchPlaybackState();
       return const Result.success(null);
     } on ServerException {
@@ -85,6 +86,7 @@ class PlayerRepositoryImpl implements PlayerRepository {
   Future<Result<void>> skipToPrevious({required String? deviceId}) async {
     try {
       await playerRemoteDataSource.skipToPrevious(deviceId: deviceId);
+      await Future.delayed(const Duration(milliseconds: 150));
       _fetchPlaybackState();
       return const Result.success(null);
     } on ServerException {

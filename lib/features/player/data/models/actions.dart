@@ -8,23 +8,35 @@ part 'actions.g.dart';
 @freezed
 class ActionsModel with _$ActionsModel {
   const factory ActionsModel({
-    @JsonKey(name: 'interrupting_playback')
-    @Default(false)
+    @Default(true)
+    @JsonKey(name: 'interrupting_playback', readValue: _readDisallowedValue)
     bool interruptingPlayback,
-    @Default(false) bool pausing,
-    @Default(false) bool resuming,
-    @Default(false) bool seeking,
-    @JsonKey(name: 'skipping_next') @Default(false) bool skippingNext,
-    @JsonKey(name: 'skipping_prev') @Default(false) bool skippingPrev,
-    @JsonKey(name: 'toggling_repeat_context')
-    @Default(false)
+    @Default(true)
+    @JsonKey(name: 'pausing', readValue: _readDisallowedValue)
+    bool pausing,
+    @Default(true)
+    @JsonKey(name: 'resuming', readValue: _readDisallowedValue)
+    bool resuming,
+    @Default(true)
+    @JsonKey(name: 'seeking', readValue: _readDisallowedValue)
+    bool seeking,
+    @Default(true)
+    @JsonKey(name: 'skipping_next', readValue: _readDisallowedValue)
+    bool skippingNext,
+    @Default(true)
+    @JsonKey(name: 'skipping_prev', readValue: _readDisallowedValue)
+    bool skippingPrev,
+    @Default(true)
+    @JsonKey(name: 'toggling_repeat_context', readValue: _readDisallowedValue)
     bool togglingRepeatContext,
-    @JsonKey(name: 'toggling_shuffle') @Default(false) bool togglingShuffle,
-    @JsonKey(name: 'toggling_repeat_track')
-    @Default(false)
+    @Default(true)
+    @JsonKey(name: 'toggling_shuffle', readValue: _readDisallowedValue)
+    bool togglingShuffle,
+    @Default(true)
+    @JsonKey(name: 'toggling_repeat_track', readValue: _readDisallowedValue)
     bool togglingRepeatTrack,
-    @JsonKey(name: 'transferring_playback')
-    @Default(false)
+    @Default(true)
+    @JsonKey(name: 'transferring_playback', readValue: _readDisallowedValue)
     bool transferringPlayback,
   }) = _ActionsModel;
 
@@ -58,4 +70,8 @@ class ActionsModel with _$ActionsModel {
         togglingRepeatTrack: togglingRepeatTrack,
         transferringPlayback: transferringPlayback,
       );
+}
+
+bool _readDisallowedValue(Map<dynamic, dynamic> input, String name) {
+  return !(input['disallows']?[name] as bool? ?? false);
 }
