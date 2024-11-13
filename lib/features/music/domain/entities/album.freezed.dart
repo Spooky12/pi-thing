@@ -257,7 +257,7 @@ class __$$AlbumEntityImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AlbumEntityImpl implements _AlbumEntity {
+class _$AlbumEntityImpl extends _AlbumEntity {
   const _$AlbumEntityImpl(
       {required this.id,
       required this.name,
@@ -273,7 +273,8 @@ class _$AlbumEntityImpl implements _AlbumEntity {
       required this.releaseDatePrecision})
       : _availableMarkets = availableMarkets,
         _images = images,
-        _artists = artists;
+        _artists = artists,
+        super._();
 
   @override
   final String id;
@@ -373,7 +374,7 @@ class _$AlbumEntityImpl implements _AlbumEntity {
       __$$AlbumEntityImplCopyWithImpl<_$AlbumEntityImpl>(this, _$identity);
 }
 
-abstract class _AlbumEntity implements AlbumEntity {
+abstract class _AlbumEntity extends AlbumEntity {
   const factory _AlbumEntity(
       {required final String id,
       required final String name,
@@ -387,6 +388,7 @@ abstract class _AlbumEntity implements AlbumEntity {
       required final int totalTracks,
       required final String releaseDate,
       required final String releaseDatePrecision}) = _$AlbumEntityImpl;
+  const _AlbumEntity._() : super._();
 
   @override
   String get id;

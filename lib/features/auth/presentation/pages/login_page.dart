@@ -16,8 +16,13 @@ class LoginPage extends ConsumerWidget {
         LoginStateError(:final message) =>
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              backgroundColor: Colors.red,
-              content: Text(message),
+              backgroundColor: Theme.of(context).colorScheme.errorContainer,
+              content: Text(
+                message,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onErrorContainer,
+                ),
+              ),
             ),
           ),
         LoginStateSuccess() => const HomeRoute().go(context),

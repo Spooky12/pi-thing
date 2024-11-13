@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../core/utils/get_closest_image.dart';
 import '../../../common/domain/entities/external_urls.dart';
 import '../../../common/domain/entities/image.dart';
 import 'artist.dart';
@@ -24,4 +25,8 @@ class AlbumEntity with _$AlbumEntity {
     required String releaseDate,
     required String releaseDatePrecision,
   }) = _AlbumEntity;
+
+  const AlbumEntity._();
+
+  ImageEntity? get cover => images.getClosestImage(300, 300);
 }

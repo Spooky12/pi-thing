@@ -2,7 +2,7 @@ import '../../features/common/domain/entities/image.dart';
 
 extension GetClosestImage on List<ImageEntity> {
   /// Returns the closest image to the given width and height.
-  ImageEntity? getClosestImage(int width, int height) {
+  ImageEntity? getClosestImage(num width, num height) {
     if (isEmpty) return null;
     if (length == 1) return first;
 
