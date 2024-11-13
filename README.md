@@ -31,3 +31,12 @@ The redirect url must be set to `http://{deviceIp}:8888/callback`
 
 Once you have clientId and clientSecret, add them to the `.env`
 
+## Hardware
+
+The PiThing app is developped using this :
+
+- Raspberry Pi 3B Rev 1.2
+- 7-inch touchscreen display with a resolution of 1024 × 600 ([docs](https://www.waveshare.com/wiki/7inch_HDMI_LCD_(C)))
+
+
+
