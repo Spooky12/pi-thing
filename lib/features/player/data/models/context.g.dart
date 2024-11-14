@@ -28,4 +28,5 @@ const _$ContextTypeEnumMap = {
   ContextType.album: 'album',
   ContextType.artist: 'artist',
   ContextType.show: 'show',
+  ContextType.collection: 'collection',
 };

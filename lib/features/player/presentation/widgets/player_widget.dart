@@ -27,7 +27,7 @@ class PlayerWidget extends ConsumerWidget {
     );
 
     final cover = item?.album.cover;
-    return PlayerBackgroundMesh(
+    return PlayerBackground(
       image: cover,
       child: Padding(
         padding: const EdgeInsets.all(80.0),

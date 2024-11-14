@@ -4,7 +4,7 @@ import '../../../common/domain/entities/external_urls.dart';
 
 part 'context.freezed.dart';
 
-enum ContextType { playlist, album, artist, show }
+enum ContextType { playlist, album, artist, show, collection }
 
 @freezed
 class ContextEntity with _$ContextEntity {

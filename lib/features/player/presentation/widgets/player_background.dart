@@ -1,10 +1,13 @@
+import 'dart:math';
+
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:mesh/mesh.dart';
 import 'package:palette_generator/palette_generator.dart';
 
-import '../../../../core/constants/app_colors.dart';
 import '../../../common/domain/entities/image.dart';
 
 class PlayerBackground extends StatefulWidget {
@@ -22,7 +25,7 @@ class PlayerBackground extends StatefulWidget {
 }
 
 class _PlayerBackgroundState extends State<PlayerBackground> {
-  Color color = AppColors.black;
+  List<Color> colors = [];
 
   @override
   void initState() {
@@ -41,27 +44,55 @@ class _PlayerBackgroundState extends State<PlayerBackground> {
 
   Future<void> generatePalette() async {
     if (widget.image == null) {
-      setState(() {
-        color = AppColors.black;
-      });
+      setState(() => colors = []);
     }
     final paletteGenerator = await PaletteGenerator.fromImageProvider(
       CachedNetworkImageProvider(widget.image!.url),
       filters: [],
+      maximumColorCount: 12,
     );
     setState(() {
-      color = (paletteGenerator.darkMutedColor ??
-              paletteGenerator.paletteColors.last)
-          .color;
+      colors = paletteGenerator.colors.toList();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedColor(
-      duration: Durations.medium1,
-      color: color,
-      child: widget.child,
+    if (colors.isEmpty) {
+      return widget.child;
+    }
+
+    if (colors.length < 9) {
+      final color = colors.firstWhere(
+        (color) {
+          final luminance = color.computeLuminance();
+          return luminance > 0.005 && luminance < 0.72;
+        },
+        orElse: () {
+          final color = colors.first;
+          final luminance = color.computeLuminance();
+          if (luminance < 0.005) {
+            return Color.lerp(color, Colors.white, 0.045 - luminance)!;
+          }
+          if (luminance > 0.72) {
+            return Color.lerp(color, Colors.black, 1 - luminance + 0.1)!;
+          }
+          return color;
+        },
+      );
+
+      return AnimatedColor(
+        duration: Durations.medium1,
+        color: color,
+        child: widget.child,
+      );
+    }
+
+    return Stack(
+      children: [
+        AnimatedMesh(colors: colors.take(9).toList()..shuffle()),
+        widget.child,
+      ],
     );
   }
 }
@@ -123,108 +154,130 @@ class _AnimatedColorState extends AnimatedWidgetBaseState<AnimatedColor> {
   }
 }
 
-//////
-/// Mesh tests
-/// https://omesh-flutter.renan.gg/
-extension on OVertex {
-  OVertex to(OVertex b, double t) => lerpTo(b, t);
-}
-
-extension on Color? {
-  Color? to(Color? b, double t) => Color.lerp(this, b, t);
-}
-
-typedef C = Colors;
-
-class PlayerBackgroundMesh extends StatefulWidget {
-  const PlayerBackgroundMesh({
-    required this.image,
-    required this.child,
+// Based on :
+// - https://omesh-flutter.renan.gg/
+// - https://www.rudrank.com/exploring-swiftui-animating-meshgradient-text-ios-18/
+class AnimatedMesh extends StatefulWidget {
+  const AnimatedMesh({
+    required this.colors,
     super.key,
   });
 
-  final ImageEntity? image;
-  final Widget child;
+  final List<Color> colors;
 
   @override
-  State<PlayerBackgroundMesh> createState() => _PlayerBackgroundMeshState();
+  State<AnimatedMesh> createState() => _AnimatedMeshState();
 }
 
-class _PlayerBackgroundMeshState extends State<PlayerBackgroundMesh>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController controller = AnimationController(vsync: this)
-    ..duration = const Duration(seconds: 10)
-    ..forward()
-    ..addListener(() {
-      if (controller.value == 1.0) {
-        controller.animateTo(0, curve: Curves.easeInOutQuint);
-      }
-      if (controller.value == 0.0) {
-        controller.animateTo(1, curve: Curves.easeInOutCubic);
-      }
-    });
+class _AnimatedMeshState extends State<AnimatedMesh>
+    with TickerProviderStateMixin {
+  late final AnimationController positionController;
+  late final AnimationController colorsController;
+
+  late List<ColorTween> colorTweens;
+
+  @override
+  void initState() {
+    super.initState();
+    positionController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 8),
+    )
+      ..repeat(reverse: true)
+      ..addListener(() => setState(() {}));
+
+    colorsController = AnimationController(
+      vsync: this,
+      duration: Durations.medium1,
+    )..addListener(() => setState(() {}));
+
+    colorTweens = List.generate(
+      widget.colors.length,
+      (i) => ColorTween(begin: widget.colors[i], end: widget.colors[i]),
+    );
+  }
+
+  @override
+  void didUpdateWidget(covariant AnimatedMesh oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!const DeepCollectionEquality()
+        .equals(oldWidget.colors, widget.colors)) {
+      colorTweens = List.generate(
+        widget.colors.length,
+        (i) => ColorTween(begin: oldWidget.colors[i], end: widget.colors[i]),
+      );
+      colorsController
+        ..value = 0.0
+        ..forward();
+    }
+  }
+
+  @override
+  void dispose() {
+    positionController.dispose();
+    colorsController.dispose();
+    super.dispose();
+  }
+
+  final vertices = [
+    (0.0, 0.0).v,
+    (0.5, 0.0).v,
+    (1.0, 0.0).v,
+    (0.0, 0.5).v,
+    (0.45, 0.55).v,
+    (1.0, 0.5).v,
+    (0.0, 1.0).v,
+    (0.5, 1.0).v,
+    (1.0, 1.0).v,
+  ];
+
+  List<OVertex> animatedVertices(double dt) {
+    final animatedVertices = [...vertices];
+
+    animatedVertices[0] = (
+      -0.5 + 0.5 * sin(dt),
+      animatedVertices[1].y,
+    ).v;
+    animatedVertices[1] = (
+      0.5 + 0.4 * sin(dt),
+      0.0 - 0.2 * sin(dt * 0.5),
+    ).v;
+    animatedVertices[3] = (
+      animatedVertices[3].x,
+      0.4 + 0.3 * sin(dt * 1.1),
+    ).v;
+    animatedVertices[4] = (
+      0.45 - 0.1 * sin(dt * 0.3),
+      0.7 - 0.4 * sin(dt * 0.9),
+    ).v;
+    animatedVertices[5] = (
+      1.0 + 0.1 * sin(dt * 0.3),
+      0.6 - 0.2 * sin(dt * 0.9),
+    ).v;
+    animatedVertices[7] = (
+      0.5 - 0.4 * sin(dt * 1.2),
+      animatedVertices[7].y,
+    ).v;
+
+    return animatedVertices;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        AnimatedBuilder(
-          animation: controller,
-          builder: (context, _) {
-            final dt = controller.value;
-            return OMeshGradient(
-              tessellation: 12,
-              size: Size.infinite,
-              mesh: OMeshRect(
-                width: 3,
-                height: 4,
-                colorSpace: OMeshColorSpace.lab,
-                fallbackColor: C.transparent,
-                vertices: [
-                  (0.0, 0.3).v.to((0.0, 0.0).v, dt),
-                  (0.5, 0.15).v.to((0.5, 0.1).v, dt * dt),
-                  (1.0, -0.1).v.to((1.0, 0.3).v, dt * dt), //
-
-                  (-0.05, 0.68).v.to((0.0, 0.45).v, dt),
-                  (0.63, 0.3).v.to((0.48, 0.54).v, dt),
-                  (1.0, 0.1).v.to((1.0, 0.6).v, dt), //
-
-                  (-0.2, 0.92).v.to((0.0, 0.58).v, dt),
-                  (0.32, 0.72).v.to((0.58, 0.69).v, dt * dt),
-                  (1.0, 0.3).v.to((1.0, 0.8).v, dt), //
-
-                  (0.0, 1.2).v.to((0.0, 0.86).v, dt),
-                  (0.5, 0.88).v.to((0.5, 0.95).v, dt),
-                  (1.0, 0.82).v.to((1.0, 1.0).v, dt), //
-                ],
-                colors: [
-                  null, null, null, //
-
-                  C.orange[500]
-                      ?.withOpacity(0.8)
-                      .to(const Color.fromARGB(255, 10, 33, 122), dt),
-                  C.orange[200]
-                      ?.withOpacity(0.8)
-                      .to(const Color.fromARGB(252, 103, 48, 205), dt),
-                  C.orange[400]
-                      ?.withOpacity(0.90)
-                      .to(const Color.fromARGB(252, 103, 53, 128), dt), //
-
-                  C.orange[900].to(const Color.fromARGB(225, 9, 20, 109), dt),
-                  C.orange[800]
-                      ?.withOpacity(0.98)
-                      .to(const Color.fromARGB(255, 103, 48, 205), dt),
-                  C.orange[900]
-                      .to(const Color.fromARGB(255, 83, 0, 124), dt), //
-
-                  null, null, null, //
-                ],
-              ),
-            );
-          },
+    return OMeshGradient(
+      tessellation: 12,
+      size: Size.infinite,
+      mesh: OMeshRect(
+        width: 3,
+        height: 3,
+        colorSpace: OMeshColorSpace.lab,
+        fallbackColor: Colors.transparent,
+        vertices: animatedVertices(positionController.value),
+        colors: List.generate(
+          colorTweens.length,
+          (i) => colorTweens[i].evaluate(colorsController),
         ),
-        widget.child,
-      ],
+      ),
     );
   }
 }
