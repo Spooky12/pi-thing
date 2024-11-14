@@ -2,6 +2,8 @@
 
 An unofficial Raspberry Pi companion app for Spotify inspired by the Car Thing and the [DeskThing](https://github.com/ItsRiprod/DeskThing)
 
+/!\ Only works for Spotify premium users
+
 ## Setup
 
 If you want to run the app on your Raspberry Pi you need to follow the instructions on the [flutter-pi repository](https://github.com/ardera/flutter-pi) ortherwise you can run it on Windows/Linux/Macos with a regular Flutter.

@@ -5,11 +5,19 @@ import '../../../../core/constants/app_colors.dart';
 import '../controllers/player_controller.dart';
 import '../controllers/player_state.dart';
 
-class ProgressBar extends ConsumerWidget {
+class ProgressBar extends ConsumerStatefulWidget {
   const ProgressBar({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ProgressBar> createState() => _ProgressBarState();
+}
+
+class _ProgressBarState extends ConsumerState<ProgressBar> {
+  bool _dragging = false;
+  double _dragedPosition = 0.0;
+
+  @override
+  Widget build(BuildContext context) {
     final playback = ref.watch(
       playerControllerProvider.select(
         (state) => switch (state) {
@@ -33,9 +41,27 @@ class ProgressBar extends ConsumerWidget {
         overlayShape: SliderComponentShape.noOverlay,
       ),
       child: Slider(
-        value: playback.progressMs?.toDouble() ?? 0.0,
+        value: _dragging
+            ? _dragedPosition
+            : playback.progressMs?.toDouble() ?? 0.0,
         max: playback.item?.durationMs.toDouble() ?? 1.0,
-        onChanged: null,
+        onChangeStart: (value) => setState(
+          () {
+            _dragging = true;
+            _dragedPosition = value;
+          },
+        ),
+        onChanged: (value) => setState(() {
+          _dragedPosition = value;
+        }),
+        onChangeEnd: (value) {
+          setState(() {
+            _dragging = false;
+          });
+          ref
+              .read(playerControllerProvider.notifier)
+              .seekToPosition(_dragedPosition.toInt());
+        },
       ),
     );
   }

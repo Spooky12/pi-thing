@@ -36,4 +36,8 @@ abstract class ApiConstants {
   static const String playerStartResumeEndpoint = 'v1/me/player/play';
   static const String playerSkipToNextEndpoint = 'v1/me/player/next';
   static const String playerSkipToPreviousEndpoint = 'v1/me/player/previous';
+  static const String playerSeekEndpoint = 'v1/me/player/seek';
+
+  static const String savedTracksEndpoint = 'v1/me/tracks';
+  static const String checkSavedTracksEndpoint = 'v1/me/tracks/contains';
 }

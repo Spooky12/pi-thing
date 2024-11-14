@@ -13,4 +13,9 @@ abstract class PlayerRepository {
   Future<Result<void>> skipToNext({required String? deviceId});
 
   Future<Result<void>> skipToPrevious({required String? deviceId});
+
+  Future<Result<void>> seekToPosition({
+    required int positionMs,
+    required String? deviceId,
+  });
 }

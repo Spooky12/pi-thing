@@ -12,6 +12,8 @@ abstract class PlayerRemoteDataSource {
   Future<void> skipToNext({required String? deviceId});
 
   Future<void> skipToPrevious({required String? deviceId});
+
+  Future<void> seekToPosition({required int positionMs, String? deviceId});
 }
 
 class PlayerRemoteDataSourceImpl extends SpotifyRemoteDataSource
@@ -62,6 +64,16 @@ class PlayerRemoteDataSourceImpl extends SpotifyRemoteDataSource
       performPostRequestApi(
         apiEndpoint: ApiConstants.playerSkipToPreviousEndpoint,
         queryParameters: {
+          if (deviceId != null) 'device_id': deviceId,
+        },
+      );
+
+  @override
+  Future<void> seekToPosition({required int positionMs, String? deviceId}) =>
+      performPutRequestApi(
+        apiEndpoint: ApiConstants.playerSeekEndpoint,
+        queryParameters: {
+          'position_ms': positionMs,
           if (deviceId != null) 'device_id': deviceId,
         },
       );

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/constants/app_colors.dart';
+import '../../../music/presentation/controllers/saved_tracks_controller.dart';
 import '../controllers/player_controller.dart';
 import '../controllers/player_state.dart';
 
@@ -48,8 +49,64 @@ class PlayerControls extends ConsumerWidget {
           icon: const Icon(Icons.skip_next_rounded),
         ),
         const Gap(16),
+        const Spacer(),
+        const _SaveTrackButton(),
       ],
     );
+  }
+}
+
+class _SaveTrackButton extends ConsumerWidget {
+  const _SaveTrackButton();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen(
+      playerControllerProvider,
+      (previous, next) {
+        if (next case PlayerStateLoaded(:final playback)
+            when playback.item != null) {
+          ref
+              .read(savedTracksControllerProvider.notifier)
+              .checkIsSaved(playback.item!.id);
+        }
+      },
+    );
+
+    final item = ref.watch(
+      playerControllerProvider.select(
+        (state) => switch (state) {
+          PlayerStateLoaded(:final playback) => playback.item,
+          _ => null,
+        },
+      ),
+    );
+
+    if (item == null) return const SizedBox.shrink();
+
+    final isSaved = ref.watch(
+      savedTracksControllerProvider.select(
+        (state) => state[item.id]?.$1,
+      ),
+    );
+
+    return switch (isSaved) {
+      null => const SizedBox.shrink(),
+      true => _ControlIcon(
+          size: 48,
+          icon: const Icon(Icons.favorite_rounded),
+          onPressed: () => ref
+              .read(savedTracksControllerProvider.notifier)
+              .unsaveTrack(item.id),
+        ),
+      false => _ControlIcon(
+          size: 48,
+          icon: const Icon(Icons.favorite_border_rounded),
+          onPressed: () => ref
+              .read(savedTracksControllerProvider.notifier)
+              .saveTrack(item.id),
+        ),
+    };
   }
 }
 
@@ -57,18 +114,21 @@ class _ControlIcon extends StatelessWidget {
   const _ControlIcon({
     required this.icon,
     this.onPressed,
+    this.size = 72,
   });
 
   final Widget icon;
   final VoidCallback? onPressed;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      iconSize: 72,
+      iconSize: size,
       color: AppColors.white,
       onPressed: onPressed,
       icon: icon,
+      visualDensity: VisualDensity.compact,
     );
   }
 }

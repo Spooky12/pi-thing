@@ -95,4 +95,23 @@ class PlayerController extends _$PlayerController {
       }
     }
   }
+
+  Future<void> seekToPosition(int positionMs) async {
+    if (state case PlayerStateLoaded(:final playback)
+        when playback.item != null) {
+      state = PlayerState.loaded(
+        playback: playback.copyWith(progressMs: positionMs),
+      );
+
+      final result = await ref
+          .read(playerRepositoryProvider)
+          .seekToPosition(positionMs: positionMs, deviceId: null);
+      if (result case IsFailure()) {
+        state = PlayerState.loaded(
+          playback: playback,
+          error: 'Error: An error occured when trying to seek to position',
+        );
+      }
+    }
+  }
 }

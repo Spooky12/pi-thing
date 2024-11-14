@@ -93,4 +93,20 @@ class PlayerRepositoryImpl implements PlayerRepository {
       return const Result.failure(Failure.server());
     }
   }
+
+  @override
+  Future<Result<void>> seekToPosition({
+    required int positionMs,
+    required String? deviceId,
+  }) async {
+    try {
+      await playerRemoteDataSource.seekToPosition(
+        positionMs: positionMs,
+        deviceId: deviceId,
+      );
+      return const Result.success(null);
+    } on ServerException {
+      return const Result.failure(Failure.server());
+    }
+  }
 }
