@@ -4,7 +4,6 @@ part 'login_state.freezed.dart';
 
 @freezed
 sealed class LoginState with _$LoginState {
-  const factory LoginState.initial() = LoginStateInistial;
   const factory LoginState.loading() = LoginStateLoading;
   const factory LoginState.loaded(String address) = LoginStateLoaded;
   const factory LoginState.success() = LoginStateSuccess;

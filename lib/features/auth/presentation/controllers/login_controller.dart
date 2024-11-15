@@ -8,7 +8,10 @@ part 'login_controller.g.dart';
 @riverpod
 class LoginController extends _$LoginController {
   @override
-  LoginState build() => const LoginState.initial();
+  LoginState build() {
+    login();
+    return const LoginState.loading();
+  }
 
   Future<void> login() async {
     state = const LoginState.loading();

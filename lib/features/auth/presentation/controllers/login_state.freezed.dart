@@ -39,49 +39,6 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
 }
 
 /// @nodoc
-abstract class _$$LoginStateInistialImplCopyWith<$Res> {
-  factory _$$LoginStateInistialImplCopyWith(_$LoginStateInistialImpl value,
-          $Res Function(_$LoginStateInistialImpl) then) =
-      __$$LoginStateInistialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LoginStateInistialImplCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateInistialImpl>
-    implements _$$LoginStateInistialImplCopyWith<$Res> {
-  __$$LoginStateInistialImplCopyWithImpl(_$LoginStateInistialImpl _value,
-      $Res Function(_$LoginStateInistialImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LoginStateInistialImpl implements LoginStateInistial {
-  const _$LoginStateInistialImpl();
-
-  @override
-  String toString() {
-    return 'LoginState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginStateInistialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class LoginStateInistial implements LoginState {
-  const factory LoginStateInistial() = _$LoginStateInistialImpl;
-}
-
-/// @nodoc
 abstract class _$$LoginStateLoadingImplCopyWith<$Res> {
   factory _$$LoginStateLoadingImplCopyWith(_$LoginStateLoadingImpl value,
           $Res Function(_$LoginStateLoadingImpl) then) =
