@@ -27,7 +27,7 @@ class TrackInfos extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         TextScroll(
-          key: ValueKey(track!.name),
+          key: ValueKey('track_${track!.name}'),
           track!.name,
           delayBefore: const Duration(seconds: 2),
           pauseBetween: const Duration(seconds: 5),
@@ -41,7 +41,7 @@ class TrackInfos extends StatelessWidget {
           ),
         ),
         TextScroll(
-          key: ValueKey(artistsName),
+          key: ValueKey('artists_$artistsName'),
           artistsName,
           delayBefore: const Duration(seconds: 2),
           pauseBetween: const Duration(seconds: 5),
