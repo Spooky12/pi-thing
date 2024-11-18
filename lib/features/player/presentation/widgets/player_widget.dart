@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gap/gap.dart';
 
-import '../../../../core/constants/app_colors.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_spacings.dart';
 import '../../../common/domain/entities/image.dart';
 import '../controllers/player_controller.dart';
 import '../controllers/player_state.dart';
@@ -30,7 +30,7 @@ class PlayerWidget extends ConsumerWidget {
     return PlayerBackground(
       image: cover,
       child: Padding(
-        padding: const EdgeInsets.all(80.0),
+        padding: const EdgeInsets.all(AppSpacing.s1000),
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -43,7 +43,7 @@ class PlayerWidget extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     _TrackArt(cover),
-                    const Gap(24),
+                    AppGap.s300,
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -58,7 +58,7 @@ class PlayerWidget extends ConsumerWidget {
                   ],
                 ),
               ),
-              const Gap(40),
+              AppGap.s500,
               const ProgressBar(),
             ],
           ),

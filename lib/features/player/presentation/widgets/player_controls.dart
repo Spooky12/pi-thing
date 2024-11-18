@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gap/gap.dart';
 
-import '../../../../core/constants/app_colors.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_spacings.dart';
 import '../../../music/presentation/controllers/saved_tracks_controller.dart';
 import '../controllers/player_controller.dart';
 import '../controllers/player_state.dart';
@@ -30,7 +30,7 @@ class PlayerControls extends ConsumerWidget {
               : null,
           icon: const Icon(Icons.skip_previous_rounded),
         ),
-        const Gap(16),
+        AppGap.s200,
         if (playback.isPlaying)
           _ControlIcon(
             onPressed: ref.read(playerControllerProvider.notifier).pause,
@@ -41,14 +41,14 @@ class PlayerControls extends ConsumerWidget {
             onPressed: ref.read(playerControllerProvider.notifier).resume,
             icon: const Icon(Icons.play_arrow_rounded),
           ),
-        const Gap(16),
+        AppGap.s200,
         _ControlIcon(
           onPressed: playback.actions.skippingNext
               ? ref.read(playerControllerProvider.notifier).skipToNext
               : null,
           icon: const Icon(Icons.skip_next_rounded),
         ),
-        const Gap(16),
+        AppGap.s200,
         const Spacer(),
         const _SaveTrackButton(),
       ],

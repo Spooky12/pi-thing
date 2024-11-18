@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gap/gap.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-import '../../../../core/constants/app_colors.dart';
 import '../../../../core/router/app_routes.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_spacings.dart';
 import '../controllers/login_controller.dart';
 import '../controllers/login_state.dart';
 
@@ -62,7 +62,7 @@ class _LoginCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(AppSpacing.s300),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -71,33 +71,30 @@ class _LoginCard extends StatelessWidget {
               'Scan this code to login with Spotify',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            const Gap(16.0),
+            AppGap.s200,
             Card(
               color: AppColors.white,
               child: QrImageView(
                 data: address,
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(AppSpacing.s200),
                 size: 250,
               ),
             ),
             const SizedBox(
               width: 150,
-              child: Divider(height: 48),
+              child: Divider(height: AppSpacing.s600),
             ),
             Text(
               'Or visit this address in your browser',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const Gap(8.0),
+            AppGap.s100,
             SizedBox(
               width: 400,
               child: TextField(
                 readOnly: true,
                 controller: TextEditingController(text: address),
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  isDense: true,
-                ),
+                decoration: const InputDecoration(isDense: true),
                 style: const TextStyle(fontSize: 18),
                 textAlign: TextAlign.center,
               ),

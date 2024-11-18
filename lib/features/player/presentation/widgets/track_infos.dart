@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:text_scroll/text_scroll.dart';
 
-import '../../../../core/constants/app_colors.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../music/domain/entities/track.dart';
 
 class TrackInfos extends StatelessWidget {
