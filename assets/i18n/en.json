@@ -1,0 +1,17 @@
+{
+  "@@locale": "en",
+  "title": "PiThing",
+  "login": {
+    "title": "Scan this code to login with Spotify",
+    "subtitle": "Or visit this address in your browser",
+    "webServer": {
+      "title": "Spotify Login",
+      "button": "Login with Spotify",
+      "success": "Authorization successful! You can close the page.",
+      "error": "Error: No code received."
+    }
+  },
+  "player": {
+    "notPlaying": "No song playing"
+  }
+}

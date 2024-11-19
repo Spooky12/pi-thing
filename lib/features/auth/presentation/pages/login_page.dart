@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
+import '../../../../core/i18n/strings.g.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacings.dart';
+import '../../../../core/theme/app_text.dart';
 import '../controllers/login_controller.dart';
 import '../controllers/login_state.dart';
 
@@ -68,7 +70,7 @@ class _LoginCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Scan this code to login with Spotify',
+              context.t.login.title,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             AppGap.s200,
@@ -85,8 +87,11 @@ class _LoginCard extends StatelessWidget {
               child: Divider(height: AppSpacing.s600),
             ),
             Text(
-              'Or visit this address in your browser',
-              style: Theme.of(context).textTheme.titleLarge,
+              context.t.login.subtitle,
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                fontFamily: AppFontFamilly.interTight,
+                fontVariations: const [FontVariation('wght', 300)],
+              ),
             ),
             AppGap.s100,
             SizedBox(

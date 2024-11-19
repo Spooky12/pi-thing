@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:text_scroll/text_scroll.dart';
 
+import '../../../../core/i18n/strings.g.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text.dart';
 import '../../../music/domain/entities/track.dart';
 
 class TrackInfos extends StatelessWidget {
@@ -13,7 +15,7 @@ class TrackInfos extends StatelessWidget {
   Widget build(BuildContext context) {
     if (track == null) {
       return Text(
-        'Not Playing',
+        context.t.player.notPlaying,
         style: Theme.of(context).textTheme.displayMedium?.copyWith(
               color: AppColors.white,
               height: 1.28,
@@ -49,7 +51,7 @@ class TrackInfos extends StatelessWidget {
           velocity: const Velocity(pixelsPerSecond: Offset(15, 0)),
           mode: TextScrollMode.bouncing,
           style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                fontFamily: 'InterTight',
+                fontFamily: AppFontFamilly.interTight,
                 fontVariations: const [FontVariation('wght', 300)],
                 color: AppColors.white.withOpacity(0.8),
                 height: 1.2,

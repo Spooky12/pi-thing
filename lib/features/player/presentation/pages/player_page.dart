@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/i18n/strings.g.dart';
 import '../controllers/player_controller.dart';
 import '../controllers/player_state.dart';
 import '../widgets/player_widget.dart';
@@ -41,7 +42,9 @@ class PlayerPage extends StatelessWidget {
           return switch (state) {
             PlayerStateLoading() =>
               const Center(child: CircularProgressIndicator()),
-            PlayerStateEmpty() => const Center(child: Text('No song playing')),
+            PlayerStateEmpty() => Center(
+                child: Text(context.t.player.notPlaying),
+              ),
             PlayerStateLoaded() => const PlayerWidget(),
           };
         },

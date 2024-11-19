@@ -6,6 +6,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 
 import '../../../../core/constants/api_constants.dart';
+import '../../../../core/i18n/strings.g.dart';
 import '../../../common/data/datasources/remote_data_source.dart';
 
 import '../models/token_model.dart';
@@ -73,8 +74,7 @@ class AuthRemoteDataSourceImpl extends RemoteDataSource
         if (request.uri.path == '/callback') {
           final code = request.uri.queryParameters['code'];
           if (code != null) {
-            request.response
-                .write('Authorization successful! You can close the page.');
+            request.response.write(t.login.webServer.success);
             request.response.close();
             sub.cancel();
             server.close();
@@ -101,12 +101,12 @@ class AuthRemoteDataSourceImpl extends RemoteDataSource
           '''
           <html>
             <head>
-              <title>Spotify Login</title>
+              <title>${t.login.webServer.title}</title>
             </head>
             <body>
-            ${hasError ? '<p>Error: No code received.</p><br />' : ''}
+            ${hasError ? '<p>${t.login.webServer.error}</p><br />' : ''}
               <a href="$uri" target="_self">
-                <button>Login with Spotify</button>
+                <button>${t.login.webServer.button}</button>
               </a>
             </body>
           </html>

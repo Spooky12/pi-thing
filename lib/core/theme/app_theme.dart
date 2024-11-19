@@ -2,10 +2,12 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
+import 'app_text.dart';
 
 abstract class AppTheme {
   static ThemeData dark = FlexThemeData.dark(
-    fontFamily: 'Inter',
+    fontFamily: AppFontFamilly.inter,
+    fontFamilyFallback: [AppFontFamilly.notoSansSC],
     colors: const FlexSchemeColor(
       primary: AppColors.white,
       primaryContainer: AppColors.black,

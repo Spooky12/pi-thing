@@ -14,6 +14,8 @@ dependencies:
   flex_color_scheme: ^8.0.1
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_riverpod: ^2.6.1
   freezed_annotation: ^2.4.4
   gap: ^3.0.1
@@ -24,6 +26,8 @@ dependencies:
   qr_flutter: ^4.1.0
   riverpod_annotation: ^2.6.1
   shared_preferences: ^2.3.2
+  slang: ^4.2.1
+  slang_flutter: ^4.2.0
   text_scroll: ^0.2.0
   url_launcher: ^6.3.1
 
@@ -39,6 +43,7 @@ dev_dependencies:
   json_serializable: ^6.8.0
   riverpod_generator: ^2.6.2
   riverpod_lint: ^2.6.2
+  slang_build_runner: ^4.2.0
 
 flutter:
   uses-material-design: true
@@ -50,3 +55,6 @@ flutter:
     - family: InterTight
       fonts:
         - asset: assets/fonts/InterTight-VariableFont_wght.ttf
+    - family: NotoSansSC
+      fonts:
+        - asset: assets/fonts/NotoSansSC-VariableFont_wght.ttf

@@ -1,0 +1,5 @@
+input_directory: assets/i18n
+output_directory: lib/core/i18n
+input_file_pattern: .json
+locales: [en]
+fallback_locale: en
