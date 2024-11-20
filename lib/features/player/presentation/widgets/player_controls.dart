@@ -56,11 +56,28 @@ class PlayerControls extends ConsumerWidget {
   }
 }
 
-class _SaveTrackButton extends ConsumerWidget {
+class _SaveTrackButton extends ConsumerStatefulWidget {
   const _SaveTrackButton();
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<_SaveTrackButton> createState() => _SaveTrackButtonState();
+}
+
+class _SaveTrackButtonState extends ConsumerState<_SaveTrackButton> {
+  @override
+  void initState() {
+    super.initState();
+    final playerState = ref.read(playerControllerProvider);
+    if (playerState case PlayerStateLoaded(:final playback)
+        when playback.item != null) {
+      ref
+          .read(savedTracksControllerProvider.notifier)
+          .checkIsSaved(playback.item!.id);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     ref.listen(
       playerControllerProvider,
       (previous, next) {
