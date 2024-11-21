@@ -114,4 +114,24 @@ class PlayerController extends _$PlayerController {
       }
     }
   }
+
+  /// Plays the item with the given uri.
+  /// Item should be an album, artist or playlist
+  Future<void> playItem(String uri) async {
+    final result = await ref.read(playerRepositoryProvider).playItem(
+          uri: uri,
+          deviceId: null,
+        );
+    if (result case IsFailure()) {
+      state = switch (state) {
+        PlayerStateLoaded(:final playback) => PlayerState.loaded(
+            playback: playback,
+            error: 'Error: An error occured when trying to play $uri',
+          ),
+        _ => PlayerState.empty(
+            error: 'Error: An error occured when trying to play $uri',
+          ),
+      };
+    }
+  }
 }

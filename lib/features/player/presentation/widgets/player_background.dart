@@ -1,26 +1,50 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:palette_generator/palette_generator.dart';
 
 import '../../../common/domain/entities/image.dart';
-import 'animated_color.dart';
+import '../controllers/player_controller.dart';
+import '../controllers/player_state.dart';
 import 'animated_mesh.dart';
 
-class PlayerBackground extends StatefulWidget {
-  const PlayerBackground({
+class AnimatedBackground extends ConsumerWidget {
+  const AnimatedBackground({required this.child, super.key});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cover = ref.watch(
+      playerControllerProvider.select(
+        (state) => switch (state) {
+          PlayerStateLoaded(:final playback) => playback.item?.album.cover,
+          _ => null,
+        },
+      ),
+    );
+
+    return _AnimatedBackground(
+      image: cover,
+      child: child,
+    );
+  }
+}
+
+class _AnimatedBackground extends StatefulWidget {
+  const _AnimatedBackground({
     required this.image,
     required this.child,
-    super.key,
   });
 
   final ImageEntity? image;
   final Widget child;
 
   @override
-  State<PlayerBackground> createState() => _PlayerBackgroundState();
+  State<_AnimatedBackground> createState() => __AnimatedBackgroundState();
 }
 
-class _PlayerBackgroundState extends State<PlayerBackground> {
+class __AnimatedBackgroundState extends State<_AnimatedBackground> {
   List<Color> colors = [];
 
   @override
@@ -30,7 +54,7 @@ class _PlayerBackgroundState extends State<PlayerBackground> {
   }
 
   @override
-  void didUpdateWidget(covariant PlayerBackground oldWidget) {
+  void didUpdateWidget(covariant _AnimatedBackground oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     if (oldWidget.image != widget.image) {
@@ -41,6 +65,7 @@ class _PlayerBackgroundState extends State<PlayerBackground> {
   Future<void> generatePalette() async {
     if (widget.image == null) {
       setState(() => colors = []);
+      return;
     }
     final paletteGenerator = await PaletteGenerator.fromImageProvider(
       CachedNetworkImageProvider(widget.image!.url),
@@ -54,12 +79,12 @@ class _PlayerBackgroundState extends State<PlayerBackground> {
 
   bool avoidBlackWhitePaletteFilter(HSLColor color) {
     bool isBlack(HSLColor hslColor) {
-      const double blackMaxLightness = 0.05;
+      const double blackMaxLightness = 0.055;
       return hslColor.lightness <= blackMaxLightness;
     }
 
     bool isWhite(HSLColor hslColor) {
-      const double whiteMinLightness = 0.95;
+      const double whiteMinLightness = 0.93;
       return hslColor.lightness >= whiteMinLightness;
     }
 
@@ -68,22 +93,13 @@ class _PlayerBackgroundState extends State<PlayerBackground> {
 
   @override
   Widget build(BuildContext context) {
-    if (colors.isEmpty) {
-      return widget.child;
-    }
-
-    if (colors.length < 4) {
-      return AnimatedColor(
-        duration: Durations.medium1,
-        color: colors.first,
-        child: widget.child,
-      );
-    }
-
     return Stack(
       children: [
         AnimatedMesh(
-          colors: colors.take(9).toList()..shuffle(),
+          colors: colors.isEmpty
+              ? [Theme.of(context).scaffoldBackgroundColor]
+              : colors.take(9).toList()
+            ..shuffle(),
         ),
         widget.child,
       ],

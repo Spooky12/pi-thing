@@ -7,7 +7,18 @@ abstract class PlayerRemoteDataSource {
 
   Future<void> pause({required String? deviceId});
 
-  Future<void> resume({required String? deviceId});
+  /// Starts or resumes playback on the specified device.
+  ///
+  /// - `deviceId` - If null, the playback will resume on the user's currently active device.
+  /// - `contextUri` - Spotify URI of the context to play. Valid contexts are albums, artists & playlists.
+  /// - `uris` - A JSON array of the Spotify track URIs to play.
+  ///
+  /// If both `contextUri` and `uris` are provided, `contextUri` will be used.
+  Future<void> startResume({
+    required String? deviceId,
+    String? contextUri,
+    List<String>? uris,
+  });
 
   Future<void> skipToNext({required String? deviceId});
 
@@ -44,10 +55,21 @@ class PlayerRemoteDataSourceImpl extends SpotifyRemoteDataSource
       );
 
   @override
-  Future<void> resume({required String? deviceId}) => performPutRequestApi(
+  Future<void> startResume({
+    required String? deviceId,
+    String? contextUri,
+    List<String>? uris,
+  }) =>
+      performPutRequestApi(
         apiEndpoint: ApiConstants.playerStartResumeEndpoint,
         queryParameters: {
           if (deviceId != null) 'device_id': deviceId,
+        },
+        data: {
+          if (contextUri != null)
+            'context_uri': contextUri
+          else if (uris != null)
+            'uris': uris,
         },
       );
 
