@@ -53,6 +53,19 @@ class _HomeBody extends ConsumerWidget {
       return const Center(child: CircularProgressIndicator());
     }
 
+    return PageView(
+      scrollDirection: Axis.vertical,
+      children: [
+        switch (playerState) {
+          PlayerStateLoaded() => const PlayerWidget(),
+          PlayerStateLoading() =>
+            const Center(child: CircularProgressIndicator()),
+          PlayerStateEmpty() => const SizedBox.shrink(),
+        },
+        const PlaylistsWidget(),
+      ],
+    );
+
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

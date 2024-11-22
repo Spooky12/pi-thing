@@ -10,7 +10,7 @@ class PlaylistWidget extends StatelessWidget {
   const PlaylistWidget({
     required this.playlist,
     required this.onTap,
-    this.showTitle = false,
+    this.showTitle = true,
     this.showDescription = true,
     super.key,
   });
@@ -20,7 +20,7 @@ class PlaylistWidget extends StatelessWidget {
   final bool showTitle;
   final bool showDescription;
 
-  static const double dimension = 190;
+  static const double dimension = 220;
   static const double padding = AppSpacing.s150;
 
   static const BorderRadius _borderRadius =
@@ -69,7 +69,7 @@ class PlaylistWidget extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontFamily: AppFontFamilly.interTight,
                           fontVariations: const [FontVariation('wght', 300)],
-                          color: AppColors.white.withOpacity(0.8),
+                          color: AppColors.white.withOpacity(0.85),
                           height: 1.2,
                           letterSpacing: 0,
                         ),
