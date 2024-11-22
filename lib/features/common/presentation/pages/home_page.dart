@@ -1,89 +1,84 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../core/theme/app_spacings.dart';
+import '../../../../core/utils/snack_bar.dart';
 import '../../../player/presentation/controllers/player_controller.dart';
 import '../../../player/presentation/controllers/player_state.dart';
 import '../../../player/presentation/widgets/player_background.dart';
-import '../../../player/presentation/widgets/player_widget.dart';
-import '../../../playlist/presentation/widgets/playlists_widgets.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeShellPage extends ConsumerStatefulWidget {
+  const HomeShellPage({
+    required this.navigationShell,
+    required this.children,
+    super.key,
+  });
+
+  final StatefulNavigationShell navigationShell;
+  final List<Widget> children;
+
+  @override
+  ConsumerState<HomeShellPage> createState() => _HomeShellPageState();
+}
+
+class _HomeShellPageState extends ConsumerState<HomeShellPage> {
+  late final PageController _controller;
+  late final ProviderSubscription<PlayerState> _sub;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = PageController();
+    _sub = ref.listenManual(playerControllerProvider, _listener);
+  }
+
+  void _listener(PlayerState? previous, PlayerState next) {
+    if (next
+        case PlayerStateEmpty(:final error?) ||
+            PlayerStateLoaded(:final error?)) {
+      context.showSnackBarError(error);
+    }
+    if ((previous, next) case (PlayerStateLoading(), PlayerStateEmpty())) {
+      widget.navigationShell.goBranch(1);
+    }
+  }
+
+  @override
+  void didUpdateWidget(covariant HomeShellPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    final navigationShell = widget.navigationShell;
+    final page = _controller.page ?? _controller.initialPage;
+    final index = page.round();
+    // Ignore swipe events.
+    if (index == navigationShell.currentIndex) {
+      return;
+    }
+    _controller.jumpToPage(widget.navigationShell.currentIndex);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    _sub.close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: AnimatedBackground(
-        child: _HomeBody(),
-      ),
-    );
-  }
-}
-
-class _HomeBody extends ConsumerWidget {
-  const _HomeBody();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen(
-      playerControllerProvider,
-      (_, next) {
-        if (next
-            case PlayerStateEmpty(:final error?) ||
-                PlayerStateLoaded(:final error?)) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              backgroundColor: Theme.of(context).colorScheme.errorContainer,
-              content: Text(
-                error,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.onErrorContainer,
-                ),
-              ),
-            ),
-          );
-        }
-      },
-    );
-
-    final playerState = ref.watch(playerControllerProvider);
-
-    if (playerState case PlayerStateLoading()) {
-      return const Center(child: CircularProgressIndicator());
-    }
-
-    return PageView(
-      scrollDirection: Axis.vertical,
-      children: [
-        switch (playerState) {
-          PlayerStateLoaded() => const PlayerWidget(),
-          PlayerStateLoading() =>
-            const Center(child: CircularProgressIndicator()),
-          PlayerStateEmpty() => const SizedBox.shrink(),
-        },
-        const PlaylistsWidget(),
-      ],
-    );
-
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          AnimatedSize(
-            duration: Durations.medium3,
-            child: switch (playerState) {
-              PlayerStateLoaded() => SizedBox(
-                  height: MediaQuery.sizeOf(context).height,
-                  child: const PlayerWidget(),
-                ),
-              _ => AppGap.s100,
-            },
-          ),
-          AppGap.s100,
-          const PlaylistsWidget(),
-          AppGap.s300,
-        ],
+        child: PageView.builder(
+          scrollDirection: Axis.vertical,
+          controller: _controller,
+          onPageChanged: (index) {
+            if (index == widget.navigationShell.currentIndex) {
+              return;
+            }
+            widget.navigationShell.goBranch(index);
+          },
+          itemBuilder: (_, index) => widget.children[index],
+          itemCount: widget.children.length,
+        ),
       ),
     );
   }

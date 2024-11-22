@@ -5,15 +5,62 @@ import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/common/presentation/pages/error_page.dart';
 import '../../features/common/presentation/pages/home_page.dart';
 import '../../features/common/presentation/pages/splash_page.dart';
+import '../../features/player/presentation/pages/player_page.dart';
+import '../../features/playlist/presentation/pages/playlists_page.dart';
 
 part 'app_routes.g.dart';
 
-@TypedGoRoute<HomeRoute>(path: '/', name: 'home')
-class HomeRoute extends GoRouteData {
-  const HomeRoute();
+@TypedStatefulShellRoute<HomeShellRoute>(
+  branches: [
+    TypedStatefulShellBranch(
+      routes: <TypedRoute<RouteData>>[
+        TypedGoRoute<HomeBranchRoute>(path: '/', name: 'home'),
+      ],
+    ),
+    TypedStatefulShellBranch(
+      routes: <TypedRoute<RouteData>>[
+        TypedGoRoute<PlaylistsBranchRoute>(
+          path: '/playlists',
+          name: 'playlists',
+        ),
+      ],
+    ),
+  ],
+)
+class HomeShellRoute extends StatefulShellRouteData {
+  const HomeShellRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => const HomePage();
+  Widget builder(
+    BuildContext context,
+    GoRouterState state,
+    StatefulNavigationShell navigationShell,
+  ) =>
+      navigationShell;
+
+  static Widget $navigatorContainerBuilder(
+    BuildContext context,
+    StatefulNavigationShell navigationShell,
+    List<Widget> children,
+  ) =>
+      HomeShellPage(
+        navigationShell: navigationShell,
+        children: children,
+      );
+}
+
+class HomeBranchRoute extends GoRouteData {
+  const HomeBranchRoute();
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const PlayerBranchPage();
+}
+
+class PlaylistsBranchRoute extends GoRouteData {
+  const PlaylistsBranchRoute();
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const PlaylistsBranchPage();
 }
 
 @TypedGoRoute<LoginRoute>(path: '/login', name: 'login')

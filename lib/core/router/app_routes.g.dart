@@ -7,22 +7,64 @@ part of 'app_routes.dart';
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $homeRoute,
+      $homeShellRoute,
       $loginRoute,
       $splashRoute,
     ];
 
-RouteBase get $homeRoute => GoRouteData.$route(
-      path: '/',
-      name: 'home',
-      factory: $HomeRouteExtension._fromState,
+RouteBase get $homeShellRoute => StatefulShellRouteData.$route(
+      navigatorContainerBuilder: HomeShellRoute.$navigatorContainerBuilder,
+      factory: $HomeShellRouteExtension._fromState,
+      branches: [
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/',
+              name: 'home',
+              factory: $HomeBranchRouteExtension._fromState,
+            ),
+          ],
+        ),
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/playlists',
+              name: 'playlists',
+              factory: $PlaylistsBranchRouteExtension._fromState,
+            ),
+          ],
+        ),
+      ],
     );
 
-extension $HomeRouteExtension on HomeRoute {
-  static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
+extension $HomeShellRouteExtension on HomeShellRoute {
+  static HomeShellRoute _fromState(GoRouterState state) =>
+      const HomeShellRoute();
+}
+
+extension $HomeBranchRouteExtension on HomeBranchRoute {
+  static HomeBranchRoute _fromState(GoRouterState state) => HomeBranchRoute();
 
   String get location => GoRouteData.$location(
         '/',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $PlaylistsBranchRouteExtension on PlaylistsBranchRoute {
+  static PlaylistsBranchRoute _fromState(GoRouterState state) =>
+      PlaylistsBranchRoute();
+
+  String get location => GoRouteData.$location(
+        '/playlists',
       );
 
   void go(BuildContext context) => context.go(location);

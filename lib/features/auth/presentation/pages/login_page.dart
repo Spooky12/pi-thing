@@ -7,6 +7,7 @@ import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacings.dart';
 import '../../../../core/theme/app_text.dart';
+import '../../../../core/utils/snack_bar.dart';
 import '../controllers/login_controller.dart';
 import '../controllers/login_state.dart';
 
@@ -18,19 +19,8 @@ class LoginPage extends ConsumerWidget {
     ref.listen(
       loginControllerProvider,
       (_, next) => switch (next) {
-        LoginStateError(:final message) =>
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              backgroundColor: Theme.of(context).colorScheme.errorContainer,
-              content: Text(
-                message,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.onErrorContainer,
-                ),
-              ),
-            ),
-          ),
-        LoginStateSuccess() => const HomeRoute().go(context),
+        LoginStateError(:final message) => context.showSnackBarError(message),
+        LoginStateSuccess() => const HomeBranchRoute().go(context),
         _ => null,
       },
     );

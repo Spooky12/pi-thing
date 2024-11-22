@@ -19,7 +19,7 @@ class _SplashPageState extends ConsumerState<SplashPage> {
       (isLogged) {
         if (!mounted) return;
         if (isLogged) {
-          const HomeRoute().go(context);
+          const HomeBranchRoute().go(context);
         } else {
           const LoginRoute().go(context);
         }
