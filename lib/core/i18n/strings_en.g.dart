@@ -40,6 +40,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get title => 'PiThing';
 	late final TranslationsLoginEn login = TranslationsLoginEn._(_root);
 	late final TranslationsPlayerEn player = TranslationsPlayerEn._(_root);
+	late final TranslationsPlaylistsEn playlists = TranslationsPlaylistsEn._(_root);
 }
 
 // Path: login
@@ -62,6 +63,18 @@ class TranslationsPlayerEn {
 
 	// Translations
 	String get notPlaying => 'No song playing';
+}
+
+// Path: playlists
+class TranslationsPlaylistsEn {
+	TranslationsPlaylistsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get dailyMixes => 'Your Daily Mixes';
+	String get uniquelyYours => 'Uniquely Yours';
+	String get discover => 'Discover New Music';
 }
 
 // Path: login.webServer
@@ -90,6 +103,9 @@ extension on Translations {
 			case 'login.webServer.success': return 'Authorization successful! You can close the page.';
 			case 'login.webServer.error': return 'Error: No code received.';
 			case 'player.notPlaying': return 'No song playing';
+			case 'playlists.dailyMixes': return 'Your Daily Mixes';
+			case 'playlists.uniquelyYours': return 'Uniquely Yours';
+			case 'playlists.discover': return 'Discover New Music';
 			default: return null;
 		}
 	}

@@ -63,7 +63,7 @@ class PlayerRepositoryImpl implements PlayerRepository {
   @override
   Future<Result<void>> resume({required String? deviceId}) async {
     try {
-      await playerRemoteDataSource.resume(deviceId: deviceId);
+      await playerRemoteDataSource.startResume(deviceId: deviceId);
       return const Result.success(null);
     } on ServerException {
       return const Result.failure(Failure.server());
@@ -104,6 +104,24 @@ class PlayerRepositoryImpl implements PlayerRepository {
         positionMs: positionMs,
         deviceId: deviceId,
       );
+      return const Result.success(null);
+    } on ServerException {
+      return const Result.failure(Failure.server());
+    }
+  }
+
+  @override
+  Future<Result<void>> playItem({
+    required String uri,
+    required String? deviceId,
+  }) async {
+    try {
+      await playerRemoteDataSource.startResume(
+        deviceId: deviceId,
+        contextUri: uri,
+      );
+      await Future.delayed(const Duration(milliseconds: 150));
+      _fetchPlaybackState();
       return const Result.success(null);
     } on ServerException {
       return const Result.failure(Failure.server());

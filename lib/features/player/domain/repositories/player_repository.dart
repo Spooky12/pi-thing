@@ -18,4 +18,11 @@ abstract class PlayerRepository {
     required int positionMs,
     required String? deviceId,
   });
+
+  /// Plays the item with the given uri.
+  /// Item should be an album, artist or playlist
+  Future<Result<void>> playItem({
+    required String uri,
+    required String? deviceId,
+  });
 }

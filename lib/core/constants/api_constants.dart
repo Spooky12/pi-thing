@@ -38,6 +38,10 @@ abstract class ApiConstants {
   static const String playerSkipToPreviousEndpoint = 'v1/me/player/previous';
   static const String playerSeekEndpoint = 'v1/me/player/seek';
 
+  static const String currentUserPlaylistsEndpoint = 'v1/me/playlists';
+  static String playlistsCategoryEndpoint(String categoryId) =>
+      'v1/browse/categories/$categoryId/playlists';
+
   static const String savedTracksEndpoint = 'v1/me/tracks';
   static const String checkSavedTracksEndpoint = 'v1/me/tracks/contains';
 }

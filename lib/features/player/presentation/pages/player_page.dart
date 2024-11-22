@@ -2,52 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/i18n/strings.g.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../controllers/player_controller.dart';
 import '../controllers/player_state.dart';
 import '../widgets/player_widget.dart';
 
-class PlayerPage extends StatelessWidget {
-  const PlayerPage({super.key});
+class PlayerBranchPage extends ConsumerWidget {
+  const PlayerBranchPage({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final playerState = ref.watch(playerControllerProvider);
+
+    return switch (playerState) {
+      PlayerStateLoaded() => const PlayerWidget(),
+      PlayerStateLoading() => const Center(child: CircularProgressIndicator()),
+      PlayerStateEmpty() => const _Empty(),
+    };
+  }
+}
+
+class _Empty extends StatelessWidget {
+  const _Empty();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).cardColor,
-      body: Consumer(
-        builder: (context, ref, _) {
-          ref.listen(
-            playerControllerProvider,
-            (_, next) {
-              if (next
-                  case PlayerStateEmpty(:final error?) ||
-                      PlayerStateLoaded(:final error?)) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    backgroundColor:
-                        Theme.of(context).colorScheme.errorContainer,
-                    content: Text(
-                      error,
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.onErrorContainer,
-                      ),
-                    ),
-                  ),
-                );
-              }
-            },
-          );
-
-          final state = ref.watch(playerControllerProvider);
-
-          return switch (state) {
-            PlayerStateLoading() =>
-              const Center(child: CircularProgressIndicator()),
-            PlayerStateEmpty() => Center(
-                child: Text(context.t.player.notPlaying),
-              ),
-            PlayerStateLoaded() => const PlayerWidget(),
-          };
-        },
+    return Center(
+      child: Text(
+        context.t.player.notPlaying,
+        style: Theme.of(context).textTheme.displayMedium?.copyWith(
+          fontVariations: const [FontVariation('wght', 600)],
+          color: AppColors.white,
+          height: 1.2,
+        ),
       ),
     );
   }
