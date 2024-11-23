@@ -79,7 +79,7 @@ class __AnimatedBackgroundState extends State<_AnimatedBackground> {
 
   bool avoidBlackWhitePaletteFilter(HSLColor color) {
     bool isBlack(HSLColor hslColor) {
-      const double blackMaxLightness = 0.055;
+      const double blackMaxLightness = 0.08;
       return hslColor.lightness <= blackMaxLightness;
     }
 

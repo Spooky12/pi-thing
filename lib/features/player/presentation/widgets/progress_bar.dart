@@ -36,9 +36,10 @@ class _ProgressBarState extends ConsumerState<ProgressBar> {
         valueIndicatorTextStyle: const TextStyle(),
       ).copyWith(
         disabledThumbColor: AppColors.white,
-        thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 9),
-        trackHeight: 8,
+        thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12),
+        trackHeight: 16,
         overlayShape: SliderComponentShape.noOverlay,
+        thumbColor: Colors.grey.shade300,
       ),
       child: Slider(
         value: _dragging

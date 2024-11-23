@@ -30,7 +30,7 @@ class PlayerControls extends ConsumerWidget {
               : null,
           icon: const Icon(Icons.skip_previous_rounded),
         ),
-        AppGap.s200,
+        AppGap.s050,
         if (playback.isPlaying)
           _ControlIcon(
             onPressed: ref.read(playerControllerProvider.notifier).pause,
@@ -41,14 +41,14 @@ class PlayerControls extends ConsumerWidget {
             onPressed: ref.read(playerControllerProvider.notifier).resume,
             icon: const Icon(Icons.play_arrow_rounded),
           ),
-        AppGap.s200,
+        AppGap.s050,
         _ControlIcon(
           onPressed: playback.actions.skippingNext
               ? ref.read(playerControllerProvider.notifier).skipToNext
               : null,
           icon: const Icon(Icons.skip_next_rounded),
         ),
-        AppGap.s200,
+        AppGap.s050,
         const Spacer(),
         const _SaveTrackButton(),
       ],
@@ -110,14 +110,14 @@ class _SaveTrackButtonState extends ConsumerState<_SaveTrackButton> {
     return switch (isSaved) {
       null => const SizedBox.shrink(),
       true => _ControlIcon(
-          size: 48,
+          size: 72,
           icon: const Icon(Icons.favorite_rounded),
           onPressed: () => ref
               .read(savedTracksControllerProvider.notifier)
               .unsaveTrack(item.id),
         ),
       false => _ControlIcon(
-          size: 48,
+          size: 72,
           icon: const Icon(Icons.favorite_border_rounded),
           onPressed: () => ref
               .read(savedTracksControllerProvider.notifier)
@@ -131,7 +131,7 @@ class _ControlIcon extends StatelessWidget {
   const _ControlIcon({
     required this.icon,
     this.onPressed,
-    this.size = 72,
+    this.size = 104,
   });
 
   final Widget icon;
