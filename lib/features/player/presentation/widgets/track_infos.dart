@@ -37,10 +37,11 @@ class TrackInfos extends StatelessWidget {
           velocity: const Velocity(pixelsPerSecond: Offset(15, 0)),
           mode: TextScrollMode.bouncing,
           style: Theme.of(context).textTheme.displayMedium?.copyWith(
-            fontVariations: const [FontVariation('wght', 600)],
-            color: AppColors.white,
-            height: 1.2,
-          ),
+                fontSize: 48,
+                fontVariations: const [FontVariation('wght', 600)],
+                color: AppColors.white,
+                height: 1.2,
+              ),
         ),
         TextScroll(
           key: ValueKey('artists_$artistsName'),
@@ -51,6 +52,7 @@ class TrackInfos extends StatelessWidget {
           velocity: const Velocity(pixelsPerSecond: Offset(15, 0)),
           mode: TextScrollMode.bouncing,
           style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                fontSize: 38,
                 fontFamily: AppFontFamilly.interTight,
                 fontVariations: const [FontVariation('wght', 300)],
                 color: AppColors.white.withOpacity(0.8),

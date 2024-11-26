@@ -26,47 +26,38 @@ class PlayerWidget extends ConsumerWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: AppSpacing.s1000,
-        horizontal: AppSpacing.s800,
+        horizontal: AppSpacing.s1000,
       ),
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.s200,
-              ),
-              child: SizedBox(
-                height: 250,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    ImageWidget(item?.album.cover),
-                    AppGap.s300,
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          TrackInfos(item),
-                          const Spacer(),
-                          const PlayerControls(),
-                        ],
-                      ),
+            AppGap.s300,
+            SizedBox(
+              height: 250,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ImageWidget(item?.album.cover),
+                  AppGap.s300,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TrackInfos(item),
+                        const Spacer(),
+                        const PlayerControls(),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-            AppGap.s600,
-            const Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: AppSpacing.s100,
-              ),
-              child: ProgressBar(),
-            ),
+            AppGap.s400,
+            const ProgressBar(),
           ],
         ),
       ),

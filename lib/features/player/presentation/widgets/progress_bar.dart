@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -232,27 +230,25 @@ class _RenderProgressBar extends RenderBox {
     return visualPosition;
   }
 
-  double _clamp(double value) {
-    return clampDouble(value, 0.0, 1.0);
-  }
+  double _clamp(double value) => clampDouble(value, 0.0, 1.0);
 
   void _startInteraction(Offset globalPosition) {
     if (!_active) {
       _active = true;
       _currentDragValue = _getValueFromGlobalPosition(globalPosition);
-
-      if (_active) {
-        onChangeStart(_clamp(value));
-        onChanged(_clamp(_currentDragValue));
-      }
+      onChangeStart(_clamp(value));
+      onChanged(_clamp(_currentDragValue));
+      markNeedsLayout();
     }
   }
 
   void _endInteraction() {
     if (_active) {
-      onChangeEnd(_clamp(_currentDragValue));
       _active = false;
+      onChanged(_clamp(_currentDragValue));
+      onChangeEnd(_clamp(_currentDragValue));
       _currentDragValue = 0.0;
+      markNeedsLayout();
     }
   }
 
