@@ -43,7 +43,8 @@ extension $HomeShellRouteExtension on HomeShellRoute {
 }
 
 extension $HomeBranchRouteExtension on HomeBranchRoute {
-  static HomeBranchRoute _fromState(GoRouterState state) => HomeBranchRoute();
+  static HomeBranchRoute _fromState(GoRouterState state) =>
+      const HomeBranchRoute();
 
   String get location => GoRouteData.$location(
         '/',
@@ -61,7 +62,7 @@ extension $HomeBranchRouteExtension on HomeBranchRoute {
 
 extension $PlaylistsBranchRouteExtension on PlaylistsBranchRoute {
   static PlaylistsBranchRoute _fromState(GoRouterState state) =>
-      PlaylistsBranchRoute();
+      const PlaylistsBranchRoute();
 
   String get location => GoRouteData.$location(
         '/playlists',

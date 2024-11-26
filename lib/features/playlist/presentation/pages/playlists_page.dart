@@ -11,6 +11,8 @@ import '../controllers/category_playlists_controller.dart';
 import '../controllers/category_playlists_state.dart';
 import '../controllers/for_you_playlists_controller.dart';
 import '../controllers/for_you_playlists_state.dart';
+import '../controllers/user_playlists_controller.dart';
+import '../controllers/user_playlists_state.dart';
 import '../widgets/playlists_row.dart';
 
 class PlaylistsBranchPage extends ConsumerWidget {
@@ -37,13 +39,24 @@ class PlaylistsBranchPage extends ConsumerWidget {
             context.showSnackBarError(message);
           }
         },
+      )
+      ..listen(
+        userPlaylistsControllerProvider,
+        (_, next) {
+          if (next
+              case UserPlaylistsStateFetchingError(error: final message) ||
+                  UserPlaylistsStateError(:final message)) {
+            context.showSnackBarError(message);
+          }
+        },
       );
 
     final forYouState = ref.watch(forYouPlaylistsControllerProvider);
     final discoverState = ref.watch(discoverControllerProvider);
+    final userPlaylistsState = ref.watch(userPlaylistsControllerProvider);
 
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Padding(
         padding: const EdgeInsets.only(top: AppSpacing.s1000),
         child: Column(
@@ -67,6 +80,22 @@ class PlaylistsBranchPage extends ConsumerWidget {
                     const Center(child: CircularProgressIndicator())
                   else if (discoverState case CategoryPlaylistsStateLoaded())
                     PlaylistsRow(playlists: discoverState.playlists),
+                  if (userPlaylistsState case UserPlaylistsStateLoading())
+                    const Center(child: CircularProgressIndicator())
+                  else if (userPlaylistsState
+                      case UserPlaylistsStateLoaded(
+                        :final playlists,
+                        :final hasNextPage,
+                      ))
+                    Center(
+                      child: PlaylistsRow(
+                        playlists: playlists,
+                        canLoadMore: hasNextPage,
+                        onLoadMore: ref
+                            .read(userPlaylistsControllerProvider.notifier)
+                            .loadMore,
+                      ),
+                    ),
                 ],
               ),
             ),
@@ -91,6 +120,7 @@ class _PlaylistsTabBar extends StatelessWidget {
         _PlaylistTab(context.t.playlists.dailyMixes),
         _PlaylistTab(context.t.playlists.uniquelyYours),
         _PlaylistTab(context.t.playlists.discover),
+        _PlaylistTab(context.t.playlists.yourPlaylists),
       ],
       unselectedLabelColor: AppColors.white.withOpacity(0.8),
       isScrollable: true,
