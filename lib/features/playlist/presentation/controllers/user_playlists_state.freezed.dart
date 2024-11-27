@@ -92,7 +92,11 @@ abstract class _$$UserPlaylistsStateFetchedImplCopyWith<$Res> {
           $Res Function(_$UserPlaylistsStateFetchedImpl) then) =
       __$$UserPlaylistsStateFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SimplifiedPlaylistEntity> playlists, int total, int page});
+  $Res call(
+      {List<SimplifiedPlaylistEntity> playlists,
+      int total,
+      int count,
+      int page});
 }
 
 /// @nodoc
@@ -112,6 +116,7 @@ class __$$UserPlaylistsStateFetchedImplCopyWithImpl<$Res>
   $Res call({
     Object? playlists = null,
     Object? total = null,
+    Object? count = null,
     Object? page = null,
   }) {
     return _then(_$UserPlaylistsStateFetchedImpl(
@@ -122,6 +127,10 @@ class __$$UserPlaylistsStateFetchedImplCopyWithImpl<$Res>
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
               as int,
       page: null == page
           ? _value.page
@@ -139,6 +148,7 @@ class _$UserPlaylistsStateFetchedImpl
   const _$UserPlaylistsStateFetchedImpl(
       {required final List<SimplifiedPlaylistEntity> playlists,
       required this.total,
+      required this.count,
       required this.page})
       : _playlists = playlists;
 
@@ -153,11 +163,13 @@ class _$UserPlaylistsStateFetchedImpl
   @override
   final int total;
   @override
+  final int count;
+  @override
   final int page;
 
   @override
   String toString() {
-    return 'UserPlaylistsState.fetched(playlists: $playlists, total: $total, page: $page)';
+    return 'UserPlaylistsState.fetched(playlists: $playlists, total: $total, count: $count, page: $page)';
   }
 
   @override
@@ -168,12 +180,13 @@ class _$UserPlaylistsStateFetchedImpl
             const DeepCollectionEquality()
                 .equals(other._playlists, _playlists) &&
             (identical(other.total, total) || other.total == total) &&
+            (identical(other.count, count) || other.count == count) &&
             (identical(other.page, page) || other.page == page));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_playlists), total, page);
+      const DeepCollectionEquality().hash(_playlists), total, count, page);
 
   /// Create a copy of UserPlaylistsState
   /// with the given fields replaced by the non-null parameter values.
@@ -190,10 +203,12 @@ abstract class UserPlaylistsStateFetched
   const factory UserPlaylistsStateFetched(
       {required final List<SimplifiedPlaylistEntity> playlists,
       required final int total,
+      required final int count,
       required final int page}) = _$UserPlaylistsStateFetchedImpl;
 
   List<SimplifiedPlaylistEntity> get playlists;
   int get total;
+  int get count;
   int get page;
 
   /// Create a copy of UserPlaylistsState
@@ -210,7 +225,11 @@ abstract class _$$UserPlaylistsStateFetchingImplCopyWith<$Res> {
           $Res Function(_$UserPlaylistsStateFetchingImpl) then) =
       __$$UserPlaylistsStateFetchingImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SimplifiedPlaylistEntity> playlists, int total, int page});
+  $Res call(
+      {List<SimplifiedPlaylistEntity> playlists,
+      int total,
+      int count,
+      int page});
 }
 
 /// @nodoc
@@ -230,6 +249,7 @@ class __$$UserPlaylistsStateFetchingImplCopyWithImpl<$Res>
   $Res call({
     Object? playlists = null,
     Object? total = null,
+    Object? count = null,
     Object? page = null,
   }) {
     return _then(_$UserPlaylistsStateFetchingImpl(
@@ -240,6 +260,10 @@ class __$$UserPlaylistsStateFetchingImplCopyWithImpl<$Res>
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
               as int,
       page: null == page
           ? _value.page
@@ -257,6 +281,7 @@ class _$UserPlaylistsStateFetchingImpl
   const _$UserPlaylistsStateFetchingImpl(
       {required final List<SimplifiedPlaylistEntity> playlists,
       required this.total,
+      required this.count,
       required this.page})
       : _playlists = playlists;
 
@@ -271,11 +296,13 @@ class _$UserPlaylistsStateFetchingImpl
   @override
   final int total;
   @override
+  final int count;
+  @override
   final int page;
 
   @override
   String toString() {
-    return 'UserPlaylistsState.fetching(playlists: $playlists, total: $total, page: $page)';
+    return 'UserPlaylistsState.fetching(playlists: $playlists, total: $total, count: $count, page: $page)';
   }
 
   @override
@@ -286,12 +313,13 @@ class _$UserPlaylistsStateFetchingImpl
             const DeepCollectionEquality()
                 .equals(other._playlists, _playlists) &&
             (identical(other.total, total) || other.total == total) &&
+            (identical(other.count, count) || other.count == count) &&
             (identical(other.page, page) || other.page == page));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_playlists), total, page);
+      const DeepCollectionEquality().hash(_playlists), total, count, page);
 
   /// Create a copy of UserPlaylistsState
   /// with the given fields replaced by the non-null parameter values.
@@ -308,10 +336,12 @@ abstract class UserPlaylistsStateFetching
   const factory UserPlaylistsStateFetching(
       {required final List<SimplifiedPlaylistEntity> playlists,
       required final int total,
+      required final int count,
       required final int page}) = _$UserPlaylistsStateFetchingImpl;
 
   List<SimplifiedPlaylistEntity> get playlists;
   int get total;
+  int get count;
   int get page;
 
   /// Create a copy of UserPlaylistsState
@@ -331,6 +361,7 @@ abstract class _$$UserPlaylistsStateFetchingErrorImplCopyWith<$Res> {
   $Res call(
       {List<SimplifiedPlaylistEntity> playlists,
       int total,
+      int count,
       int page,
       String error});
 }
@@ -352,6 +383,7 @@ class __$$UserPlaylistsStateFetchingErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? playlists = null,
     Object? total = null,
+    Object? count = null,
     Object? page = null,
     Object? error = null,
   }) {
@@ -363,6 +395,10 @@ class __$$UserPlaylistsStateFetchingErrorImplCopyWithImpl<$Res>
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
               as int,
       page: null == page
           ? _value.page
@@ -384,6 +420,7 @@ class _$UserPlaylistsStateFetchingErrorImpl
   const _$UserPlaylistsStateFetchingErrorImpl(
       {required final List<SimplifiedPlaylistEntity> playlists,
       required this.total,
+      required this.count,
       required this.page,
       required this.error})
       : _playlists = playlists;
@@ -399,13 +436,15 @@ class _$UserPlaylistsStateFetchingErrorImpl
   @override
   final int total;
   @override
+  final int count;
+  @override
   final int page;
   @override
   final String error;
 
   @override
   String toString() {
-    return 'UserPlaylistsState.fetchingError(playlists: $playlists, total: $total, page: $page, error: $error)';
+    return 'UserPlaylistsState.fetchingError(playlists: $playlists, total: $total, count: $count, page: $page, error: $error)';
   }
 
   @override
@@ -416,13 +455,19 @@ class _$UserPlaylistsStateFetchingErrorImpl
             const DeepCollectionEquality()
                 .equals(other._playlists, _playlists) &&
             (identical(other.total, total) || other.total == total) &&
+            (identical(other.count, count) || other.count == count) &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_playlists), total, page, error);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_playlists),
+      total,
+      count,
+      page,
+      error);
 
   /// Create a copy of UserPlaylistsState
   /// with the given fields replaced by the non-null parameter values.
@@ -440,11 +485,13 @@ abstract class UserPlaylistsStateFetchingError
   const factory UserPlaylistsStateFetchingError(
       {required final List<SimplifiedPlaylistEntity> playlists,
       required final int total,
+      required final int count,
       required final int page,
       required final String error}) = _$UserPlaylistsStateFetchingErrorImpl;
 
   List<SimplifiedPlaylistEntity> get playlists;
   int get total;
+  int get count;
   int get page;
   String get error;
 

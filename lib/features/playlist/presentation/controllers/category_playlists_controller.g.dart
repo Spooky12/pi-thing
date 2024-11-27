@@ -7,7 +7,7 @@ part of 'category_playlists_controller.dart';
 // **************************************************************************
 
 String _$categoryPlaylistsControllerHash() =>
-    r'4fae3a0b21c89be49ab170df970c0986355d91ca';
+    r'944cf13a440d1be98fcdee9c167e421f88bce498';
 
 /// Copied from Dart SDK
 class _SystemHash {

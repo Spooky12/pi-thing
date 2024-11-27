@@ -10,8 +10,9 @@ _$PlaylistListModelImpl _$$PlaylistListModelImplFromJson(
         Map<String, dynamic> json) =>
     _$PlaylistListModelImpl(
       items: (json['items'] as List<dynamic>)
-          .map((e) =>
-              SimplifiedPlaylistModel.fromJson(e as Map<String, dynamic>))
+          .map((e) => e == null
+              ? null
+              : SimplifiedPlaylistModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       limit: (json['limit'] as num).toInt(),
       offset: (json['offset'] as num).toInt(),

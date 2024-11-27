@@ -76,6 +76,7 @@ class TranslationsPlaylistsEn {
 	String get uniquelyYours => 'Uniquely Yours';
 	String get discover => 'Discover New Music';
 	String get yourPlaylists => 'Your Playlists';
+	String get retry => 'Retry';
 }
 
 // Path: login.webServer
@@ -108,6 +109,7 @@ extension on Translations {
 			case 'playlists.uniquelyYours': return 'Uniquely Yours';
 			case 'playlists.discover': return 'Discover New Music';
 			case 'playlists.yourPlaylists': return 'Your Playlists';
+			case 'playlists.retry': return 'Retry';
 			default: return null;
 		}
 	}

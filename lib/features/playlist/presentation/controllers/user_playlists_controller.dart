@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../providers.dart';
 import 'user_playlists_state.dart';
@@ -25,8 +26,9 @@ class UserPlaylistsController extends _$UserPlaylistsController {
 
     result.when(
       success: (success) => state = UserPlaylistsState.fetched(
-        playlists: success.items,
+        playlists: success.items.whereNotNull().toList(),
         total: success.total,
+        count: success.items.length,
         page: 0,
       ),
       failure: (failure) => state = const UserPlaylistsState.error(
@@ -42,6 +44,7 @@ class UserPlaylistsController extends _$UserPlaylistsController {
           :final page,
           :final playlists,
           :final total,
+          :final count,
           :final hasNextPage,
         ) when hasNextPage) {
       final nextPage = page + 1;
@@ -57,17 +60,19 @@ class UserPlaylistsController extends _$UserPlaylistsController {
         success: (success) {
           final updatedPlaylists = [
             ...playlists,
-            ...success.items,
+            ...success.items.whereNotNull(),
           ];
           state = UserPlaylistsState.fetched(
             playlists: updatedPlaylists,
             total: success.total,
             page: nextPage,
+            count: count + success.items.length,
           );
         },
         failure: (failure) => state = UserPlaylistsState.fetchingError(
           playlists: playlists,
           total: total,
+          count: count,
           page: page,
           error: 'An error occurred while loading more playlists',
         ),

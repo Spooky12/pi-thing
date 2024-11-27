@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PlaylistListEntity {
-  List<SimplifiedPlaylistEntity> get items =>
+  List<SimplifiedPlaylistEntity?> get items =>
       throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
   int get offset => throw _privateConstructorUsedError;
@@ -36,7 +36,10 @@ abstract class $PlaylistListEntityCopyWith<$Res> {
       _$PlaylistListEntityCopyWithImpl<$Res, PlaylistListEntity>;
   @useResult
   $Res call(
-      {List<SimplifiedPlaylistEntity> items, int limit, int offset, int total});
+      {List<SimplifiedPlaylistEntity?> items,
+      int limit,
+      int offset,
+      int total});
 }
 
 /// @nodoc
@@ -63,7 +66,7 @@ class _$PlaylistListEntityCopyWithImpl<$Res, $Val extends PlaylistListEntity>
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<SimplifiedPlaylistEntity>,
+              as List<SimplifiedPlaylistEntity?>,
       limit: null == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -89,7 +92,10 @@ abstract class _$$PlaylistListEntityImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<SimplifiedPlaylistEntity> items, int limit, int offset, int total});
+      {List<SimplifiedPlaylistEntity?> items,
+      int limit,
+      int offset,
+      int total});
 }
 
 /// @nodoc
@@ -114,7 +120,7 @@ class __$$PlaylistListEntityImplCopyWithImpl<$Res>
       items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<SimplifiedPlaylistEntity>,
+              as List<SimplifiedPlaylistEntity?>,
       limit: null == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -135,15 +141,15 @@ class __$$PlaylistListEntityImplCopyWithImpl<$Res>
 
 class _$PlaylistListEntityImpl implements _PlaylistListEntity {
   const _$PlaylistListEntityImpl(
-      {required final List<SimplifiedPlaylistEntity> items,
+      {required final List<SimplifiedPlaylistEntity?> items,
       required this.limit,
       required this.offset,
       required this.total})
       : _items = items;
 
-  final List<SimplifiedPlaylistEntity> _items;
+  final List<SimplifiedPlaylistEntity?> _items;
   @override
-  List<SimplifiedPlaylistEntity> get items {
+  List<SimplifiedPlaylistEntity?> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_items);
@@ -188,13 +194,13 @@ class _$PlaylistListEntityImpl implements _PlaylistListEntity {
 
 abstract class _PlaylistListEntity implements PlaylistListEntity {
   const factory _PlaylistListEntity(
-      {required final List<SimplifiedPlaylistEntity> items,
+      {required final List<SimplifiedPlaylistEntity?> items,
       required final int limit,
       required final int offset,
       required final int total}) = _$PlaylistListEntityImpl;
 
   @override
-  List<SimplifiedPlaylistEntity> get items;
+  List<SimplifiedPlaylistEntity?> get items;
   @override
   int get limit;
   @override

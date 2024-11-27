@@ -20,7 +20,8 @@ PlaylistListModel _$PlaylistListModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PlaylistListModel {
-  List<SimplifiedPlaylistModel> get items => throw _privateConstructorUsedError;
+  List<SimplifiedPlaylistModel?> get items =>
+      throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
   int get offset => throw _privateConstructorUsedError;
   int get total => throw _privateConstructorUsedError;
@@ -42,7 +43,7 @@ abstract class $PlaylistListModelCopyWith<$Res> {
       _$PlaylistListModelCopyWithImpl<$Res, PlaylistListModel>;
   @useResult
   $Res call(
-      {List<SimplifiedPlaylistModel> items, int limit, int offset, int total});
+      {List<SimplifiedPlaylistModel?> items, int limit, int offset, int total});
 }
 
 /// @nodoc
@@ -69,7 +70,7 @@ class _$PlaylistListModelCopyWithImpl<$Res, $Val extends PlaylistListModel>
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<SimplifiedPlaylistModel>,
+              as List<SimplifiedPlaylistModel?>,
       limit: null == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -95,7 +96,7 @@ abstract class _$$PlaylistListModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<SimplifiedPlaylistModel> items, int limit, int offset, int total});
+      {List<SimplifiedPlaylistModel?> items, int limit, int offset, int total});
 }
 
 /// @nodoc
@@ -120,7 +121,7 @@ class __$$PlaylistListModelImplCopyWithImpl<$Res>
       items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<SimplifiedPlaylistModel>,
+              as List<SimplifiedPlaylistModel?>,
       limit: null == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -141,7 +142,7 @@ class __$$PlaylistListModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PlaylistListModelImpl extends _PlaylistListModel {
   const _$PlaylistListModelImpl(
-      {required final List<SimplifiedPlaylistModel> items,
+      {required final List<SimplifiedPlaylistModel?> items,
       required this.limit,
       required this.offset,
       required this.total})
@@ -151,9 +152,9 @@ class _$PlaylistListModelImpl extends _PlaylistListModel {
   factory _$PlaylistListModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$PlaylistListModelImplFromJson(json);
 
-  final List<SimplifiedPlaylistModel> _items;
+  final List<SimplifiedPlaylistModel?> _items;
   @override
-  List<SimplifiedPlaylistModel> get items {
+  List<SimplifiedPlaylistModel?> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_items);
@@ -206,7 +207,7 @@ class _$PlaylistListModelImpl extends _PlaylistListModel {
 
 abstract class _PlaylistListModel extends PlaylistListModel {
   const factory _PlaylistListModel(
-      {required final List<SimplifiedPlaylistModel> items,
+      {required final List<SimplifiedPlaylistModel?> items,
       required final int limit,
       required final int offset,
       required final int total}) = _$PlaylistListModelImpl;
@@ -216,7 +217,7 @@ abstract class _PlaylistListModel extends PlaylistListModel {
       _$PlaylistListModelImpl.fromJson;
 
   @override
-  List<SimplifiedPlaylistModel> get items;
+  List<SimplifiedPlaylistModel?> get items;
   @override
   int get limit;
   @override

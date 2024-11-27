@@ -50,9 +50,9 @@ class PlaylistRepositoryImpl implements PlaylistRepository {
   }
 
   @override
-  Future<Result<List<SimplifiedPlaylistEntity>>> getForYouPlaylists() async {
+  Future<Result<List<SimplifiedPlaylistEntity?>>> getForYouPlaylists() async {
     try {
-      final List<SimplifiedPlaylistEntity> playlists = [];
+      final List<SimplifiedPlaylistEntity?> playlists = [];
       int offset = 0;
       int total = 0;
       do {
@@ -66,7 +66,7 @@ class PlaylistRepositoryImpl implements PlaylistRepository {
         final items = result.playlists.items;
 
         playlists.addAll(
-          List.generate(items.length, (i) => items[i].toDomain()),
+          List.generate(items.length, (i) => items[i]?.toDomain()),
         );
       } while (playlists.length < total);
 

@@ -140,6 +140,8 @@ abstract class RemoteDataSource {
       if (error is ServerException) throw error;
 
       switch (e.response?.statusCode) {
+        case 404:
+          throw const NotFoundException();
         case 429:
           throw const TooManyRequestsException();
         case 504:

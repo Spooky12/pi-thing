@@ -7,7 +7,7 @@ part of 'user_playlists_controller.dart';
 // **************************************************************************
 
 String _$userPlaylistsControllerHash() =>
-    r'0f740c8fee9f548ddd1f1e2118765cc851828b67';
+    r'4a1933f4bb9a354ed68b921b557dd37978546a8d';
 
 /// See also [UserPlaylistsController].
 @ProviderFor(UserPlaylistsController)

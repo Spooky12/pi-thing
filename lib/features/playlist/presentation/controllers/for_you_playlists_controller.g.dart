@@ -7,7 +7,7 @@ part of 'for_you_playlists_controller.dart';
 // **************************************************************************
 
 String _$forYouPlaylistsControllerHash() =>
-    r'b8b3a07276249083c2e09003670d0762d12d357b';
+    r'71dd7c354414b9af752a480d82e65d3ce5c4cf23';
 
 /// See also [ForYouPlaylistsController].
 @ProviderFor(ForYouPlaylistsController)

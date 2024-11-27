@@ -15,5 +15,5 @@ abstract class PlaylistRepository {
     required int offset,
   });
 
-  Future<Result<List<SimplifiedPlaylistEntity>>> getForYouPlaylists();
+  Future<Result<List<SimplifiedPlaylistEntity?>>> getForYouPlaylists();
 }

@@ -6,10 +6,11 @@ part 'user_playlists_state.freezed.dart';
 
 abstract mixin class UserPlaylistsStateLoaded {
   List<SimplifiedPlaylistEntity> get playlists;
+  int get count;
   int get total;
   int get page;
 
-  bool get hasNextPage => playlists.length < total;
+  bool get hasNextPage => count < total;
 }
 
 @freezed
@@ -20,6 +21,7 @@ sealed class UserPlaylistsState with _$UserPlaylistsState {
   const factory UserPlaylistsState.fetched({
     required List<SimplifiedPlaylistEntity> playlists,
     required int total,
+    required int count,
     required int page,
   }) = UserPlaylistsStateFetched;
 
@@ -27,6 +29,7 @@ sealed class UserPlaylistsState with _$UserPlaylistsState {
   const factory UserPlaylistsState.fetching({
     required List<SimplifiedPlaylistEntity> playlists,
     required int total,
+    required int count,
     required int page,
   }) = UserPlaylistsStateFetching;
 
@@ -34,6 +37,7 @@ sealed class UserPlaylistsState with _$UserPlaylistsState {
   const factory UserPlaylistsState.fetchingError({
     required List<SimplifiedPlaylistEntity> playlists,
     required int total,
+    required int count,
     required int page,
     required String error,
   }) = UserPlaylistsStateFetchingError;

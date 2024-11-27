@@ -9,7 +9,7 @@ part 'playlist_list.g.dart';
 @freezed
 class PlaylistListModel with _$PlaylistListModel {
   const factory PlaylistListModel({
-    required List<SimplifiedPlaylistModel> items,
+    required List<SimplifiedPlaylistModel?> items,
     required int limit,
     required int offset,
     required int total,
@@ -24,7 +24,9 @@ class PlaylistListModel with _$PlaylistListModel {
       PlaylistListModel(
         items: List.generate(
           entity.items.length,
-          (i) => SimplifiedPlaylistModel.fromDomain(entity.items[i]),
+          (i) => entity.items[i] == null
+              ? null
+              : SimplifiedPlaylistModel.fromDomain(entity.items[i]!),
         ),
         limit: entity.limit,
         offset: entity.offset,
@@ -34,7 +36,7 @@ class PlaylistListModel with _$PlaylistListModel {
   PlaylistListEntity toDomain() => PlaylistListEntity(
         items: List.generate(
           items.length,
-          (i) => items[i].toDomain(),
+          (i) => items[i]?.toDomain(),
         ),
         limit: limit,
         offset: offset,

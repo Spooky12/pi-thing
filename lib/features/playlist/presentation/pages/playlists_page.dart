@@ -69,33 +69,62 @@ class PlaylistsBranchPage extends ConsumerWidget {
             Expanded(
               child: TabBarView(
                 children: [
-                  if (forYouState case ForYouPlaylistsStateLoading()) ...[
-                    const Center(child: CircularProgressIndicator()),
-                    const Center(child: CircularProgressIndicator()),
-                  ] else if (forYouState case ForYouPlaylistsStateLoaded()) ...[
-                    PlaylistsRow(playlists: forYouState.dailyMixes),
-                    PlaylistsRow(playlists: forYouState.uniquelyYours),
-                  ],
-                  if (discoverState case CategoryPlaylistsStateLoading())
-                    const Center(child: CircularProgressIndicator())
-                  else if (discoverState case CategoryPlaylistsStateLoaded())
-                    PlaylistsRow(playlists: discoverState.playlists),
-                  if (userPlaylistsState case UserPlaylistsStateLoading())
-                    const Center(child: CircularProgressIndicator())
-                  else if (userPlaylistsState
-                      case UserPlaylistsStateLoaded(
-                        :final playlists,
-                        :final hasNextPage,
-                      ))
-                    Center(
-                      child: PlaylistsRow(
+                  switch (userPlaylistsState) {
+                    UserPlaylistsStateLoading() =>
+                      const Center(child: CircularProgressIndicator()),
+                    UserPlaylistsStateError(:final message) => _Error(
+                        message: message,
+                        onRetry: ref
+                            .read(userPlaylistsControllerProvider.notifier)
+                            .load,
+                      ),
+                    UserPlaylistsStateLoaded(
+                      :final playlists,
+                      :final hasNextPage,
+                    ) =>
+                      PlaylistsRow(
                         playlists: playlists,
                         canLoadMore: hasNextPage,
                         onLoadMore: ref
                             .read(userPlaylistsControllerProvider.notifier)
                             .loadMore,
                       ),
-                    ),
+                  },
+                  ...switch (forYouState) {
+                    ForYouPlaylistsStateLoading() => [
+                        const Center(child: CircularProgressIndicator()),
+                        const Center(child: CircularProgressIndicator()),
+                      ],
+                    ForYouPlaylistsStateError(:final message) => [
+                        _Error(
+                          message: message,
+                          onRetry: ref
+                              .read(forYouPlaylistsControllerProvider.notifier)
+                              .load,
+                        ),
+                        _Error(
+                          message: message,
+                          onRetry: ref
+                              .read(forYouPlaylistsControllerProvider.notifier)
+                              .load,
+                        ),
+                      ],
+                    ForYouPlaylistsStateLoaded() => [
+                        PlaylistsRow(playlists: forYouState.dailyMixes),
+                        PlaylistsRow(playlists: forYouState.uniquelyYours),
+                      ],
+                  },
+                  switch (discoverState) {
+                    CategoryPlaylistsStateLoading() =>
+                      const Center(child: CircularProgressIndicator()),
+                    CategoryPlaylistsStateError(:final message) => _Error(
+                        message: message,
+                        onRetry:
+                            ref.read(discoverControllerProvider.notifier).load,
+                      ),
+                    CategoryPlaylistsStateLoaded() =>
+                      PlaylistsRow(playlists: discoverState.playlists),
+                  },
                 ],
               ),
             ),
@@ -117,10 +146,10 @@ class _PlaylistsTabBar extends StatelessWidget {
         vertical: AppSpacing.s100,
       ),
       tabs: [
+        _PlaylistTab(context.t.playlists.yourPlaylists),
         _PlaylistTab(context.t.playlists.dailyMixes),
         _PlaylistTab(context.t.playlists.uniquelyYours),
         _PlaylistTab(context.t.playlists.discover),
-        _PlaylistTab(context.t.playlists.yourPlaylists),
       ],
       unselectedLabelColor: AppColors.white.withOpacity(0.8),
       isScrollable: true,
@@ -151,6 +180,30 @@ class _PlaylistTab extends StatelessWidget {
         alignment: const Alignment(0.0, 0.5),
         child: Text(title),
       ),
+    );
+  }
+}
+
+class _Error extends StatelessWidget {
+  const _Error({
+    required this.message,
+    required this.onRetry,
+  });
+  final String message;
+  final VoidCallback onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(message),
+        AppGap.s200,
+        ElevatedButton(
+          onPressed: onRetry,
+          child: Text(context.t.playlists.retry),
+        ),
+      ],
     );
   }
 }

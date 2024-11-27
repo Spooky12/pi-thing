@@ -7,7 +7,7 @@ part 'playlist_list.freezed.dart';
 @freezed
 class PlaylistListEntity with _$PlaylistListEntity {
   const factory PlaylistListEntity({
-    required List<SimplifiedPlaylistEntity> items,
+    required List<SimplifiedPlaylistEntity?> items,
     required int limit,
     required int offset,
     required int total,

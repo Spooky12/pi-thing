@@ -18,6 +18,10 @@ class TimeoutException extends ServerException {
   const TimeoutException();
 }
 
+class NotFoundException extends ServerException {
+  const NotFoundException();
+}
+
 class TooManyRequestsException extends ServerException {
   const TooManyRequestsException();
 }
