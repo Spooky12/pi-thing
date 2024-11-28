@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacings.dart';
+import '../../../lyrics/presentation/controllers/show_lyrics_controller.dart';
 import '../../../music/presentation/controllers/saved_tracks_controller.dart';
 import '../controllers/player_controller.dart';
 import '../controllers/player_state.dart';
@@ -50,8 +51,26 @@ class PlayerControls extends ConsumerWidget {
         ),
         AppGap.s050,
         const Spacer(),
+        const _ShowLyricsButton(),
+        AppGap.s050,
         const _SaveTrackButton(),
       ],
+    );
+  }
+}
+
+class _ShowLyricsButton extends ConsumerWidget {
+  const _ShowLyricsButton();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final showLyrics = ref.watch(showLyricsControllerProvider);
+    return _ControlIcon(
+      size: 64,
+      icon: showLyrics
+          ? const Icon(Icons.mic_external_off_rounded)
+          : const Icon(Icons.mic_external_on_rounded),
+      onPressed: ref.read(showLyricsControllerProvider.notifier).toggle,
     );
   }
 }
@@ -110,14 +129,14 @@ class _SaveTrackButtonState extends ConsumerState<_SaveTrackButton> {
     return switch (isSaved) {
       null => const SizedBox.shrink(),
       true => _ControlIcon(
-          size: 72,
+          size: 64,
           icon: const Icon(Icons.favorite_rounded),
           onPressed: () => ref
               .read(savedTracksControllerProvider.notifier)
               .unsaveTrack(item.id),
         ),
       false => _ControlIcon(
-          size: 72,
+          size: 64,
           icon: const Icon(Icons.favorite_border_rounded),
           onPressed: () => ref
               .read(savedTracksControllerProvider.notifier)
