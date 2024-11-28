@@ -27,11 +27,7 @@ class LyricsWidget extends StatelessWidget {
                 ),
           ),
           AppGap.s150,
-          for (final line in lyrics.split('\n'))
-            LyricLine(
-              line: line,
-              type: LyricLineType.current,
-            ),
+          for (final line in lyrics.split('\n')) LyricLine(line: line),
         ],
       ),
     );

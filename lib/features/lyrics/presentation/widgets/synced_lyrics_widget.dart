@@ -18,7 +18,9 @@ class SyncedLyricsWidget extends ConsumerStatefulWidget {
 
 class _SyncedLyricsWidgetState extends ConsumerState<SyncedLyricsWidget> {
   final scrollController = ScrollController();
-  late final List<_ParsedLyricLine> parsedLyrics;
+  late List<_ParsedLyricLine> parsedLyrics;
+
+  final _currentKey = GlobalKey();
 
   @override
   void initState() {
@@ -63,6 +65,31 @@ class _SyncedLyricsWidgetState extends ConsumerState<SyncedLyricsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    ref.listen(
+      playerControllerProvider,
+      (p, n) {
+        final pMs = switch (p) {
+              PlayerStateLoaded(:final playback) => playback.progressMs,
+              _ => null,
+            } ??
+            0;
+        final nMs = switch (n) {
+              PlayerStateLoaded(:final playback) => playback.progressMs,
+              _ => null,
+            } ??
+            0;
+        final lineCtx = _currentKey.currentContext;
+        if (lineCtx == null || !lineCtx.mounted) return;
+        if (pMs != nMs) {
+          scrollController.position.ensureVisible(
+            lineCtx.findRenderObject()!,
+            alignment: .5,
+            duration: Durations.long4,
+          );
+        }
+      },
+    );
+
     final ms = ref.watch(
           playerControllerProvider.select(
             (state) => switch (state) {
@@ -73,6 +100,29 @@ class _SyncedLyricsWidgetState extends ConsumerState<SyncedLyricsWidget> {
         ) ??
         0;
 
+    final lyricsLines = <LyricLine>[];
+
+    for (int i = 0; i < parsedLyrics.length; i++) {
+      final type = switch ((ms, parsedLyrics[i].timeMs)) {
+        (final currentMs, final lineMs) when currentMs < lineMs =>
+          LyricLineType.after,
+        (final currentMs, final lineMs)
+            when currentMs >= lineMs &&
+                (i >= parsedLyrics.length - 1 ||
+                    currentMs < parsedLyrics[i + 1].timeMs) =>
+          LyricLineType.current,
+        _ => LyricLineType.before,
+      };
+
+      lyricsLines.add(
+        LyricLine(
+          key: type == LyricLineType.current ? _currentKey : null,
+          line: parsedLyrics[i].text,
+          type: type,
+        ),
+      );
+    }
+
     return SingleChildScrollView(
       controller: scrollController,
       padding: const EdgeInsets.symmetric(
@@ -81,22 +131,7 @@ class _SyncedLyricsWidgetState extends ConsumerState<SyncedLyricsWidget> {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          for (int i = 0; i < parsedLyrics.length; i++)
-            LyricLine(
-              line: parsedLyrics[i].text,
-              type: switch ((ms, parsedLyrics[i].timeMs)) {
-                (final currentMs, final lineMs) when currentMs < lineMs =>
-                  LyricLineType.after,
-                (final currentMs, final lineMs)
-                    when currentMs >= lineMs &&
-                        (i >= parsedLyrics.length - 1 ||
-                            currentMs < parsedLyrics[i + 1].timeMs) =>
-                  LyricLineType.current,
-                _ => LyricLineType.before,
-              },
-            ),
-        ],
+        children: lyricsLines,
       ),
     );
   }
