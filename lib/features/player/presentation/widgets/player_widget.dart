@@ -38,17 +38,20 @@ class PlayerWidget extends ConsumerWidget {
           children: [
             AppGap.s300,
             AnimatedSize(
-              duration: Durations.short2,
-              child: IntrinsicHeight(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    ImageWidget(item?.album.cover),
-                    AppGap.s300,
-                    Expanded(child: _Right(item: item)),
-                  ],
-                ),
+              duration: Durations.short3,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ImageWidget(item?.album.cover),
+                  AppGap.s300,
+                  Flexible(
+                    child: AnimatedSize(
+                      duration: Durations.short3,
+                      child: _Right(item: item),
+                    ),
+                  ),
+                ],
               ),
             ),
             AppGap.s400,
@@ -70,18 +73,23 @@ class _Right extends ConsumerWidget {
     final showLyrics = ref.watch(showLyricsControllerProvider);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Expanded(
+        AnimatedSize(
+          duration: Durations.short3,
           child: AnimatedSwitcher(
             duration: Durations.medium1,
             child: showLyrics
                 ? AnimatedSize(
                     duration: Durations.medium1,
-                    child: LyricsCard(item),
+                    child: IntrinsicHeight(child: LyricsCard(item)),
                   )
                 : Align(
                     alignment: Alignment.topLeft,
-                    child: TrackInfos(item),
+                    child: SizedBox(
+                      height: 146,
+                      child: TrackInfos(item),
+                    ),
                   ),
           ),
         ),

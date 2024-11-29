@@ -26,6 +26,8 @@ class _SyncedLyricsWidgetState extends ConsumerState<SyncedLyricsWidget> {
   void initState() {
     super.initState();
     parsedLyrics = _parseLyrics(widget.lyrics);
+
+    Future.microtask(jumpToLyric);
   }
 
   @override
@@ -33,7 +35,21 @@ class _SyncedLyricsWidgetState extends ConsumerState<SyncedLyricsWidget> {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.lyrics != widget.lyrics) {
       parsedLyrics = _parseLyrics(widget.lyrics);
+      Future.microtask(jumpToLyric);
     }
+  }
+
+  void jumpToLyric([Duration duration = Duration.zero]) {
+    final lineCtx = _currentKey.currentContext;
+    if (lineCtx == null || !lineCtx.mounted) {
+      if (mounted) scrollController.jumpTo(0);
+      return;
+    }
+    scrollController.position.ensureVisible(
+      lineCtx.findRenderObject()!,
+      alignment: .5,
+      duration: duration,
+    );
   }
 
   List<_ParsedLyricLine> _parseLyrics(String lyrics) {
@@ -78,15 +94,8 @@ class _SyncedLyricsWidgetState extends ConsumerState<SyncedLyricsWidget> {
               _ => null,
             } ??
             0;
-        final lineCtx = _currentKey.currentContext;
-        if (lineCtx == null || !lineCtx.mounted) return;
-        if (pMs != nMs) {
-          scrollController.position.ensureVisible(
-            lineCtx.findRenderObject()!,
-            alignment: .5,
-            duration: Durations.long4,
-          );
-        }
+        if (pMs == nMs) return;
+        jumpToLyric(Durations.long4);
       },
     );
 

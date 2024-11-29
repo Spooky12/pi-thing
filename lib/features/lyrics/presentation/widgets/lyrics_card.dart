@@ -45,8 +45,11 @@ class _Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints:
-          const BoxConstraints(maxHeight: 300, minWidth: double.infinity),
+      constraints: const BoxConstraints(
+        minHeight: 146,
+        maxHeight: 300,
+        minWidth: double.infinity,
+      ),
       decoration: BoxDecoration(
         color: AppColors.black.withOpacity(0.2),
         borderRadius: const BorderRadius.all(Radius.circular(8.0)),
@@ -69,7 +72,7 @@ class _Message extends StatelessWidget {
         text,
         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
               fontFamily: AppFontFamilly.interTight,
-              color: AppColors.white.withOpacity(0.8),
+              color: AppColors.white.withOpacity(0.7),
               height: 1,
             ),
       ),
