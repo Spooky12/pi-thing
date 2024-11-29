@@ -20,5 +20,10 @@
     "discover": "Discover New Music",
     "yourPlaylists": "Your Playlists",
     "retry": "Retry"
+  },
+  "lyrics": {
+    "noLyrics": "No lyrics available",
+    "instrumental": "No lyrics, the song is instrumental",
+    "notSynced": "The lyrics aren't synced yet"
   }
 }

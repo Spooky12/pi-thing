@@ -37,7 +37,7 @@ class PlayerRepositoryImpl implements PlayerRepository {
 
   void _initPlaybackLongPolling() {
     _fetchPlaybackState();
-    _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       _fetchPlaybackState();
     });
   }

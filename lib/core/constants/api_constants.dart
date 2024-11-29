@@ -1,6 +1,7 @@
 abstract class ApiConstants {
   static const String baseUrl = 'https://api.spotify.com/';
   static const String authBaseUrl = 'https://accounts.spotify.com/';
+  static const String lyricsBaseUrl = 'https://lrclib.net/';
 
   static String redirectUrl(String host, int port) =>
       'http://$host:$port/callback';
@@ -44,4 +45,6 @@ abstract class ApiConstants {
 
   static const String savedTracksEndpoint = 'v1/me/tracks';
   static const String checkSavedTracksEndpoint = 'v1/me/tracks/contains';
+
+  static const String getLyricsEndpoint = 'api/get';
 }

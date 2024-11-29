@@ -41,6 +41,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final TranslationsLoginEn login = TranslationsLoginEn._(_root);
 	late final TranslationsPlayerEn player = TranslationsPlayerEn._(_root);
 	late final TranslationsPlaylistsEn playlists = TranslationsPlaylistsEn._(_root);
+	late final TranslationsLyricsEn lyrics = TranslationsLyricsEn._(_root);
 }
 
 // Path: login
@@ -79,6 +80,18 @@ class TranslationsPlaylistsEn {
 	String get retry => 'Retry';
 }
 
+// Path: lyrics
+class TranslationsLyricsEn {
+	TranslationsLyricsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get noLyrics => 'No lyrics available';
+	String get instrumental => 'No lyrics, the song is instrumental';
+	String get notSynced => 'The lyrics aren\'t synced yet';
+}
+
 // Path: login.webServer
 class TranslationsLoginWebServerEn {
 	TranslationsLoginWebServerEn._(this._root);
@@ -110,6 +123,9 @@ extension on Translations {
 			case 'playlists.discover': return 'Discover New Music';
 			case 'playlists.yourPlaylists': return 'Your Playlists';
 			case 'playlists.retry': return 'Retry';
+			case 'lyrics.noLyrics': return 'No lyrics available';
+			case 'lyrics.instrumental': return 'No lyrics, the song is instrumental';
+			case 'lyrics.notSynced': return 'The lyrics aren\'t synced yet';
 			default: return null;
 		}
 	}
