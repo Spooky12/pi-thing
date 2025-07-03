@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'actions.freezed.dart';
 
 @freezed
-class ActionsEntity with _$ActionsEntity {
+abstract class ActionsEntity with _$ActionsEntity {
   factory ActionsEntity({
     required bool interruptingPlayback,
     required bool pausing,

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,38 +9,82 @@ part of 'album.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AlbumEntity {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  AlbumType get type => throw _privateConstructorUsedError;
-  String get uri => throw _privateConstructorUsedError;
-  String get href => throw _privateConstructorUsedError;
-  List<String> get availableMarkets => throw _privateConstructorUsedError;
-  List<ImageEntity> get images => throw _privateConstructorUsedError;
-  ExternalUrlsEntity get externalUrls => throw _privateConstructorUsedError;
-  List<SimpleArtistEntity> get artists => throw _privateConstructorUsedError;
-  int get totalTracks => throw _privateConstructorUsedError;
-  String get releaseDate => throw _privateConstructorUsedError;
-  String get releaseDatePrecision => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  AlbumType get type;
+  String get uri;
+  String get href;
+  List<String> get availableMarkets;
+  List<ImageEntity> get images;
+  ExternalUrlsEntity get externalUrls;
+  List<SimpleArtistEntity> get artists;
+  int get totalTracks;
+  String get releaseDate;
+  String get releaseDatePrecision;
 
   /// Create a copy of AlbumEntity
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AlbumEntityCopyWith<AlbumEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AlbumEntityCopyWithImpl<AlbumEntity>(this as AlbumEntity, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AlbumEntity &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.href, href) || other.href == href) &&
+            const DeepCollectionEquality()
+                .equals(other.availableMarkets, availableMarkets) &&
+            const DeepCollectionEquality().equals(other.images, images) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls) &&
+            const DeepCollectionEquality().equals(other.artists, artists) &&
+            (identical(other.totalTracks, totalTracks) ||
+                other.totalTracks == totalTracks) &&
+            (identical(other.releaseDate, releaseDate) ||
+                other.releaseDate == releaseDate) &&
+            (identical(other.releaseDatePrecision, releaseDatePrecision) ||
+                other.releaseDatePrecision == releaseDatePrecision));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      type,
+      uri,
+      href,
+      const DeepCollectionEquality().hash(availableMarkets),
+      const DeepCollectionEquality().hash(images),
+      externalUrls,
+      const DeepCollectionEquality().hash(artists),
+      totalTracks,
+      releaseDate,
+      releaseDatePrecision);
+
+  @override
+  String toString() {
+    return 'AlbumEntity(id: $id, name: $name, type: $type, uri: $uri, href: $href, availableMarkets: $availableMarkets, images: $images, externalUrls: $externalUrls, artists: $artists, totalTracks: $totalTracks, releaseDate: $releaseDate, releaseDatePrecision: $releaseDatePrecision)';
+  }
 }
 
 /// @nodoc
-abstract class $AlbumEntityCopyWith<$Res> {
+abstract mixin class $AlbumEntityCopyWith<$Res> {
   factory $AlbumEntityCopyWith(
-          AlbumEntity value, $Res Function(AlbumEntity) then) =
-      _$AlbumEntityCopyWithImpl<$Res, AlbumEntity>;
+          AlbumEntity value, $Res Function(AlbumEntity) _then) =
+      _$AlbumEntityCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -60,14 +104,11 @@ abstract class $AlbumEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AlbumEntityCopyWithImpl<$Res, $Val extends AlbumEntity>
-    implements $AlbumEntityCopyWith<$Res> {
-  _$AlbumEntityCopyWithImpl(this._value, this._then);
+class _$AlbumEntityCopyWithImpl<$Res> implements $AlbumEntityCopyWith<$Res> {
+  _$AlbumEntityCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AlbumEntity _self;
+  final $Res Function(AlbumEntity) _then;
 
   /// Create a copy of AlbumEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -87,56 +128,56 @@ class _$AlbumEntityCopyWithImpl<$Res, $Val extends AlbumEntity>
     Object? releaseDate = null,
     Object? releaseDatePrecision = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as AlbumType,
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
       href: null == href
-          ? _value.href
+          ? _self.href
           : href // ignore: cast_nullable_to_non_nullable
               as String,
       availableMarkets: null == availableMarkets
-          ? _value.availableMarkets
+          ? _self.availableMarkets
           : availableMarkets // ignore: cast_nullable_to_non_nullable
               as List<String>,
       images: null == images
-          ? _value.images
+          ? _self.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageEntity>,
       externalUrls: null == externalUrls
-          ? _value.externalUrls
+          ? _self.externalUrls
           : externalUrls // ignore: cast_nullable_to_non_nullable
               as ExternalUrlsEntity,
       artists: null == artists
-          ? _value.artists
+          ? _self.artists
           : artists // ignore: cast_nullable_to_non_nullable
               as List<SimpleArtistEntity>,
       totalTracks: null == totalTracks
-          ? _value.totalTracks
+          ? _self.totalTracks
           : totalTracks // ignore: cast_nullable_to_non_nullable
               as int,
       releaseDate: null == releaseDate
-          ? _value.releaseDate
+          ? _self.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as String,
       releaseDatePrecision: null == releaseDatePrecision
-          ? _value.releaseDatePrecision
+          ? _self.releaseDatePrecision
           : releaseDatePrecision // ignore: cast_nullable_to_non_nullable
               as String,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AlbumEntity
@@ -144,121 +185,16 @@ class _$AlbumEntityCopyWithImpl<$Res, $Val extends AlbumEntity>
   @override
   @pragma('vm:prefer-inline')
   $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
-    return $ExternalUrlsEntityCopyWith<$Res>(_value.externalUrls, (value) {
-      return _then(_value.copyWith(externalUrls: value) as $Val);
+    return $ExternalUrlsEntityCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AlbumEntityImplCopyWith<$Res>
-    implements $AlbumEntityCopyWith<$Res> {
-  factory _$$AlbumEntityImplCopyWith(
-          _$AlbumEntityImpl value, $Res Function(_$AlbumEntityImpl) then) =
-      __$$AlbumEntityImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      AlbumType type,
-      String uri,
-      String href,
-      List<String> availableMarkets,
-      List<ImageEntity> images,
-      ExternalUrlsEntity externalUrls,
-      List<SimpleArtistEntity> artists,
-      int totalTracks,
-      String releaseDate,
-      String releaseDatePrecision});
 
-  @override
-  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
-}
-
-/// @nodoc
-class __$$AlbumEntityImplCopyWithImpl<$Res>
-    extends _$AlbumEntityCopyWithImpl<$Res, _$AlbumEntityImpl>
-    implements _$$AlbumEntityImplCopyWith<$Res> {
-  __$$AlbumEntityImplCopyWithImpl(
-      _$AlbumEntityImpl _value, $Res Function(_$AlbumEntityImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AlbumEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? type = null,
-    Object? uri = null,
-    Object? href = null,
-    Object? availableMarkets = null,
-    Object? images = null,
-    Object? externalUrls = null,
-    Object? artists = null,
-    Object? totalTracks = null,
-    Object? releaseDate = null,
-    Object? releaseDatePrecision = null,
-  }) {
-    return _then(_$AlbumEntityImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as AlbumType,
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as String,
-      href: null == href
-          ? _value.href
-          : href // ignore: cast_nullable_to_non_nullable
-              as String,
-      availableMarkets: null == availableMarkets
-          ? _value._availableMarkets
-          : availableMarkets // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      images: null == images
-          ? _value._images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<ImageEntity>,
-      externalUrls: null == externalUrls
-          ? _value.externalUrls
-          : externalUrls // ignore: cast_nullable_to_non_nullable
-              as ExternalUrlsEntity,
-      artists: null == artists
-          ? _value._artists
-          : artists // ignore: cast_nullable_to_non_nullable
-              as List<SimpleArtistEntity>,
-      totalTracks: null == totalTracks
-          ? _value.totalTracks
-          : totalTracks // ignore: cast_nullable_to_non_nullable
-              as int,
-      releaseDate: null == releaseDate
-          ? _value.releaseDate
-          : releaseDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      releaseDatePrecision: null == releaseDatePrecision
-          ? _value.releaseDatePrecision
-          : releaseDatePrecision // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$AlbumEntityImpl extends _AlbumEntity {
-  const _$AlbumEntityImpl(
+class _AlbumEntity extends AlbumEntity {
+  const _AlbumEntity(
       {required this.id,
       required this.name,
       required this.type,
@@ -320,16 +256,19 @@ class _$AlbumEntityImpl extends _AlbumEntity {
   @override
   final String releaseDatePrecision;
 
+  /// Create a copy of AlbumEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AlbumEntity(id: $id, name: $name, type: $type, uri: $uri, href: $href, availableMarkets: $availableMarkets, images: $images, externalUrls: $externalUrls, artists: $artists, totalTracks: $totalTracks, releaseDate: $releaseDate, releaseDatePrecision: $releaseDatePrecision)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AlbumEntityCopyWith<_AlbumEntity> get copyWith =>
+      __$AlbumEntityCopyWithImpl<_AlbumEntity>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AlbumEntityImpl &&
+            other is _AlbumEntity &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type) &&
@@ -365,60 +304,124 @@ class _$AlbumEntityImpl extends _AlbumEntity {
       releaseDate,
       releaseDatePrecision);
 
+  @override
+  String toString() {
+    return 'AlbumEntity(id: $id, name: $name, type: $type, uri: $uri, href: $href, availableMarkets: $availableMarkets, images: $images, externalUrls: $externalUrls, artists: $artists, totalTracks: $totalTracks, releaseDate: $releaseDate, releaseDatePrecision: $releaseDatePrecision)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AlbumEntityCopyWith<$Res>
+    implements $AlbumEntityCopyWith<$Res> {
+  factory _$AlbumEntityCopyWith(
+          _AlbumEntity value, $Res Function(_AlbumEntity) _then) =
+      __$AlbumEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      AlbumType type,
+      String uri,
+      String href,
+      List<String> availableMarkets,
+      List<ImageEntity> images,
+      ExternalUrlsEntity externalUrls,
+      List<SimpleArtistEntity> artists,
+      int totalTracks,
+      String releaseDate,
+      String releaseDatePrecision});
+
+  @override
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
+}
+
+/// @nodoc
+class __$AlbumEntityCopyWithImpl<$Res> implements _$AlbumEntityCopyWith<$Res> {
+  __$AlbumEntityCopyWithImpl(this._self, this._then);
+
+  final _AlbumEntity _self;
+  final $Res Function(_AlbumEntity) _then;
+
   /// Create a copy of AlbumEntity
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AlbumEntityImplCopyWith<_$AlbumEntityImpl> get copyWith =>
-      __$$AlbumEntityImplCopyWithImpl<_$AlbumEntityImpl>(this, _$identity);
-}
-
-abstract class _AlbumEntity extends AlbumEntity {
-  const factory _AlbumEntity(
-      {required final String id,
-      required final String name,
-      required final AlbumType type,
-      required final String uri,
-      required final String href,
-      required final List<String> availableMarkets,
-      required final List<ImageEntity> images,
-      required final ExternalUrlsEntity externalUrls,
-      required final List<SimpleArtistEntity> artists,
-      required final int totalTracks,
-      required final String releaseDate,
-      required final String releaseDatePrecision}) = _$AlbumEntityImpl;
-  const _AlbumEntity._() : super._();
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  AlbumType get type;
-  @override
-  String get uri;
-  @override
-  String get href;
-  @override
-  List<String> get availableMarkets;
-  @override
-  List<ImageEntity> get images;
-  @override
-  ExternalUrlsEntity get externalUrls;
-  @override
-  List<SimpleArtistEntity> get artists;
-  @override
-  int get totalTracks;
-  @override
-  String get releaseDate;
-  @override
-  String get releaseDatePrecision;
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? type = null,
+    Object? uri = null,
+    Object? href = null,
+    Object? availableMarkets = null,
+    Object? images = null,
+    Object? externalUrls = null,
+    Object? artists = null,
+    Object? totalTracks = null,
+    Object? releaseDate = null,
+    Object? releaseDatePrecision = null,
+  }) {
+    return _then(_AlbumEntity(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as AlbumType,
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      href: null == href
+          ? _self.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String,
+      availableMarkets: null == availableMarkets
+          ? _self._availableMarkets
+          : availableMarkets // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      images: null == images
+          ? _self._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<ImageEntity>,
+      externalUrls: null == externalUrls
+          ? _self.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsEntity,
+      artists: null == artists
+          ? _self._artists
+          : artists // ignore: cast_nullable_to_non_nullable
+              as List<SimpleArtistEntity>,
+      totalTracks: null == totalTracks
+          ? _self.totalTracks
+          : totalTracks // ignore: cast_nullable_to_non_nullable
+              as int,
+      releaseDate: null == releaseDate
+          ? _self.releaseDate
+          : releaseDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      releaseDatePrecision: null == releaseDatePrecision
+          ? _self.releaseDatePrecision
+          : releaseDatePrecision // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 
   /// Create a copy of AlbumEntity
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AlbumEntityImplCopyWith<_$AlbumEntityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsEntityCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
 }
+
+// dart format on

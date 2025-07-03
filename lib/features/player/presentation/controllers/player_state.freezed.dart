@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,105 +9,109 @@ part of 'player_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
-mixin _$PlayerState {}
+mixin _$PlayerState {
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PlayerState);
+  }
 
-/// @nodoc
-abstract class $PlayerStateCopyWith<$Res> {
-  factory $PlayerStateCopyWith(
-          PlayerState value, $Res Function(PlayerState) then) =
-      _$PlayerStateCopyWithImpl<$Res, PlayerState>;
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'PlayerState()';
+  }
 }
 
 /// @nodoc
-class _$PlayerStateCopyWithImpl<$Res, $Val extends PlayerState>
-    implements $PlayerStateCopyWith<$Res> {
-  _$PlayerStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of PlayerState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$PlayerStateLoadingImplCopyWith<$Res> {
-  factory _$$PlayerStateLoadingImplCopyWith(_$PlayerStateLoadingImpl value,
-          $Res Function(_$PlayerStateLoadingImpl) then) =
-      __$$PlayerStateLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$PlayerStateLoadingImplCopyWithImpl<$Res>
-    extends _$PlayerStateCopyWithImpl<$Res, _$PlayerStateLoadingImpl>
-    implements _$$PlayerStateLoadingImplCopyWith<$Res> {
-  __$$PlayerStateLoadingImplCopyWithImpl(_$PlayerStateLoadingImpl _value,
-      $Res Function(_$PlayerStateLoadingImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PlayerState
-  /// with the given fields replaced by the non-null parameter values.
+class $PlayerStateCopyWith<$Res> {
+  $PlayerStateCopyWith(PlayerState _, $Res Function(PlayerState) __);
 }
 
 /// @nodoc
 
-class _$PlayerStateLoadingImpl implements PlayerStateLoading {
-  const _$PlayerStateLoadingImpl();
+class PlayerStateLoading implements PlayerState {
+  const PlayerStateLoading();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PlayerStateLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'PlayerState.loading()';
   }
+}
+
+/// @nodoc
+
+class PlayerStateEmpty implements PlayerState {
+  const PlayerStateEmpty({this.error});
+
+  final String? error;
+
+  /// Create a copy of PlayerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $PlayerStateEmptyCopyWith<PlayerStateEmpty> get copyWith =>
+      _$PlayerStateEmptyCopyWithImpl<PlayerStateEmpty>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PlayerStateLoadingImpl);
+        (other.runtimeType == runtimeType &&
+            other is PlayerStateEmpty &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
-}
+  int get hashCode => Object.hash(runtimeType, error);
 
-abstract class PlayerStateLoading implements PlayerState {
-  const factory PlayerStateLoading() = _$PlayerStateLoadingImpl;
+  @override
+  String toString() {
+    return 'PlayerState.empty(error: $error)';
+  }
 }
 
 /// @nodoc
-abstract class _$$PlayerStateEmptyImplCopyWith<$Res> {
-  factory _$$PlayerStateEmptyImplCopyWith(_$PlayerStateEmptyImpl value,
-          $Res Function(_$PlayerStateEmptyImpl) then) =
-      __$$PlayerStateEmptyImplCopyWithImpl<$Res>;
+abstract mixin class $PlayerStateEmptyCopyWith<$Res>
+    implements $PlayerStateCopyWith<$Res> {
+  factory $PlayerStateEmptyCopyWith(
+          PlayerStateEmpty value, $Res Function(PlayerStateEmpty) _then) =
+      _$PlayerStateEmptyCopyWithImpl;
   @useResult
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$$PlayerStateEmptyImplCopyWithImpl<$Res>
-    extends _$PlayerStateCopyWithImpl<$Res, _$PlayerStateEmptyImpl>
-    implements _$$PlayerStateEmptyImplCopyWith<$Res> {
-  __$$PlayerStateEmptyImplCopyWithImpl(_$PlayerStateEmptyImpl _value,
-      $Res Function(_$PlayerStateEmptyImpl) _then)
-      : super(_value, _then);
+class _$PlayerStateEmptyCopyWithImpl<$Res>
+    implements $PlayerStateEmptyCopyWith<$Res> {
+  _$PlayerStateEmptyCopyWithImpl(this._self, this._then);
+
+  final PlayerStateEmpty _self;
+  final $Res Function(PlayerStateEmpty) _then;
 
   /// Create a copy of PlayerState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$PlayerStateEmptyImpl(
+    return _then(PlayerStateEmpty(
       error: freezed == error
-          ? _value.error
+          ? _self.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -116,56 +120,44 @@ class __$$PlayerStateEmptyImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PlayerStateEmptyImpl implements PlayerStateEmpty {
-  const _$PlayerStateEmptyImpl({this.error});
+class PlayerStateLoaded implements PlayerState {
+  const PlayerStateLoaded({required this.playback, this.error});
 
-  @override
+  final PlaybackEntity playback;
   final String? error;
 
-  @override
-  String toString() {
-    return 'PlayerState.empty(error: $error)';
-  }
+  /// Create a copy of PlayerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $PlayerStateLoadedCopyWith<PlayerStateLoaded> get copyWith =>
+      _$PlayerStateLoadedCopyWithImpl<PlayerStateLoaded>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PlayerStateEmptyImpl &&
+            other is PlayerStateLoaded &&
+            (identical(other.playback, playback) ||
+                other.playback == playback) &&
             (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, error);
+  int get hashCode => Object.hash(runtimeType, playback, error);
 
-  /// Create a copy of PlayerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PlayerStateEmptyImplCopyWith<_$PlayerStateEmptyImpl> get copyWith =>
-      __$$PlayerStateEmptyImplCopyWithImpl<_$PlayerStateEmptyImpl>(
-          this, _$identity);
-}
-
-abstract class PlayerStateEmpty implements PlayerState {
-  const factory PlayerStateEmpty({final String? error}) =
-      _$PlayerStateEmptyImpl;
-
-  String? get error;
-
-  /// Create a copy of PlayerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PlayerStateEmptyImplCopyWith<_$PlayerStateEmptyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  String toString() {
+    return 'PlayerState.loaded(playback: $playback, error: $error)';
+  }
 }
 
 /// @nodoc
-abstract class _$$PlayerStateLoadedImplCopyWith<$Res> {
-  factory _$$PlayerStateLoadedImplCopyWith(_$PlayerStateLoadedImpl value,
-          $Res Function(_$PlayerStateLoadedImpl) then) =
-      __$$PlayerStateLoadedImplCopyWithImpl<$Res>;
+abstract mixin class $PlayerStateLoadedCopyWith<$Res>
+    implements $PlayerStateCopyWith<$Res> {
+  factory $PlayerStateLoadedCopyWith(
+          PlayerStateLoaded value, $Res Function(PlayerStateLoaded) _then) =
+      _$PlayerStateLoadedCopyWithImpl;
   @useResult
   $Res call({PlaybackEntity playback, String? error});
 
@@ -173,28 +165,27 @@ abstract class _$$PlayerStateLoadedImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PlayerStateLoadedImplCopyWithImpl<$Res>
-    extends _$PlayerStateCopyWithImpl<$Res, _$PlayerStateLoadedImpl>
-    implements _$$PlayerStateLoadedImplCopyWith<$Res> {
-  __$$PlayerStateLoadedImplCopyWithImpl(_$PlayerStateLoadedImpl _value,
-      $Res Function(_$PlayerStateLoadedImpl) _then)
-      : super(_value, _then);
+class _$PlayerStateLoadedCopyWithImpl<$Res>
+    implements $PlayerStateLoadedCopyWith<$Res> {
+  _$PlayerStateLoadedCopyWithImpl(this._self, this._then);
+
+  final PlayerStateLoaded _self;
+  final $Res Function(PlayerStateLoaded) _then;
 
   /// Create a copy of PlayerState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? playback = null,
     Object? error = freezed,
   }) {
-    return _then(_$PlayerStateLoadedImpl(
+    return _then(PlayerStateLoaded(
       playback: null == playback
-          ? _value.playback
+          ? _self.playback
           : playback // ignore: cast_nullable_to_non_nullable
               as PlaybackEntity,
       error: freezed == error
-          ? _value.error
+          ? _self.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -205,61 +196,10 @@ class __$$PlayerStateLoadedImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $PlaybackEntityCopyWith<$Res> get playback {
-    return $PlaybackEntityCopyWith<$Res>(_value.playback, (value) {
-      return _then(_value.copyWith(playback: value));
+    return $PlaybackEntityCopyWith<$Res>(_self.playback, (value) {
+      return _then(_self.copyWith(playback: value));
     });
   }
 }
 
-/// @nodoc
-
-class _$PlayerStateLoadedImpl implements PlayerStateLoaded {
-  const _$PlayerStateLoadedImpl({required this.playback, this.error});
-
-  @override
-  final PlaybackEntity playback;
-  @override
-  final String? error;
-
-  @override
-  String toString() {
-    return 'PlayerState.loaded(playback: $playback, error: $error)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PlayerStateLoadedImpl &&
-            (identical(other.playback, playback) ||
-                other.playback == playback) &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, playback, error);
-
-  /// Create a copy of PlayerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PlayerStateLoadedImplCopyWith<_$PlayerStateLoadedImpl> get copyWith =>
-      __$$PlayerStateLoadedImplCopyWithImpl<_$PlayerStateLoadedImpl>(
-          this, _$identity);
-}
-
-abstract class PlayerStateLoaded implements PlayerState {
-  const factory PlayerStateLoaded(
-      {required final PlaybackEntity playback,
-      final String? error}) = _$PlayerStateLoadedImpl;
-
-  PlaybackEntity get playback;
-  String? get error;
-
-  /// Create a copy of PlayerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PlayerStateLoadedImplCopyWith<_$PlayerStateLoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

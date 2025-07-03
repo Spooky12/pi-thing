@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,46 +9,82 @@ part of 'simplified_playlist.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-SimplifiedPlaylistModel _$SimplifiedPlaylistModelFromJson(
-    Map<String, dynamic> json) {
-  return _SimplifiedPlaylistModel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$SimplifiedPlaylistModel {
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @JsonKey(name: 'snapshot_id')
-  String get snapshotId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get uri => throw _privateConstructorUsedError;
-  String get href => throw _privateConstructorUsedError;
-  List<ImageModel> get images => throw _privateConstructorUsedError;
+  String get snapshotId;
+  String get name;
+  String get description;
+  String get uri;
+  String get href;
+  List<ImageModel> get images;
   @JsonKey(name: 'external_urls')
-  ExternalUrlsModel get externalUrls => throw _privateConstructorUsedError;
-  bool get collaborative => throw _privateConstructorUsedError;
-  bool get public => throw _privateConstructorUsedError;
-
-  /// Serializes this SimplifiedPlaylistModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  ExternalUrlsModel get externalUrls;
+  bool get collaborative;
+  bool get public;
 
   /// Create a copy of SimplifiedPlaylistModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $SimplifiedPlaylistModelCopyWith<SimplifiedPlaylistModel> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$SimplifiedPlaylistModelCopyWithImpl<SimplifiedPlaylistModel>(
+          this as SimplifiedPlaylistModel, _$identity);
+
+  /// Serializes this SimplifiedPlaylistModel to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SimplifiedPlaylistModel &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.snapshotId, snapshotId) ||
+                other.snapshotId == snapshotId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.href, href) || other.href == href) &&
+            const DeepCollectionEquality().equals(other.images, images) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls) &&
+            (identical(other.collaborative, collaborative) ||
+                other.collaborative == collaborative) &&
+            (identical(other.public, public) || other.public == public));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      snapshotId,
+      name,
+      description,
+      uri,
+      href,
+      const DeepCollectionEquality().hash(images),
+      externalUrls,
+      collaborative,
+      public);
+
+  @override
+  String toString() {
+    return 'SimplifiedPlaylistModel(id: $id, snapshotId: $snapshotId, name: $name, description: $description, uri: $uri, href: $href, images: $images, externalUrls: $externalUrls, collaborative: $collaborative, public: $public)';
+  }
 }
 
 /// @nodoc
-abstract class $SimplifiedPlaylistModelCopyWith<$Res> {
+abstract mixin class $SimplifiedPlaylistModelCopyWith<$Res> {
   factory $SimplifiedPlaylistModelCopyWith(SimplifiedPlaylistModel value,
-          $Res Function(SimplifiedPlaylistModel) then) =
-      _$SimplifiedPlaylistModelCopyWithImpl<$Res, SimplifiedPlaylistModel>;
+          $Res Function(SimplifiedPlaylistModel) _then) =
+      _$SimplifiedPlaylistModelCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -66,15 +102,12 @@ abstract class $SimplifiedPlaylistModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SimplifiedPlaylistModelCopyWithImpl<$Res,
-        $Val extends SimplifiedPlaylistModel>
+class _$SimplifiedPlaylistModelCopyWithImpl<$Res>
     implements $SimplifiedPlaylistModelCopyWith<$Res> {
-  _$SimplifiedPlaylistModelCopyWithImpl(this._value, this._then);
+  _$SimplifiedPlaylistModelCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final SimplifiedPlaylistModel _self;
+  final $Res Function(SimplifiedPlaylistModel) _then;
 
   /// Create a copy of SimplifiedPlaylistModel
   /// with the given fields replaced by the non-null parameter values.
@@ -92,48 +125,48 @@ class _$SimplifiedPlaylistModelCopyWithImpl<$Res,
     Object? collaborative = null,
     Object? public = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       snapshotId: null == snapshotId
-          ? _value.snapshotId
+          ? _self.snapshotId
           : snapshotId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
       href: null == href
-          ? _value.href
+          ? _self.href
           : href // ignore: cast_nullable_to_non_nullable
               as String,
       images: null == images
-          ? _value.images
+          ? _self.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageModel>,
       externalUrls: null == externalUrls
-          ? _value.externalUrls
+          ? _self.externalUrls
           : externalUrls // ignore: cast_nullable_to_non_nullable
               as ExternalUrlsModel,
       collaborative: null == collaborative
-          ? _value.collaborative
+          ? _self.collaborative
           : collaborative // ignore: cast_nullable_to_non_nullable
               as bool,
       public: null == public
-          ? _value.public
+          ? _self.public
           : public // ignore: cast_nullable_to_non_nullable
               as bool,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of SimplifiedPlaylistModel
@@ -141,112 +174,16 @@ class _$SimplifiedPlaylistModelCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $ExternalUrlsModelCopyWith<$Res> get externalUrls {
-    return $ExternalUrlsModelCopyWith<$Res>(_value.externalUrls, (value) {
-      return _then(_value.copyWith(externalUrls: value) as $Val);
+    return $ExternalUrlsModelCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$SimplifiedPlaylistModelImplCopyWith<$Res>
-    implements $SimplifiedPlaylistModelCopyWith<$Res> {
-  factory _$$SimplifiedPlaylistModelImplCopyWith(
-          _$SimplifiedPlaylistModelImpl value,
-          $Res Function(_$SimplifiedPlaylistModelImpl) then) =
-      __$$SimplifiedPlaylistModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @JsonKey(name: 'snapshot_id') String snapshotId,
-      String name,
-      String description,
-      String uri,
-      String href,
-      List<ImageModel> images,
-      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
-      bool collaborative,
-      bool public});
-
-  @override
-  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
-}
-
-/// @nodoc
-class __$$SimplifiedPlaylistModelImplCopyWithImpl<$Res>
-    extends _$SimplifiedPlaylistModelCopyWithImpl<$Res,
-        _$SimplifiedPlaylistModelImpl>
-    implements _$$SimplifiedPlaylistModelImplCopyWith<$Res> {
-  __$$SimplifiedPlaylistModelImplCopyWithImpl(
-      _$SimplifiedPlaylistModelImpl _value,
-      $Res Function(_$SimplifiedPlaylistModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SimplifiedPlaylistModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? snapshotId = null,
-    Object? name = null,
-    Object? description = null,
-    Object? uri = null,
-    Object? href = null,
-    Object? images = null,
-    Object? externalUrls = null,
-    Object? collaborative = null,
-    Object? public = null,
-  }) {
-    return _then(_$SimplifiedPlaylistModelImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      snapshotId: null == snapshotId
-          ? _value.snapshotId
-          : snapshotId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as String,
-      href: null == href
-          ? _value.href
-          : href // ignore: cast_nullable_to_non_nullable
-              as String,
-      images: null == images
-          ? _value._images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<ImageModel>,
-      externalUrls: null == externalUrls
-          ? _value.externalUrls
-          : externalUrls // ignore: cast_nullable_to_non_nullable
-              as ExternalUrlsModel,
-      collaborative: null == collaborative
-          ? _value.collaborative
-          : collaborative // ignore: cast_nullable_to_non_nullable
-              as bool,
-      public: null == public
-          ? _value.public
-          : public // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$SimplifiedPlaylistModelImpl extends _SimplifiedPlaylistModel {
-  const _$SimplifiedPlaylistModelImpl(
+class _SimplifiedPlaylistModel extends SimplifiedPlaylistModel {
+  const _SimplifiedPlaylistModel(
       {required this.id,
       @JsonKey(name: 'snapshot_id') required this.snapshotId,
       required this.name,
@@ -259,9 +196,8 @@ class _$SimplifiedPlaylistModelImpl extends _SimplifiedPlaylistModel {
       required this.public})
       : _images = images,
         super._();
-
-  factory _$SimplifiedPlaylistModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SimplifiedPlaylistModelImplFromJson(json);
+  factory _SimplifiedPlaylistModel.fromJson(Map<String, dynamic> json) =>
+      _$SimplifiedPlaylistModelFromJson(json);
 
   @override
   final String id;
@@ -292,16 +228,27 @@ class _$SimplifiedPlaylistModelImpl extends _SimplifiedPlaylistModel {
   @override
   final bool public;
 
+  /// Create a copy of SimplifiedPlaylistModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SimplifiedPlaylistModel(id: $id, snapshotId: $snapshotId, name: $name, description: $description, uri: $uri, href: $href, images: $images, externalUrls: $externalUrls, collaborative: $collaborative, public: $public)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SimplifiedPlaylistModelCopyWith<_SimplifiedPlaylistModel> get copyWith =>
+      __$SimplifiedPlaylistModelCopyWithImpl<_SimplifiedPlaylistModel>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SimplifiedPlaylistModelToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SimplifiedPlaylistModelImpl &&
+            other is _SimplifiedPlaylistModel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.snapshotId, snapshotId) ||
                 other.snapshotId == snapshotId) &&
@@ -333,68 +280,113 @@ class _$SimplifiedPlaylistModelImpl extends _SimplifiedPlaylistModel {
       collaborative,
       public);
 
-  /// Create a copy of SimplifiedPlaylistModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SimplifiedPlaylistModelImplCopyWith<_$SimplifiedPlaylistModelImpl>
-      get copyWith => __$$SimplifiedPlaylistModelImplCopyWithImpl<
-          _$SimplifiedPlaylistModelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SimplifiedPlaylistModelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SimplifiedPlaylistModel(id: $id, snapshotId: $snapshotId, name: $name, description: $description, uri: $uri, href: $href, images: $images, externalUrls: $externalUrls, collaborative: $collaborative, public: $public)';
   }
 }
 
-abstract class _SimplifiedPlaylistModel extends SimplifiedPlaylistModel {
-  const factory _SimplifiedPlaylistModel(
-      {required final String id,
-      @JsonKey(name: 'snapshot_id') required final String snapshotId,
-      required final String name,
-      required final String description,
-      required final String uri,
-      required final String href,
-      required final List<ImageModel> images,
-      @JsonKey(name: 'external_urls')
-      required final ExternalUrlsModel externalUrls,
-      required final bool collaborative,
-      required final bool public}) = _$SimplifiedPlaylistModelImpl;
-  const _SimplifiedPlaylistModel._() : super._();
+/// @nodoc
+abstract mixin class _$SimplifiedPlaylistModelCopyWith<$Res>
+    implements $SimplifiedPlaylistModelCopyWith<$Res> {
+  factory _$SimplifiedPlaylistModelCopyWith(_SimplifiedPlaylistModel value,
+          $Res Function(_SimplifiedPlaylistModel) _then) =
+      __$SimplifiedPlaylistModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @JsonKey(name: 'snapshot_id') String snapshotId,
+      String name,
+      String description,
+      String uri,
+      String href,
+      List<ImageModel> images,
+      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
+      bool collaborative,
+      bool public});
 
-  factory _SimplifiedPlaylistModel.fromJson(Map<String, dynamic> json) =
-      _$SimplifiedPlaylistModelImpl.fromJson;
+  @override
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
+}
 
-  @override
-  String get id;
-  @override
-  @JsonKey(name: 'snapshot_id')
-  String get snapshotId;
-  @override
-  String get name;
-  @override
-  String get description;
-  @override
-  String get uri;
-  @override
-  String get href;
-  @override
-  List<ImageModel> get images;
-  @override
-  @JsonKey(name: 'external_urls')
-  ExternalUrlsModel get externalUrls;
-  @override
-  bool get collaborative;
-  @override
-  bool get public;
+/// @nodoc
+class __$SimplifiedPlaylistModelCopyWithImpl<$Res>
+    implements _$SimplifiedPlaylistModelCopyWith<$Res> {
+  __$SimplifiedPlaylistModelCopyWithImpl(this._self, this._then);
+
+  final _SimplifiedPlaylistModel _self;
+  final $Res Function(_SimplifiedPlaylistModel) _then;
 
   /// Create a copy of SimplifiedPlaylistModel
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SimplifiedPlaylistModelImplCopyWith<_$SimplifiedPlaylistModelImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? snapshotId = null,
+    Object? name = null,
+    Object? description = null,
+    Object? uri = null,
+    Object? href = null,
+    Object? images = null,
+    Object? externalUrls = null,
+    Object? collaborative = null,
+    Object? public = null,
+  }) {
+    return _then(_SimplifiedPlaylistModel(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      snapshotId: null == snapshotId
+          ? _self.snapshotId
+          : snapshotId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      href: null == href
+          ? _self.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String,
+      images: null == images
+          ? _self._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<ImageModel>,
+      externalUrls: null == externalUrls
+          ? _self.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsModel,
+      collaborative: null == collaborative
+          ? _self.collaborative
+          : collaborative // ignore: cast_nullable_to_non_nullable
+              as bool,
+      public: null == public
+          ? _self.public
+          : public // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+
+  /// Create a copy of SimplifiedPlaylistModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsModelCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
 }
+
+// dart format on

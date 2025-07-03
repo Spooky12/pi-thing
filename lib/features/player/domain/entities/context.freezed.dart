@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,30 +9,50 @@ part of 'context.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ContextEntity {
-  ContextType? get type => throw _privateConstructorUsedError;
-  String get href => throw _privateConstructorUsedError;
-  ExternalUrlsEntity get externalUrls => throw _privateConstructorUsedError;
-  String get uri => throw _privateConstructorUsedError;
+  ContextType? get type;
+  String get href;
+  ExternalUrlsEntity get externalUrls;
+  String get uri;
 
   /// Create a copy of ContextEntity
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ContextEntityCopyWith<ContextEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$ContextEntityCopyWithImpl<ContextEntity>(
+          this as ContextEntity, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ContextEntity &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.href, href) || other.href == href) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls) &&
+            (identical(other.uri, uri) || other.uri == uri));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, type, href, externalUrls, uri);
+
+  @override
+  String toString() {
+    return 'ContextEntity(type: $type, href: $href, externalUrls: $externalUrls, uri: $uri)';
+  }
 }
 
 /// @nodoc
-abstract class $ContextEntityCopyWith<$Res> {
+abstract mixin class $ContextEntityCopyWith<$Res> {
   factory $ContextEntityCopyWith(
-          ContextEntity value, $Res Function(ContextEntity) then) =
-      _$ContextEntityCopyWithImpl<$Res, ContextEntity>;
+          ContextEntity value, $Res Function(ContextEntity) _then) =
+      _$ContextEntityCopyWithImpl;
   @useResult
   $Res call(
       {ContextType? type,
@@ -44,14 +64,12 @@ abstract class $ContextEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ContextEntityCopyWithImpl<$Res, $Val extends ContextEntity>
+class _$ContextEntityCopyWithImpl<$Res>
     implements $ContextEntityCopyWith<$Res> {
-  _$ContextEntityCopyWithImpl(this._value, this._then);
+  _$ContextEntityCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ContextEntity _self;
+  final $Res Function(ContextEntity) _then;
 
   /// Create a copy of ContextEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -63,24 +81,24 @@ class _$ContextEntityCopyWithImpl<$Res, $Val extends ContextEntity>
     Object? externalUrls = null,
     Object? uri = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       type: freezed == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as ContextType?,
       href: null == href
-          ? _value.href
+          ? _self.href
           : href // ignore: cast_nullable_to_non_nullable
               as String,
       externalUrls: null == externalUrls
-          ? _value.externalUrls
+          ? _self.externalUrls
           : externalUrls // ignore: cast_nullable_to_non_nullable
               as ExternalUrlsEntity,
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of ContextEntity
@@ -88,73 +106,16 @@ class _$ContextEntityCopyWithImpl<$Res, $Val extends ContextEntity>
   @override
   @pragma('vm:prefer-inline')
   $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
-    return $ExternalUrlsEntityCopyWith<$Res>(_value.externalUrls, (value) {
-      return _then(_value.copyWith(externalUrls: value) as $Val);
+    return $ExternalUrlsEntityCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$ContextEntityImplCopyWith<$Res>
-    implements $ContextEntityCopyWith<$Res> {
-  factory _$$ContextEntityImplCopyWith(
-          _$ContextEntityImpl value, $Res Function(_$ContextEntityImpl) then) =
-      __$$ContextEntityImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {ContextType? type,
-      String href,
-      ExternalUrlsEntity externalUrls,
-      String uri});
 
-  @override
-  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
-}
-
-/// @nodoc
-class __$$ContextEntityImplCopyWithImpl<$Res>
-    extends _$ContextEntityCopyWithImpl<$Res, _$ContextEntityImpl>
-    implements _$$ContextEntityImplCopyWith<$Res> {
-  __$$ContextEntityImplCopyWithImpl(
-      _$ContextEntityImpl _value, $Res Function(_$ContextEntityImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ContextEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = freezed,
-    Object? href = null,
-    Object? externalUrls = null,
-    Object? uri = null,
-  }) {
-    return _then(_$ContextEntityImpl(
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as ContextType?,
-      href: null == href
-          ? _value.href
-          : href // ignore: cast_nullable_to_non_nullable
-              as String,
-      externalUrls: null == externalUrls
-          ? _value.externalUrls
-          : externalUrls // ignore: cast_nullable_to_non_nullable
-              as ExternalUrlsEntity,
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ContextEntityImpl implements _ContextEntity {
-  const _$ContextEntityImpl(
+class _ContextEntity implements ContextEntity {
+  const _ContextEntity(
       {required this.type,
       required this.href,
       required this.externalUrls,
@@ -169,16 +130,19 @@ class _$ContextEntityImpl implements _ContextEntity {
   @override
   final String uri;
 
+  /// Create a copy of ContextEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ContextEntity(type: $type, href: $href, externalUrls: $externalUrls, uri: $uri)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ContextEntityCopyWith<_ContextEntity> get copyWith =>
+      __$ContextEntityCopyWithImpl<_ContextEntity>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ContextEntityImpl &&
+            other is _ContextEntity &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.href, href) || other.href == href) &&
             (identical(other.externalUrls, externalUrls) ||
@@ -189,35 +153,77 @@ class _$ContextEntityImpl implements _ContextEntity {
   @override
   int get hashCode => Object.hash(runtimeType, type, href, externalUrls, uri);
 
+  @override
+  String toString() {
+    return 'ContextEntity(type: $type, href: $href, externalUrls: $externalUrls, uri: $uri)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ContextEntityCopyWith<$Res>
+    implements $ContextEntityCopyWith<$Res> {
+  factory _$ContextEntityCopyWith(
+          _ContextEntity value, $Res Function(_ContextEntity) _then) =
+      __$ContextEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {ContextType? type,
+      String href,
+      ExternalUrlsEntity externalUrls,
+      String uri});
+
+  @override
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
+}
+
+/// @nodoc
+class __$ContextEntityCopyWithImpl<$Res>
+    implements _$ContextEntityCopyWith<$Res> {
+  __$ContextEntityCopyWithImpl(this._self, this._then);
+
+  final _ContextEntity _self;
+  final $Res Function(_ContextEntity) _then;
+
   /// Create a copy of ContextEntity
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ContextEntityImplCopyWith<_$ContextEntityImpl> get copyWith =>
-      __$$ContextEntityImplCopyWithImpl<_$ContextEntityImpl>(this, _$identity);
-}
-
-abstract class _ContextEntity implements ContextEntity {
-  const factory _ContextEntity(
-      {required final ContextType? type,
-      required final String href,
-      required final ExternalUrlsEntity externalUrls,
-      required final String uri}) = _$ContextEntityImpl;
-
-  @override
-  ContextType? get type;
-  @override
-  String get href;
-  @override
-  ExternalUrlsEntity get externalUrls;
-  @override
-  String get uri;
+  $Res call({
+    Object? type = freezed,
+    Object? href = null,
+    Object? externalUrls = null,
+    Object? uri = null,
+  }) {
+    return _then(_ContextEntity(
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ContextType?,
+      href: null == href
+          ? _self.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String,
+      externalUrls: null == externalUrls
+          ? _self.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsEntity,
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 
   /// Create a copy of ContextEntity
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ContextEntityImplCopyWith<_$ContextEntityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsEntityCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
 }
+
+// dart format on

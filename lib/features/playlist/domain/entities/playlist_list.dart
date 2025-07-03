@@ -5,7 +5,7 @@ import 'simplified_playlist.dart';
 part 'playlist_list.freezed.dart';
 
 @freezed
-class PlaylistListEntity with _$PlaylistListEntity {
+abstract class PlaylistListEntity with _$PlaylistListEntity {
   const factory PlaylistListEntity({
     required List<SimplifiedPlaylistEntity?> items,
     required int limit,

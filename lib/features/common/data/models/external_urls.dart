@@ -6,7 +6,7 @@ part 'external_urls.freezed.dart';
 part 'external_urls.g.dart';
 
 @freezed
-class ExternalUrlsModel with _$ExternalUrlsModel {
+abstract class ExternalUrlsModel with _$ExternalUrlsModel {
   const factory ExternalUrlsModel({
     required String spotify,
   }) = _ExternalUrlsModel;

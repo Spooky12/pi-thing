@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,11 +9,8 @@ part of 'user.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 UserModel _$UserModelFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
     case 'current':
@@ -29,29 +26,55 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @JsonKey(name: 'display_name')
-  String? get displayName => throw _privateConstructorUsedError;
-  List<ImageModel> get images => throw _privateConstructorUsedError;
+  String? get displayName;
+  List<ImageModel> get images;
   @JsonKey(name: 'external_urls')
-  ExternalUrlsModel get externalUrls => throw _privateConstructorUsedError;
-  String get uri => throw _privateConstructorUsedError;
-  String get href => throw _privateConstructorUsedError;
-
-  /// Serializes this UserModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  ExternalUrlsModel get externalUrls;
+  String get uri;
+  String get href;
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $UserModelCopyWith<UserModel> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$UserModelCopyWithImpl<UserModel>(this as UserModel, _$identity);
+
+  /// Serializes this UserModel to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UserModel &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.displayName, displayName) ||
+                other.displayName == displayName) &&
+            const DeepCollectionEquality().equals(other.images, images) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.href, href) || other.href == href));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, displayName,
+      const DeepCollectionEquality().hash(images), externalUrls, uri, href);
+
+  @override
+  String toString() {
+    return 'UserModel(id: $id, displayName: $displayName, images: $images, externalUrls: $externalUrls, uri: $uri, href: $href)';
+  }
 }
 
 /// @nodoc
-abstract class $UserModelCopyWith<$Res> {
-  factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) =
-      _$UserModelCopyWithImpl<$Res, UserModel>;
+abstract mixin class $UserModelCopyWith<$Res> {
+  factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) _then) =
+      _$UserModelCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -65,14 +88,11 @@ abstract class $UserModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
-    implements $UserModelCopyWith<$Res> {
-  _$UserModelCopyWithImpl(this._value, this._then);
+class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
+  _$UserModelCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final UserModel _self;
+  final $Res Function(UserModel) _then;
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.
@@ -86,121 +106,29 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? uri = null,
     Object? href = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       displayName: freezed == displayName
-          ? _value.displayName
+          ? _self.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String?,
       images: null == images
-          ? _value.images
+          ? _self.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageModel>,
       externalUrls: null == externalUrls
-          ? _value.externalUrls
+          ? _self.externalUrls
           : externalUrls // ignore: cast_nullable_to_non_nullable
               as ExternalUrlsModel,
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
       href: null == href
-          ? _value.href
-          : href // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-
-  /// Create a copy of UserModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
-    return $ExternalUrlsModelCopyWith<$Res>(_value.externalUrls, (value) {
-      return _then(_value.copyWith(externalUrls: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$CurrentUserModelImplCopyWith<$Res>
-    implements $UserModelCopyWith<$Res> {
-  factory _$$CurrentUserModelImplCopyWith(_$CurrentUserModelImpl value,
-          $Res Function(_$CurrentUserModelImpl) then) =
-      __$$CurrentUserModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String country,
-      @JsonKey(name: 'display_name') String? displayName,
-      List<ImageModel> images,
-      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
-      @JsonKey(name: 'explicit_content') ExplicitContentModel explicitContent,
-      String uri,
-      String href});
-
-  @override
-  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
-  $ExplicitContentModelCopyWith<$Res> get explicitContent;
-}
-
-/// @nodoc
-class __$$CurrentUserModelImplCopyWithImpl<$Res>
-    extends _$UserModelCopyWithImpl<$Res, _$CurrentUserModelImpl>
-    implements _$$CurrentUserModelImplCopyWith<$Res> {
-  __$$CurrentUserModelImplCopyWithImpl(_$CurrentUserModelImpl _value,
-      $Res Function(_$CurrentUserModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of UserModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? country = null,
-    Object? displayName = freezed,
-    Object? images = null,
-    Object? externalUrls = null,
-    Object? explicitContent = null,
-    Object? uri = null,
-    Object? href = null,
-  }) {
-    return _then(_$CurrentUserModelImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      country: null == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String,
-      displayName: freezed == displayName
-          ? _value.displayName
-          : displayName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      images: null == images
-          ? _value._images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<ImageModel>,
-      externalUrls: null == externalUrls
-          ? _value.externalUrls
-          : externalUrls // ignore: cast_nullable_to_non_nullable
-              as ExternalUrlsModel,
-      explicitContent: null == explicitContent
-          ? _value.explicitContent
-          : explicitContent // ignore: cast_nullable_to_non_nullable
-              as ExplicitContentModel,
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as String,
-      href: null == href
-          ? _value.href
+          ? _self.href
           : href // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -210,17 +138,17 @@ class __$$CurrentUserModelImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ExplicitContentModelCopyWith<$Res> get explicitContent {
-    return $ExplicitContentModelCopyWith<$Res>(_value.explicitContent, (value) {
-      return _then(_value.copyWith(explicitContent: value));
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsModelCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
     });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CurrentUserModelImpl extends CurrentUserModel {
-  const _$CurrentUserModelImpl(
+class CurrentUserModel extends UserModel {
+  const CurrentUserModel(
       {required this.id,
       required this.country,
       @JsonKey(name: 'display_name') required this.displayName,
@@ -233,13 +161,11 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
       : _images = images,
         $type = $type ?? 'current',
         super._();
-
-  factory _$CurrentUserModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CurrentUserModelImplFromJson(json);
+  factory CurrentUserModel.fromJson(Map<String, dynamic> json) =>
+      _$CurrentUserModelFromJson(json);
 
   @override
   final String id;
-  @override
   final String country;
   @override
   @JsonKey(name: 'display_name')
@@ -255,7 +181,6 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
   @override
   @JsonKey(name: 'external_urls')
   final ExternalUrlsModel externalUrls;
-  @override
   @JsonKey(name: 'explicit_content')
   final ExplicitContentModel explicitContent;
   @override
@@ -266,16 +191,26 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
   @JsonKey(name: 'runtimeType')
   final String $type;
 
+  /// Create a copy of UserModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UserModel.current(id: $id, country: $country, displayName: $displayName, images: $images, externalUrls: $externalUrls, explicitContent: $explicitContent, uri: $uri, href: $href)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CurrentUserModelCopyWith<CurrentUserModel> get copyWith =>
+      _$CurrentUserModelCopyWithImpl<CurrentUserModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CurrentUserModelToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CurrentUserModelImpl &&
+            other is CurrentUserModel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.displayName, displayName) ||
@@ -302,139 +237,118 @@ class _$CurrentUserModelImpl extends CurrentUserModel {
       uri,
       href);
 
-  /// Create a copy of UserModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CurrentUserModelImplCopyWith<_$CurrentUserModelImpl> get copyWith =>
-      __$$CurrentUserModelImplCopyWithImpl<_$CurrentUserModelImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CurrentUserModelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UserModel.current(id: $id, country: $country, displayName: $displayName, images: $images, externalUrls: $externalUrls, explicitContent: $explicitContent, uri: $uri, href: $href)';
   }
 }
 
-abstract class CurrentUserModel extends UserModel {
-  const factory CurrentUserModel(
-      {required final String id,
-      required final String country,
-      @JsonKey(name: 'display_name') required final String? displayName,
-      required final List<ImageModel> images,
-      @JsonKey(name: 'external_urls')
-      required final ExternalUrlsModel externalUrls,
-      @JsonKey(name: 'explicit_content')
-      required final ExplicitContentModel explicitContent,
-      required final String uri,
-      required final String href}) = _$CurrentUserModelImpl;
-  const CurrentUserModel._() : super._();
-
-  factory CurrentUserModel.fromJson(Map<String, dynamic> json) =
-      _$CurrentUserModelImpl.fromJson;
-
-  @override
-  String get id;
-  String get country;
-  @override
-  @JsonKey(name: 'display_name')
-  String? get displayName;
-  @override
-  List<ImageModel> get images;
-  @override
-  @JsonKey(name: 'external_urls')
-  ExternalUrlsModel get externalUrls;
-  @JsonKey(name: 'explicit_content')
-  ExplicitContentModel get explicitContent;
-  @override
-  String get uri;
-  @override
-  String get href;
-
-  /// Create a copy of UserModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CurrentUserModelImplCopyWith<_$CurrentUserModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 /// @nodoc
-abstract class _$$PublicUserModelImplCopyWith<$Res>
+abstract mixin class $CurrentUserModelCopyWith<$Res>
     implements $UserModelCopyWith<$Res> {
-  factory _$$PublicUserModelImplCopyWith(_$PublicUserModelImpl value,
-          $Res Function(_$PublicUserModelImpl) then) =
-      __$$PublicUserModelImplCopyWithImpl<$Res>;
+  factory $CurrentUserModelCopyWith(
+          CurrentUserModel value, $Res Function(CurrentUserModel) _then) =
+      _$CurrentUserModelCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
+      String country,
       @JsonKey(name: 'display_name') String? displayName,
       List<ImageModel> images,
       @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
+      @JsonKey(name: 'explicit_content') ExplicitContentModel explicitContent,
       String uri,
       String href});
 
   @override
   $ExternalUrlsModelCopyWith<$Res> get externalUrls;
+  $ExplicitContentModelCopyWith<$Res> get explicitContent;
 }
 
 /// @nodoc
-class __$$PublicUserModelImplCopyWithImpl<$Res>
-    extends _$UserModelCopyWithImpl<$Res, _$PublicUserModelImpl>
-    implements _$$PublicUserModelImplCopyWith<$Res> {
-  __$$PublicUserModelImplCopyWithImpl(
-      _$PublicUserModelImpl _value, $Res Function(_$PublicUserModelImpl) _then)
-      : super(_value, _then);
+class _$CurrentUserModelCopyWithImpl<$Res>
+    implements $CurrentUserModelCopyWith<$Res> {
+  _$CurrentUserModelCopyWithImpl(this._self, this._then);
+
+  final CurrentUserModel _self;
+  final $Res Function(CurrentUserModel) _then;
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
+    Object? country = null,
     Object? displayName = freezed,
     Object? images = null,
     Object? externalUrls = null,
+    Object? explicitContent = null,
     Object? uri = null,
     Object? href = null,
   }) {
-    return _then(_$PublicUserModelImpl(
+    return _then(CurrentUserModel(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      country: null == country
+          ? _self.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
       displayName: freezed == displayName
-          ? _value.displayName
+          ? _self.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String?,
       images: null == images
-          ? _value._images
+          ? _self._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageModel>,
       externalUrls: null == externalUrls
-          ? _value.externalUrls
+          ? _self.externalUrls
           : externalUrls // ignore: cast_nullable_to_non_nullable
               as ExternalUrlsModel,
+      explicitContent: null == explicitContent
+          ? _self.explicitContent
+          : explicitContent // ignore: cast_nullable_to_non_nullable
+              as ExplicitContentModel,
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
       href: null == href
-          ? _value.href
+          ? _self.href
           : href // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+
+  /// Create a copy of UserModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsModelCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
+
+  /// Create a copy of UserModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExplicitContentModelCopyWith<$Res> get explicitContent {
+    return $ExplicitContentModelCopyWith<$Res>(_self.explicitContent, (value) {
+      return _then(_self.copyWith(explicitContent: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$PublicUserModelImpl extends PublicUserModel {
-  const _$PublicUserModelImpl(
+class PublicUserModel extends UserModel {
+  const PublicUserModel(
       {required this.id,
       @JsonKey(name: 'display_name') required this.displayName,
       required final List<ImageModel> images,
@@ -445,9 +359,8 @@ class _$PublicUserModelImpl extends PublicUserModel {
       : _images = images,
         $type = $type ?? 'public',
         super._();
-
-  factory _$PublicUserModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PublicUserModelImplFromJson(json);
+  factory PublicUserModel.fromJson(Map<String, dynamic> json) =>
+      _$PublicUserModelFromJson(json);
 
   @override
   final String id;
@@ -473,16 +386,26 @@ class _$PublicUserModelImpl extends PublicUserModel {
   @JsonKey(name: 'runtimeType')
   final String $type;
 
+  /// Create a copy of UserModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UserModel.public(id: $id, displayName: $displayName, images: $images, externalUrls: $externalUrls, uri: $uri, href: $href)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $PublicUserModelCopyWith<PublicUserModel> get copyWith =>
+      _$PublicUserModelCopyWithImpl<PublicUserModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PublicUserModelToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PublicUserModelImpl &&
+            other is PublicUserModel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
@@ -498,56 +421,89 @@ class _$PublicUserModelImpl extends PublicUserModel {
   int get hashCode => Object.hash(runtimeType, id, displayName,
       const DeepCollectionEquality().hash(_images), externalUrls, uri, href);
 
-  /// Create a copy of UserModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PublicUserModelImplCopyWith<_$PublicUserModelImpl> get copyWith =>
-      __$$PublicUserModelImplCopyWithImpl<_$PublicUserModelImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PublicUserModelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UserModel.public(id: $id, displayName: $displayName, images: $images, externalUrls: $externalUrls, uri: $uri, href: $href)';
   }
 }
 
-abstract class PublicUserModel extends UserModel {
-  const factory PublicUserModel(
-      {required final String id,
-      @JsonKey(name: 'display_name') required final String? displayName,
-      required final List<ImageModel> images,
-      @JsonKey(name: 'external_urls')
-      required final ExternalUrlsModel externalUrls,
-      required final String uri,
-      required final String href}) = _$PublicUserModelImpl;
-  const PublicUserModel._() : super._();
+/// @nodoc
+abstract mixin class $PublicUserModelCopyWith<$Res>
+    implements $UserModelCopyWith<$Res> {
+  factory $PublicUserModelCopyWith(
+          PublicUserModel value, $Res Function(PublicUserModel) _then) =
+      _$PublicUserModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @JsonKey(name: 'display_name') String? displayName,
+      List<ImageModel> images,
+      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
+      String uri,
+      String href});
 
-  factory PublicUserModel.fromJson(Map<String, dynamic> json) =
-      _$PublicUserModelImpl.fromJson;
+  @override
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
+}
 
-  @override
-  String get id;
-  @override
-  @JsonKey(name: 'display_name')
-  String? get displayName;
-  @override
-  List<ImageModel> get images;
-  @override
-  @JsonKey(name: 'external_urls')
-  ExternalUrlsModel get externalUrls;
-  @override
-  String get uri;
-  @override
-  String get href;
+/// @nodoc
+class _$PublicUserModelCopyWithImpl<$Res>
+    implements $PublicUserModelCopyWith<$Res> {
+  _$PublicUserModelCopyWithImpl(this._self, this._then);
+
+  final PublicUserModel _self;
+  final $Res Function(PublicUserModel) _then;
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PublicUserModelImplCopyWith<_$PublicUserModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? displayName = freezed,
+    Object? images = null,
+    Object? externalUrls = null,
+    Object? uri = null,
+    Object? href = null,
+  }) {
+    return _then(PublicUserModel(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      displayName: freezed == displayName
+          ? _self.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      images: null == images
+          ? _self._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<ImageModel>,
+      externalUrls: null == externalUrls
+          ? _self.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsModel,
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      href: null == href
+          ? _self.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  /// Create a copy of UserModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsModelCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
 }
+
+// dart format on

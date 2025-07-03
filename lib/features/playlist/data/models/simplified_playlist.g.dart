@@ -6,9 +6,9 @@ part of 'simplified_playlist.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SimplifiedPlaylistModelImpl _$$SimplifiedPlaylistModelImplFromJson(
+_SimplifiedPlaylistModel _$SimplifiedPlaylistModelFromJson(
         Map<String, dynamic> json) =>
-    _$SimplifiedPlaylistModelImpl(
+    _SimplifiedPlaylistModel(
       id: json['id'] as String,
       snapshotId: json['snapshot_id'] as String,
       name: json['name'] as String,
@@ -24,8 +24,8 @@ _$SimplifiedPlaylistModelImpl _$$SimplifiedPlaylistModelImplFromJson(
       public: json['public'] as bool,
     );
 
-Map<String, dynamic> _$$SimplifiedPlaylistModelImplToJson(
-        _$SimplifiedPlaylistModelImpl instance) =>
+Map<String, dynamic> _$SimplifiedPlaylistModelToJson(
+        _SimplifiedPlaylistModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'snapshot_id': instance.snapshotId,

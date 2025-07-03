@@ -6,16 +6,16 @@ part of 'playlists_category.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PlaylistsCategoryModelImpl _$$PlaylistsCategoryModelImplFromJson(
+_PlaylistsCategoryModel _$PlaylistsCategoryModelFromJson(
         Map<String, dynamic> json) =>
-    _$PlaylistsCategoryModelImpl(
+    _PlaylistsCategoryModel(
       message: json['message'] as String,
       playlists:
           PlaylistListModel.fromJson(json['playlists'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$PlaylistsCategoryModelImplToJson(
-        _$PlaylistsCategoryModelImpl instance) =>
+Map<String, dynamic> _$PlaylistsCategoryModelToJson(
+        _PlaylistsCategoryModel instance) =>
     <String, dynamic>{
       'message': instance.message,
       'playlists': instance.playlists,

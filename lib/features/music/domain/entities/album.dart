@@ -10,7 +10,7 @@ part 'album.freezed.dart';
 enum AlbumType { album, single, compilation }
 
 @freezed
-class AlbumEntity with _$AlbumEntity {
+abstract class AlbumEntity with _$AlbumEntity {
   const factory AlbumEntity({
     required String id,
     required String name,

@@ -6,8 +6,7 @@ part of 'track.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TrackModelImpl _$$TrackModelImplFromJson(Map<String, dynamic> json) =>
-    _$TrackModelImpl(
+_TrackModel _$TrackModelFromJson(Map<String, dynamic> json) => _TrackModel(
       id: json['id'] as String,
       name: json['name'] as String,
       uri: json['uri'] as String,
@@ -30,7 +29,7 @@ _$TrackModelImpl _$$TrackModelImplFromJson(Map<String, dynamic> json) =>
       popularity: (json['popularity'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$TrackModelImplToJson(_$TrackModelImpl instance) =>
+Map<String, dynamic> _$TrackModelToJson(_TrackModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

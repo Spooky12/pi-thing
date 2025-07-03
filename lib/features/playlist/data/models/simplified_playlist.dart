@@ -8,7 +8,7 @@ part 'simplified_playlist.freezed.dart';
 part 'simplified_playlist.g.dart';
 
 @freezed
-class SimplifiedPlaylistModel with _$SimplifiedPlaylistModel {
+abstract class SimplifiedPlaylistModel with _$SimplifiedPlaylistModel {
   const factory SimplifiedPlaylistModel({
     required String id,
     @JsonKey(name: 'snapshot_id') required String snapshotId,

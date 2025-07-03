@@ -7,7 +7,7 @@ part 'playlist_list.freezed.dart';
 part 'playlist_list.g.dart';
 
 @freezed
-class PlaylistListModel with _$PlaylistListModel {
+abstract class PlaylistListModel with _$PlaylistListModel {
   const factory PlaylistListModel({
     required List<SimplifiedPlaylistModel?> items,
     required int limit,

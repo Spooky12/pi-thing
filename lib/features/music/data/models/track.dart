@@ -10,7 +10,7 @@ part 'track.freezed.dart';
 part 'track.g.dart';
 
 @freezed
-class TrackModel with _$TrackModel {
+abstract class TrackModel with _$TrackModel {
   const factory TrackModel({
     required String id,
     required String name,

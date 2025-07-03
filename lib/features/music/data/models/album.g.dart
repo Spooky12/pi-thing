@@ -6,8 +6,7 @@ part of 'album.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AlbumModelImpl _$$AlbumModelImplFromJson(Map<String, dynamic> json) =>
-    _$AlbumModelImpl(
+_AlbumModel _$AlbumModelFromJson(Map<String, dynamic> json) => _AlbumModel(
       id: json['id'] as String,
       name: json['name'] as String,
       type: $enumDecode(_$AlbumTypeEnumMap, json['album_type']),
@@ -29,7 +28,7 @@ _$AlbumModelImpl _$$AlbumModelImplFromJson(Map<String, dynamic> json) =>
       releaseDatePrecision: json['release_date_precision'] as String,
     );
 
-Map<String, dynamic> _$$AlbumModelImplToJson(_$AlbumModelImpl instance) =>
+Map<String, dynamic> _$AlbumModelToJson(_AlbumModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,11 +9,8 @@ part of 'artist.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 ArtistModel _$ArtistModelFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
     case 'simple':
@@ -29,199 +26,28 @@ ArtistModel _$ArtistModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ArtistModel {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get uri => throw _privateConstructorUsedError;
-  String get href => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get uri;
+  String get href;
   @JsonKey(name: 'external_urls')
-  ExternalUrlsModel get externalUrls => throw _privateConstructorUsedError;
-
-  /// Serializes this ArtistModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  ExternalUrlsModel get externalUrls;
 
   /// Create a copy of ArtistModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ArtistModelCopyWith<ArtistModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ArtistModelCopyWithImpl<ArtistModel>(this as ArtistModel, _$identity);
 
-/// @nodoc
-abstract class $ArtistModelCopyWith<$Res> {
-  factory $ArtistModelCopyWith(
-          ArtistModel value, $Res Function(ArtistModel) then) =
-      _$ArtistModelCopyWithImpl<$Res, ArtistModel>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String uri,
-      String href,
-      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls});
-
-  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
-}
-
-/// @nodoc
-class _$ArtistModelCopyWithImpl<$Res, $Val extends ArtistModel>
-    implements $ArtistModelCopyWith<$Res> {
-  _$ArtistModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ArtistModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? uri = null,
-    Object? href = null,
-    Object? externalUrls = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as String,
-      href: null == href
-          ? _value.href
-          : href // ignore: cast_nullable_to_non_nullable
-              as String,
-      externalUrls: null == externalUrls
-          ? _value.externalUrls
-          : externalUrls // ignore: cast_nullable_to_non_nullable
-              as ExternalUrlsModel,
-    ) as $Val);
-  }
-
-  /// Create a copy of ArtistModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
-    return $ExternalUrlsModelCopyWith<$Res>(_value.externalUrls, (value) {
-      return _then(_value.copyWith(externalUrls: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$SimpleArtistModelImplCopyWith<$Res>
-    implements $ArtistModelCopyWith<$Res> {
-  factory _$$SimpleArtistModelImplCopyWith(_$SimpleArtistModelImpl value,
-          $Res Function(_$SimpleArtistModelImpl) then) =
-      __$$SimpleArtistModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String uri,
-      String href,
-      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls});
-
-  @override
-  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
-}
-
-/// @nodoc
-class __$$SimpleArtistModelImplCopyWithImpl<$Res>
-    extends _$ArtistModelCopyWithImpl<$Res, _$SimpleArtistModelImpl>
-    implements _$$SimpleArtistModelImplCopyWith<$Res> {
-  __$$SimpleArtistModelImplCopyWithImpl(_$SimpleArtistModelImpl _value,
-      $Res Function(_$SimpleArtistModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ArtistModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? uri = null,
-    Object? href = null,
-    Object? externalUrls = null,
-  }) {
-    return _then(_$SimpleArtistModelImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as String,
-      href: null == href
-          ? _value.href
-          : href // ignore: cast_nullable_to_non_nullable
-              as String,
-      externalUrls: null == externalUrls
-          ? _value.externalUrls
-          : externalUrls // ignore: cast_nullable_to_non_nullable
-              as ExternalUrlsModel,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$SimpleArtistModelImpl extends SimpleArtistModel {
-  const _$SimpleArtistModelImpl(
-      {required this.id,
-      required this.name,
-      required this.uri,
-      required this.href,
-      @JsonKey(name: 'external_urls') required this.externalUrls,
-      final String? $type})
-      : $type = $type ?? 'simple',
-        super._();
-
-  factory _$SimpleArtistModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SimpleArtistModelImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String name;
-  @override
-  final String uri;
-  @override
-  final String href;
-  @override
-  @JsonKey(name: 'external_urls')
-  final ExternalUrlsModel externalUrls;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'ArtistModel.simple(id: $id, name: $name, uri: $uri, href: $href, externalUrls: $externalUrls)';
-  }
+  /// Serializes this ArtistModel to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SimpleArtistModelImpl &&
+            other is ArtistModel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.uri, uri) || other.uri == uri) &&
@@ -235,70 +61,161 @@ class _$SimpleArtistModelImpl extends SimpleArtistModel {
   int get hashCode =>
       Object.hash(runtimeType, id, name, uri, href, externalUrls);
 
-  /// Create a copy of ArtistModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SimpleArtistModelImplCopyWith<_$SimpleArtistModelImpl> get copyWith =>
-      __$$SimpleArtistModelImplCopyWithImpl<_$SimpleArtistModelImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SimpleArtistModelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ArtistModel(id: $id, name: $name, uri: $uri, href: $href, externalUrls: $externalUrls)';
   }
 }
 
-abstract class SimpleArtistModel extends ArtistModel {
-  const factory SimpleArtistModel(
-      {required final String id,
-      required final String name,
-      required final String uri,
-      required final String href,
-      @JsonKey(name: 'external_urls')
-      required final ExternalUrlsModel externalUrls}) = _$SimpleArtistModelImpl;
-  const SimpleArtistModel._() : super._();
+/// @nodoc
+abstract mixin class $ArtistModelCopyWith<$Res> {
+  factory $ArtistModelCopyWith(
+          ArtistModel value, $Res Function(ArtistModel) _then) =
+      _$ArtistModelCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String uri,
+      String href,
+      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls});
 
-  factory SimpleArtistModel.fromJson(Map<String, dynamic> json) =
-      _$SimpleArtistModelImpl.fromJson;
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
+}
+
+/// @nodoc
+class _$ArtistModelCopyWithImpl<$Res> implements $ArtistModelCopyWith<$Res> {
+  _$ArtistModelCopyWithImpl(this._self, this._then);
+
+  final ArtistModel _self;
+  final $Res Function(ArtistModel) _then;
+
+  /// Create a copy of ArtistModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? uri = null,
+    Object? href = null,
+    Object? externalUrls = null,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      href: null == href
+          ? _self.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String,
+      externalUrls: null == externalUrls
+          ? _self.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsModel,
+    ));
+  }
+
+  /// Create a copy of ArtistModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsModelCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class SimpleArtistModel extends ArtistModel {
+  const SimpleArtistModel(
+      {required this.id,
+      required this.name,
+      required this.uri,
+      required this.href,
+      @JsonKey(name: 'external_urls') required this.externalUrls,
+      final String? $type})
+      : $type = $type ?? 'simple',
+        super._();
+  factory SimpleArtistModel.fromJson(Map<String, dynamic> json) =>
+      _$SimpleArtistModelFromJson(json);
 
   @override
-  String get id;
+  final String id;
   @override
-  String get name;
+  final String name;
   @override
-  String get uri;
+  final String uri;
   @override
-  String get href;
+  final String href;
   @override
   @JsonKey(name: 'external_urls')
-  ExternalUrlsModel get externalUrls;
+  final ExternalUrlsModel externalUrls;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   /// Create a copy of ArtistModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SimpleArtistModelImplCopyWith<_$SimpleArtistModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $SimpleArtistModelCopyWith<SimpleArtistModel> get copyWith =>
+      _$SimpleArtistModelCopyWithImpl<SimpleArtistModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SimpleArtistModelToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SimpleArtistModel &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.href, href) || other.href == href) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, uri, href, externalUrls);
+
+  @override
+  String toString() {
+    return 'ArtistModel.simple(id: $id, name: $name, uri: $uri, href: $href, externalUrls: $externalUrls)';
+  }
 }
 
 /// @nodoc
-abstract class _$$FullArtistModelImplCopyWith<$Res>
+abstract mixin class $SimpleArtistModelCopyWith<$Res>
     implements $ArtistModelCopyWith<$Res> {
-  factory _$$FullArtistModelImplCopyWith(_$FullArtistModelImpl value,
-          $Res Function(_$FullArtistModelImpl) then) =
-      __$$FullArtistModelImplCopyWithImpl<$Res>;
+  factory $SimpleArtistModelCopyWith(
+          SimpleArtistModel value, $Res Function(SimpleArtistModel) _then) =
+      _$SimpleArtistModelCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
       String name,
-      List<String> genres,
-      List<ImageModel> images,
-      int popularity,
       String uri,
       String href,
       @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls});
@@ -308,68 +225,63 @@ abstract class _$$FullArtistModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FullArtistModelImplCopyWithImpl<$Res>
-    extends _$ArtistModelCopyWithImpl<$Res, _$FullArtistModelImpl>
-    implements _$$FullArtistModelImplCopyWith<$Res> {
-  __$$FullArtistModelImplCopyWithImpl(
-      _$FullArtistModelImpl _value, $Res Function(_$FullArtistModelImpl) _then)
-      : super(_value, _then);
+class _$SimpleArtistModelCopyWithImpl<$Res>
+    implements $SimpleArtistModelCopyWith<$Res> {
+  _$SimpleArtistModelCopyWithImpl(this._self, this._then);
+
+  final SimpleArtistModel _self;
+  final $Res Function(SimpleArtistModel) _then;
 
   /// Create a copy of ArtistModel
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? genres = null,
-    Object? images = null,
-    Object? popularity = null,
     Object? uri = null,
     Object? href = null,
     Object? externalUrls = null,
   }) {
-    return _then(_$FullArtistModelImpl(
+    return _then(SimpleArtistModel(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      genres: null == genres
-          ? _value._genres
-          : genres // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      images: null == images
-          ? _value._images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<ImageModel>,
-      popularity: null == popularity
-          ? _value.popularity
-          : popularity // ignore: cast_nullable_to_non_nullable
-              as int,
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
       href: null == href
-          ? _value.href
+          ? _self.href
           : href // ignore: cast_nullable_to_non_nullable
               as String,
       externalUrls: null == externalUrls
-          ? _value.externalUrls
+          ? _self.externalUrls
           : externalUrls // ignore: cast_nullable_to_non_nullable
               as ExternalUrlsModel,
     ));
+  }
+
+  /// Create a copy of ArtistModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsModelCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$FullArtistModelImpl extends FullArtistModel {
-  const _$FullArtistModelImpl(
+class FullArtistModel extends ArtistModel {
+  const FullArtistModel(
       {required this.id,
       required this.name,
       required final List<String> genres,
@@ -383,16 +295,14 @@ class _$FullArtistModelImpl extends FullArtistModel {
         _images = images,
         $type = $type ?? 'full',
         super._();
-
-  factory _$FullArtistModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FullArtistModelImplFromJson(json);
+  factory FullArtistModel.fromJson(Map<String, dynamic> json) =>
+      _$FullArtistModelFromJson(json);
 
   @override
   final String id;
   @override
   final String name;
   final List<String> _genres;
-  @override
   List<String> get genres {
     if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
@@ -400,14 +310,12 @@ class _$FullArtistModelImpl extends FullArtistModel {
   }
 
   final List<ImageModel> _images;
-  @override
   List<ImageModel> get images {
     if (_images is EqualUnmodifiableListView) return _images;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_images);
   }
 
-  @override
   final int popularity;
   @override
   final String uri;
@@ -420,16 +328,26 @@ class _$FullArtistModelImpl extends FullArtistModel {
   @JsonKey(name: 'runtimeType')
   final String $type;
 
+  /// Create a copy of ArtistModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ArtistModel.full(id: $id, name: $name, genres: $genres, images: $images, popularity: $popularity, uri: $uri, href: $href, externalUrls: $externalUrls)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $FullArtistModelCopyWith<FullArtistModel> get copyWith =>
+      _$FullArtistModelCopyWithImpl<FullArtistModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FullArtistModelToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FullArtistModelImpl &&
+            other is FullArtistModel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other._genres, _genres) &&
@@ -455,58 +373,101 @@ class _$FullArtistModelImpl extends FullArtistModel {
       href,
       externalUrls);
 
-  /// Create a copy of ArtistModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$FullArtistModelImplCopyWith<_$FullArtistModelImpl> get copyWith =>
-      __$$FullArtistModelImplCopyWithImpl<_$FullArtistModelImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FullArtistModelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ArtistModel.full(id: $id, name: $name, genres: $genres, images: $images, popularity: $popularity, uri: $uri, href: $href, externalUrls: $externalUrls)';
   }
 }
 
-abstract class FullArtistModel extends ArtistModel {
-  const factory FullArtistModel(
-      {required final String id,
-      required final String name,
-      required final List<String> genres,
-      required final List<ImageModel> images,
-      required final int popularity,
-      required final String uri,
-      required final String href,
-      @JsonKey(name: 'external_urls')
-      required final ExternalUrlsModel externalUrls}) = _$FullArtistModelImpl;
-  const FullArtistModel._() : super._();
+/// @nodoc
+abstract mixin class $FullArtistModelCopyWith<$Res>
+    implements $ArtistModelCopyWith<$Res> {
+  factory $FullArtistModelCopyWith(
+          FullArtistModel value, $Res Function(FullArtistModel) _then) =
+      _$FullArtistModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      List<String> genres,
+      List<ImageModel> images,
+      int popularity,
+      String uri,
+      String href,
+      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls});
 
-  factory FullArtistModel.fromJson(Map<String, dynamic> json) =
-      _$FullArtistModelImpl.fromJson;
+  @override
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
+}
 
-  @override
-  String get id;
-  @override
-  String get name;
-  List<String> get genres;
-  List<ImageModel> get images;
-  int get popularity;
-  @override
-  String get uri;
-  @override
-  String get href;
-  @override
-  @JsonKey(name: 'external_urls')
-  ExternalUrlsModel get externalUrls;
+/// @nodoc
+class _$FullArtistModelCopyWithImpl<$Res>
+    implements $FullArtistModelCopyWith<$Res> {
+  _$FullArtistModelCopyWithImpl(this._self, this._then);
+
+  final FullArtistModel _self;
+  final $Res Function(FullArtistModel) _then;
 
   /// Create a copy of ArtistModel
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FullArtistModelImplCopyWith<_$FullArtistModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? genres = null,
+    Object? images = null,
+    Object? popularity = null,
+    Object? uri = null,
+    Object? href = null,
+    Object? externalUrls = null,
+  }) {
+    return _then(FullArtistModel(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      genres: null == genres
+          ? _self._genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      images: null == images
+          ? _self._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<ImageModel>,
+      popularity: null == popularity
+          ? _self.popularity
+          : popularity // ignore: cast_nullable_to_non_nullable
+              as int,
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      href: null == href
+          ? _self.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String,
+      externalUrls: null == externalUrls
+          ? _self.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsModel,
+    ));
+  }
+
+  /// Create a copy of ArtistModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsModelCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
 }
+
+// dart format on

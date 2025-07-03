@@ -7,7 +7,7 @@ import '../../../common/domain/entities/image.dart';
 part 'simplified_playlist.freezed.dart';
 
 @freezed
-class SimplifiedPlaylistEntity with _$SimplifiedPlaylistEntity {
+abstract class SimplifiedPlaylistEntity with _$SimplifiedPlaylistEntity {
   const factory SimplifiedPlaylistEntity({
     required String id,
     required String snapshotId,

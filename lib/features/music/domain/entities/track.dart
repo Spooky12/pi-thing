@@ -7,7 +7,7 @@ import 'artist.dart';
 part 'track.freezed.dart';
 
 @freezed
-class TrackEntity with _$TrackEntity {
+abstract class TrackEntity with _$TrackEntity {
   const factory TrackEntity({
     required String id,
     required String name,
