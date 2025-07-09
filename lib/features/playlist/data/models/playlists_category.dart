@@ -6,7 +6,7 @@ part 'playlists_category.freezed.dart';
 part 'playlists_category.g.dart';
 
 @freezed
-class PlaylistsCategoryModel with _$PlaylistsCategoryModel {
+abstract class PlaylistsCategoryModel with _$PlaylistsCategoryModel {
   const factory PlaylistsCategoryModel({
     required String message,
     required PlaylistListModel playlists,

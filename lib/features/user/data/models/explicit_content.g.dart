@@ -6,15 +6,15 @@ part of 'explicit_content.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ExplicitContentModelImpl _$$ExplicitContentModelImplFromJson(
+_ExplicitContentModel _$ExplicitContentModelFromJson(
         Map<String, dynamic> json) =>
-    _$ExplicitContentModelImpl(
+    _ExplicitContentModel(
       filterEnabled: json['filter_enabled'] as bool,
       filterLocked: json['filter_locked'] as bool,
     );
 
-Map<String, dynamic> _$$ExplicitContentModelImplToJson(
-        _$ExplicitContentModelImpl instance) =>
+Map<String, dynamic> _$ExplicitContentModelToJson(
+        _ExplicitContentModel instance) =>
     <String, dynamic>{
       'filter_enabled': instance.filterEnabled,
       'filter_locked': instance.filterLocked,

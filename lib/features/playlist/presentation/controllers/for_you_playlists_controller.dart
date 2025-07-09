@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../providers.dart';
 import 'for_you_playlists_state.dart';
@@ -21,7 +20,7 @@ class ForYouPlaylistsController extends _$ForYouPlaylistsController {
 
     result.when(
       success: (success) => state = ForYouPlaylistsState.loaded(
-        success.whereNotNull().toList(),
+        success.nonNulls.toList(),
       ),
       failure: (failure) => state = const ForYouPlaylistsState.error(
         'An error occured while fetching "Made for you" playlists',

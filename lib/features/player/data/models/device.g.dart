@@ -6,8 +6,7 @@ part of 'device.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DeviceModelImpl _$$DeviceModelImplFromJson(Map<String, dynamic> json) =>
-    _$DeviceModelImpl(
+_DeviceModel _$DeviceModelFromJson(Map<String, dynamic> json) => _DeviceModel(
       id: json['id'] as String,
       name: json['name'] as String,
       type: json['type'] as String,
@@ -18,7 +17,7 @@ _$DeviceModelImpl _$$DeviceModelImplFromJson(Map<String, dynamic> json) =>
       supportsVolume: json['supports_volume'] as bool,
     );
 
-Map<String, dynamic> _$$DeviceModelImplToJson(_$DeviceModelImpl instance) =>
+Map<String, dynamic> _$DeviceModelToJson(_DeviceModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

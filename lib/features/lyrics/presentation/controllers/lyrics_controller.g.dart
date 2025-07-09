@@ -6,7 +6,7 @@ part of 'lyrics_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$lyricsControllerHash() => r'cf7126a641eb4e6e529cb513a344dd3440c7d8d1';
+String _$lyricsControllerHash() => r'6029fb3411dcd4fa31e3e97ffd626f5d4a40f50a';
 
 /// Copied from Dart SDK
 class _SystemHash {

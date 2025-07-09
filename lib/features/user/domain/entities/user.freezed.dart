@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,32 +9,55 @@ part of 'user.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserEntity {
-  String get id => throw _privateConstructorUsedError;
-  String? get displayName => throw _privateConstructorUsedError;
-  List<ImageEntity> get images => throw _privateConstructorUsedError;
-  ExternalUrlsEntity get externalUrls => throw _privateConstructorUsedError;
-  String get uri => throw _privateConstructorUsedError;
-  String get href => throw _privateConstructorUsedError;
+  String get id;
+  String? get displayName;
+  List<ImageEntity> get images;
+  ExternalUrlsEntity get externalUrls;
+  String get uri;
+  String get href;
 
   /// Create a copy of UserEntity
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $UserEntityCopyWith<UserEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$UserEntityCopyWithImpl<UserEntity>(this as UserEntity, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UserEntity &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.displayName, displayName) ||
+                other.displayName == displayName) &&
+            const DeepCollectionEquality().equals(other.images, images) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.href, href) || other.href == href));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id, displayName,
+      const DeepCollectionEquality().hash(images), externalUrls, uri, href);
+
+  @override
+  String toString() {
+    return 'UserEntity(id: $id, displayName: $displayName, images: $images, externalUrls: $externalUrls, uri: $uri, href: $href)';
+  }
 }
 
 /// @nodoc
-abstract class $UserEntityCopyWith<$Res> {
+abstract mixin class $UserEntityCopyWith<$Res> {
   factory $UserEntityCopyWith(
-          UserEntity value, $Res Function(UserEntity) then) =
-      _$UserEntityCopyWithImpl<$Res, UserEntity>;
+          UserEntity value, $Res Function(UserEntity) _then) =
+      _$UserEntityCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -48,14 +71,11 @@ abstract class $UserEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
-    implements $UserEntityCopyWith<$Res> {
-  _$UserEntityCopyWithImpl(this._value, this._then);
+class _$UserEntityCopyWithImpl<$Res> implements $UserEntityCopyWith<$Res> {
+  _$UserEntityCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final UserEntity _self;
+  final $Res Function(UserEntity) _then;
 
   /// Create a copy of UserEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -69,121 +89,29 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
     Object? uri = null,
     Object? href = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       displayName: freezed == displayName
-          ? _value.displayName
+          ? _self.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String?,
       images: null == images
-          ? _value.images
+          ? _self.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageEntity>,
       externalUrls: null == externalUrls
-          ? _value.externalUrls
+          ? _self.externalUrls
           : externalUrls // ignore: cast_nullable_to_non_nullable
               as ExternalUrlsEntity,
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
       href: null == href
-          ? _value.href
-          : href // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-
-  /// Create a copy of UserEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
-    return $ExternalUrlsEntityCopyWith<$Res>(_value.externalUrls, (value) {
-      return _then(_value.copyWith(externalUrls: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$CurrentUserEntityImplCopyWith<$Res>
-    implements $UserEntityCopyWith<$Res> {
-  factory _$$CurrentUserEntityImplCopyWith(_$CurrentUserEntityImpl value,
-          $Res Function(_$CurrentUserEntityImpl) then) =
-      __$$CurrentUserEntityImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String country,
-      String? displayName,
-      List<ImageEntity> images,
-      ExternalUrlsEntity externalUrls,
-      ExplicitContentEntity explicitContent,
-      String uri,
-      String href});
-
-  @override
-  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
-  $ExplicitContentEntityCopyWith<$Res> get explicitContent;
-}
-
-/// @nodoc
-class __$$CurrentUserEntityImplCopyWithImpl<$Res>
-    extends _$UserEntityCopyWithImpl<$Res, _$CurrentUserEntityImpl>
-    implements _$$CurrentUserEntityImplCopyWith<$Res> {
-  __$$CurrentUserEntityImplCopyWithImpl(_$CurrentUserEntityImpl _value,
-      $Res Function(_$CurrentUserEntityImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of UserEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? country = null,
-    Object? displayName = freezed,
-    Object? images = null,
-    Object? externalUrls = null,
-    Object? explicitContent = null,
-    Object? uri = null,
-    Object? href = null,
-  }) {
-    return _then(_$CurrentUserEntityImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      country: null == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String,
-      displayName: freezed == displayName
-          ? _value.displayName
-          : displayName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      images: null == images
-          ? _value._images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<ImageEntity>,
-      externalUrls: null == externalUrls
-          ? _value.externalUrls
-          : externalUrls // ignore: cast_nullable_to_non_nullable
-              as ExternalUrlsEntity,
-      explicitContent: null == explicitContent
-          ? _value.explicitContent
-          : explicitContent // ignore: cast_nullable_to_non_nullable
-              as ExplicitContentEntity,
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as String,
-      href: null == href
-          ? _value.href
+          ? _self.href
           : href // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -193,18 +121,17 @@ class __$$CurrentUserEntityImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ExplicitContentEntityCopyWith<$Res> get explicitContent {
-    return $ExplicitContentEntityCopyWith<$Res>(_value.explicitContent,
-        (value) {
-      return _then(_value.copyWith(explicitContent: value));
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsEntityCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$CurrentUserEntityImpl implements CurrentUserEntity {
-  const _$CurrentUserEntityImpl(
+class CurrentUserEntity implements UserEntity {
+  const CurrentUserEntity(
       {required this.id,
       required this.country,
       required this.displayName,
@@ -217,7 +144,6 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
 
   @override
   final String id;
-  @override
   final String country;
   @override
   final String? displayName;
@@ -231,23 +157,25 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
 
   @override
   final ExternalUrlsEntity externalUrls;
-  @override
   final ExplicitContentEntity explicitContent;
   @override
   final String uri;
   @override
   final String href;
 
+  /// Create a copy of UserEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UserEntity.current(id: $id, country: $country, displayName: $displayName, images: $images, externalUrls: $externalUrls, explicitContent: $explicitContent, uri: $uri, href: $href)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CurrentUserEntityCopyWith<CurrentUserEntity> get copyWith =>
+      _$CurrentUserEntityCopyWithImpl<CurrentUserEntity>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CurrentUserEntityImpl &&
+            other is CurrentUserEntity &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.displayName, displayName) ||
@@ -273,123 +201,118 @@ class _$CurrentUserEntityImpl implements CurrentUserEntity {
       uri,
       href);
 
-  /// Create a copy of UserEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CurrentUserEntityImplCopyWith<_$CurrentUserEntityImpl> get copyWith =>
-      __$$CurrentUserEntityImplCopyWithImpl<_$CurrentUserEntityImpl>(
-          this, _$identity);
-}
-
-abstract class CurrentUserEntity implements UserEntity {
-  const factory CurrentUserEntity(
-      {required final String id,
-      required final String country,
-      required final String? displayName,
-      required final List<ImageEntity> images,
-      required final ExternalUrlsEntity externalUrls,
-      required final ExplicitContentEntity explicitContent,
-      required final String uri,
-      required final String href}) = _$CurrentUserEntityImpl;
-
-  @override
-  String get id;
-  String get country;
-  @override
-  String? get displayName;
-  @override
-  List<ImageEntity> get images;
-  @override
-  ExternalUrlsEntity get externalUrls;
-  ExplicitContentEntity get explicitContent;
-  @override
-  String get uri;
-  @override
-  String get href;
-
-  /// Create a copy of UserEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CurrentUserEntityImplCopyWith<_$CurrentUserEntityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  String toString() {
+    return 'UserEntity.current(id: $id, country: $country, displayName: $displayName, images: $images, externalUrls: $externalUrls, explicitContent: $explicitContent, uri: $uri, href: $href)';
+  }
 }
 
 /// @nodoc
-abstract class _$$PublicUserEntityImplCopyWith<$Res>
+abstract mixin class $CurrentUserEntityCopyWith<$Res>
     implements $UserEntityCopyWith<$Res> {
-  factory _$$PublicUserEntityImplCopyWith(_$PublicUserEntityImpl value,
-          $Res Function(_$PublicUserEntityImpl) then) =
-      __$$PublicUserEntityImplCopyWithImpl<$Res>;
+  factory $CurrentUserEntityCopyWith(
+          CurrentUserEntity value, $Res Function(CurrentUserEntity) _then) =
+      _$CurrentUserEntityCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
+      String country,
       String? displayName,
       List<ImageEntity> images,
       ExternalUrlsEntity externalUrls,
+      ExplicitContentEntity explicitContent,
       String uri,
       String href});
 
   @override
   $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
+  $ExplicitContentEntityCopyWith<$Res> get explicitContent;
 }
 
 /// @nodoc
-class __$$PublicUserEntityImplCopyWithImpl<$Res>
-    extends _$UserEntityCopyWithImpl<$Res, _$PublicUserEntityImpl>
-    implements _$$PublicUserEntityImplCopyWith<$Res> {
-  __$$PublicUserEntityImplCopyWithImpl(_$PublicUserEntityImpl _value,
-      $Res Function(_$PublicUserEntityImpl) _then)
-      : super(_value, _then);
+class _$CurrentUserEntityCopyWithImpl<$Res>
+    implements $CurrentUserEntityCopyWith<$Res> {
+  _$CurrentUserEntityCopyWithImpl(this._self, this._then);
+
+  final CurrentUserEntity _self;
+  final $Res Function(CurrentUserEntity) _then;
 
   /// Create a copy of UserEntity
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
+    Object? country = null,
     Object? displayName = freezed,
     Object? images = null,
     Object? externalUrls = null,
+    Object? explicitContent = null,
     Object? uri = null,
     Object? href = null,
   }) {
-    return _then(_$PublicUserEntityImpl(
+    return _then(CurrentUserEntity(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      country: null == country
+          ? _self.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
       displayName: freezed == displayName
-          ? _value.displayName
+          ? _self.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String?,
       images: null == images
-          ? _value._images
+          ? _self._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<ImageEntity>,
       externalUrls: null == externalUrls
-          ? _value.externalUrls
+          ? _self.externalUrls
           : externalUrls // ignore: cast_nullable_to_non_nullable
               as ExternalUrlsEntity,
+      explicitContent: null == explicitContent
+          ? _self.explicitContent
+          : explicitContent // ignore: cast_nullable_to_non_nullable
+              as ExplicitContentEntity,
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
       href: null == href
-          ? _value.href
+          ? _self.href
           : href // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+
+  /// Create a copy of UserEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsEntityCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
+
+  /// Create a copy of UserEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExplicitContentEntityCopyWith<$Res> get explicitContent {
+    return $ExplicitContentEntityCopyWith<$Res>(_self.explicitContent, (value) {
+      return _then(_self.copyWith(explicitContent: value));
+    });
   }
 }
 
 /// @nodoc
 
-class _$PublicUserEntityImpl implements PublicUserEntity {
-  const _$PublicUserEntityImpl(
+class PublicUserEntity implements UserEntity {
+  const PublicUserEntity(
       {required this.id,
       required this.displayName,
       required final List<ImageEntity> images,
@@ -417,16 +340,19 @@ class _$PublicUserEntityImpl implements PublicUserEntity {
   @override
   final String href;
 
+  /// Create a copy of UserEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UserEntity.public(id: $id, displayName: $displayName, images: $images, externalUrls: $externalUrls, uri: $uri, href: $href)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $PublicUserEntityCopyWith<PublicUserEntity> get copyWith =>
+      _$PublicUserEntityCopyWithImpl<PublicUserEntity>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PublicUserEntityImpl &&
+            other is PublicUserEntity &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
@@ -441,42 +367,89 @@ class _$PublicUserEntityImpl implements PublicUserEntity {
   int get hashCode => Object.hash(runtimeType, id, displayName,
       const DeepCollectionEquality().hash(_images), externalUrls, uri, href);
 
+  @override
+  String toString() {
+    return 'UserEntity.public(id: $id, displayName: $displayName, images: $images, externalUrls: $externalUrls, uri: $uri, href: $href)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $PublicUserEntityCopyWith<$Res>
+    implements $UserEntityCopyWith<$Res> {
+  factory $PublicUserEntityCopyWith(
+          PublicUserEntity value, $Res Function(PublicUserEntity) _then) =
+      _$PublicUserEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String? displayName,
+      List<ImageEntity> images,
+      ExternalUrlsEntity externalUrls,
+      String uri,
+      String href});
+
+  @override
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
+}
+
+/// @nodoc
+class _$PublicUserEntityCopyWithImpl<$Res>
+    implements $PublicUserEntityCopyWith<$Res> {
+  _$PublicUserEntityCopyWithImpl(this._self, this._then);
+
+  final PublicUserEntity _self;
+  final $Res Function(PublicUserEntity) _then;
+
   /// Create a copy of UserEntity
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PublicUserEntityImplCopyWith<_$PublicUserEntityImpl> get copyWith =>
-      __$$PublicUserEntityImplCopyWithImpl<_$PublicUserEntityImpl>(
-          this, _$identity);
-}
-
-abstract class PublicUserEntity implements UserEntity {
-  const factory PublicUserEntity(
-      {required final String id,
-      required final String? displayName,
-      required final List<ImageEntity> images,
-      required final ExternalUrlsEntity externalUrls,
-      required final String uri,
-      required final String href}) = _$PublicUserEntityImpl;
-
-  @override
-  String get id;
-  @override
-  String? get displayName;
-  @override
-  List<ImageEntity> get images;
-  @override
-  ExternalUrlsEntity get externalUrls;
-  @override
-  String get uri;
-  @override
-  String get href;
+  $Res call({
+    Object? id = null,
+    Object? displayName = freezed,
+    Object? images = null,
+    Object? externalUrls = null,
+    Object? uri = null,
+    Object? href = null,
+  }) {
+    return _then(PublicUserEntity(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      displayName: freezed == displayName
+          ? _self.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      images: null == images
+          ? _self._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<ImageEntity>,
+      externalUrls: null == externalUrls
+          ? _self.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsEntity,
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      href: null == href
+          ? _self.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 
   /// Create a copy of UserEntity
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PublicUserEntityImplCopyWith<_$PublicUserEntityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsEntityCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
 }
+
+// dart format on

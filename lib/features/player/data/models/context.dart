@@ -7,7 +7,7 @@ part 'context.freezed.dart';
 part 'context.g.dart';
 
 @freezed
-class ContextModel with _$ContextModel {
+abstract class ContextModel with _$ContextModel {
   const factory ContextModel({
     required ContextType? type,
     required String href,

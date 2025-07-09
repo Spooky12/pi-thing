@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,189 +9,33 @@ part of 'context.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ContextModel _$ContextModelFromJson(Map<String, dynamic> json) {
-  return _ContextModel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ContextModel {
-  ContextType? get type => throw _privateConstructorUsedError;
-  String get href => throw _privateConstructorUsedError;
+  ContextType? get type;
+  String get href;
   @JsonKey(name: 'external_urls')
-  ExternalUrlsModel get externalUrls => throw _privateConstructorUsedError;
-  String get uri => throw _privateConstructorUsedError;
-
-  /// Serializes this ContextModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  ExternalUrlsModel get externalUrls;
+  String get uri;
 
   /// Create a copy of ContextModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ContextModelCopyWith<ContextModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ContextModelCopyWithImpl<ContextModel>(
+          this as ContextModel, _$identity);
 
-/// @nodoc
-abstract class $ContextModelCopyWith<$Res> {
-  factory $ContextModelCopyWith(
-          ContextModel value, $Res Function(ContextModel) then) =
-      _$ContextModelCopyWithImpl<$Res, ContextModel>;
-  @useResult
-  $Res call(
-      {ContextType? type,
-      String href,
-      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
-      String uri});
-
-  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
-}
-
-/// @nodoc
-class _$ContextModelCopyWithImpl<$Res, $Val extends ContextModel>
-    implements $ContextModelCopyWith<$Res> {
-  _$ContextModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ContextModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = freezed,
-    Object? href = null,
-    Object? externalUrls = null,
-    Object? uri = null,
-  }) {
-    return _then(_value.copyWith(
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as ContextType?,
-      href: null == href
-          ? _value.href
-          : href // ignore: cast_nullable_to_non_nullable
-              as String,
-      externalUrls: null == externalUrls
-          ? _value.externalUrls
-          : externalUrls // ignore: cast_nullable_to_non_nullable
-              as ExternalUrlsModel,
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-
-  /// Create a copy of ContextModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
-    return $ExternalUrlsModelCopyWith<$Res>(_value.externalUrls, (value) {
-      return _then(_value.copyWith(externalUrls: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$ContextModelImplCopyWith<$Res>
-    implements $ContextModelCopyWith<$Res> {
-  factory _$$ContextModelImplCopyWith(
-          _$ContextModelImpl value, $Res Function(_$ContextModelImpl) then) =
-      __$$ContextModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {ContextType? type,
-      String href,
-      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
-      String uri});
-
-  @override
-  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
-}
-
-/// @nodoc
-class __$$ContextModelImplCopyWithImpl<$Res>
-    extends _$ContextModelCopyWithImpl<$Res, _$ContextModelImpl>
-    implements _$$ContextModelImplCopyWith<$Res> {
-  __$$ContextModelImplCopyWithImpl(
-      _$ContextModelImpl _value, $Res Function(_$ContextModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ContextModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = freezed,
-    Object? href = null,
-    Object? externalUrls = null,
-    Object? uri = null,
-  }) {
-    return _then(_$ContextModelImpl(
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as ContextType?,
-      href: null == href
-          ? _value.href
-          : href // ignore: cast_nullable_to_non_nullable
-              as String,
-      externalUrls: null == externalUrls
-          ? _value.externalUrls
-          : externalUrls // ignore: cast_nullable_to_non_nullable
-              as ExternalUrlsModel,
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ContextModelImpl extends _ContextModel {
-  const _$ContextModelImpl(
-      {required this.type,
-      required this.href,
-      @JsonKey(name: 'external_urls') required this.externalUrls,
-      required this.uri})
-      : super._();
-
-  factory _$ContextModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ContextModelImplFromJson(json);
-
-  @override
-  final ContextType? type;
-  @override
-  final String href;
-  @override
-  @JsonKey(name: 'external_urls')
-  final ExternalUrlsModel externalUrls;
-  @override
-  final String uri;
-
-  @override
-  String toString() {
-    return 'ContextModel(type: $type, href: $href, externalUrls: $externalUrls, uri: $uri)';
-  }
+  /// Serializes this ContextModel to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ContextModelImpl &&
+            other is ContextModel &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.href, href) || other.href == href) &&
             (identical(other.externalUrls, externalUrls) ||
@@ -203,48 +47,199 @@ class _$ContextModelImpl extends _ContextModel {
   @override
   int get hashCode => Object.hash(runtimeType, type, href, externalUrls, uri);
 
-  /// Create a copy of ContextModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ContextModelImplCopyWith<_$ContextModelImpl> get copyWith =>
-      __$$ContextModelImplCopyWithImpl<_$ContextModelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ContextModelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ContextModel(type: $type, href: $href, externalUrls: $externalUrls, uri: $uri)';
   }
 }
 
-abstract class _ContextModel extends ContextModel {
-  const factory _ContextModel(
-      {required final ContextType? type,
-      required final String href,
-      @JsonKey(name: 'external_urls')
-      required final ExternalUrlsModel externalUrls,
-      required final String uri}) = _$ContextModelImpl;
-  const _ContextModel._() : super._();
+/// @nodoc
+abstract mixin class $ContextModelCopyWith<$Res> {
+  factory $ContextModelCopyWith(
+          ContextModel value, $Res Function(ContextModel) _then) =
+      _$ContextModelCopyWithImpl;
+  @useResult
+  $Res call(
+      {ContextType? type,
+      String href,
+      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
+      String uri});
 
-  factory _ContextModel.fromJson(Map<String, dynamic> json) =
-      _$ContextModelImpl.fromJson;
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
+}
+
+/// @nodoc
+class _$ContextModelCopyWithImpl<$Res> implements $ContextModelCopyWith<$Res> {
+  _$ContextModelCopyWithImpl(this._self, this._then);
+
+  final ContextModel _self;
+  final $Res Function(ContextModel) _then;
+
+  /// Create a copy of ContextModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = freezed,
+    Object? href = null,
+    Object? externalUrls = null,
+    Object? uri = null,
+  }) {
+    return _then(_self.copyWith(
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ContextType?,
+      href: null == href
+          ? _self.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String,
+      externalUrls: null == externalUrls
+          ? _self.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsModel,
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  /// Create a copy of ContextModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsModelCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ContextModel extends ContextModel {
+  const _ContextModel(
+      {required this.type,
+      required this.href,
+      @JsonKey(name: 'external_urls') required this.externalUrls,
+      required this.uri})
+      : super._();
+  factory _ContextModel.fromJson(Map<String, dynamic> json) =>
+      _$ContextModelFromJson(json);
 
   @override
-  ContextType? get type;
+  final ContextType? type;
   @override
-  String get href;
+  final String href;
   @override
   @JsonKey(name: 'external_urls')
-  ExternalUrlsModel get externalUrls;
+  final ExternalUrlsModel externalUrls;
   @override
-  String get uri;
+  final String uri;
 
   /// Create a copy of ContextModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ContextModelImplCopyWith<_$ContextModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ContextModelCopyWith<_ContextModel> get copyWith =>
+      __$ContextModelCopyWithImpl<_ContextModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ContextModelToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ContextModel &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.href, href) || other.href == href) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls) &&
+            (identical(other.uri, uri) || other.uri == uri));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, type, href, externalUrls, uri);
+
+  @override
+  String toString() {
+    return 'ContextModel(type: $type, href: $href, externalUrls: $externalUrls, uri: $uri)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ContextModelCopyWith<$Res>
+    implements $ContextModelCopyWith<$Res> {
+  factory _$ContextModelCopyWith(
+          _ContextModel value, $Res Function(_ContextModel) _then) =
+      __$ContextModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {ContextType? type,
+      String href,
+      @JsonKey(name: 'external_urls') ExternalUrlsModel externalUrls,
+      String uri});
+
+  @override
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls;
+}
+
+/// @nodoc
+class __$ContextModelCopyWithImpl<$Res>
+    implements _$ContextModelCopyWith<$Res> {
+  __$ContextModelCopyWithImpl(this._self, this._then);
+
+  final _ContextModel _self;
+  final $Res Function(_ContextModel) _then;
+
+  /// Create a copy of ContextModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? type = freezed,
+    Object? href = null,
+    Object? externalUrls = null,
+    Object? uri = null,
+  }) {
+    return _then(_ContextModel(
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ContextType?,
+      href: null == href
+          ? _self.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String,
+      externalUrls: null == externalUrls
+          ? _self.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsModel,
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  /// Create a copy of ContextModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsModelCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsModelCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
+}
+
+// dart format on

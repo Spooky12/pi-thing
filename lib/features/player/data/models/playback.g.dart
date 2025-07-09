@@ -6,8 +6,8 @@ part of 'playback.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PlaybackModelImpl _$$PlaybackModelImplFromJson(Map<String, dynamic> json) =>
-    _$PlaybackModelImpl(
+_PlaybackModel _$PlaybackModelFromJson(Map<String, dynamic> json) =>
+    _PlaybackModel(
       isPlaying: json['is_playing'] as bool,
       device: DeviceModel.fromJson(json['device'] as Map<String, dynamic>),
       repeatState: $enumDecode(_$RepeatStateEnumMap, json['repeat_state']),
@@ -25,7 +25,7 @@ _$PlaybackModelImpl _$$PlaybackModelImplFromJson(Map<String, dynamic> json) =>
       actions: ActionsModel.fromJson(json['actions'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$PlaybackModelImplToJson(_$PlaybackModelImpl instance) =>
+Map<String, dynamic> _$PlaybackModelToJson(_PlaybackModel instance) =>
     <String, dynamic>{
       'is_playing': instance.isPlaying,
       'device': instance.device,

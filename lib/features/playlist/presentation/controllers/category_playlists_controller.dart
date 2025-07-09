@@ -1,5 +1,5 @@
-import 'package:collection/collection.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 import '../../providers.dart';
 import 'category_playlists_state.dart';
 
@@ -26,7 +26,7 @@ class CategoryPlaylistsController extends _$CategoryPlaylistsController {
     result.when(
       success: (success) => state = CategoryPlaylistsState.loaded(
         title: success.message,
-        playlists: success.playlists.items.whereNotNull().toList(),
+        playlists: success.playlists.items.nonNulls.toList(),
       ),
       failure: (failure) => state = CategoryPlaylistsState.error(
         'An error occured while fetching category $categoryId',

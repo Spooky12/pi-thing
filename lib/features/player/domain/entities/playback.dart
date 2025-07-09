@@ -12,7 +12,7 @@ enum RepeatState { off, track, context }
 enum CurrentlyPlayingType { track, episode, ad, unknown }
 
 @freezed
-class PlaybackEntity with _$PlaybackEntity {
+abstract class PlaybackEntity with _$PlaybackEntity {
   const factory PlaybackEntity({
     required bool isPlaying,
     required DeviceEntity device,

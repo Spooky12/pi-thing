@@ -51,7 +51,7 @@ class _Card extends StatelessWidget {
         minWidth: double.infinity,
       ),
       decoration: BoxDecoration(
-        color: AppColors.black.withOpacity(0.2),
+        color: AppColors.black.withValues(alpha: 0.2),
         borderRadius: const BorderRadius.all(Radius.circular(8.0)),
       ),
       clipBehavior: Clip.hardEdge,
@@ -72,7 +72,7 @@ class _Message extends StatelessWidget {
         text,
         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
               fontFamily: AppFontFamilly.interTight,
-              color: AppColors.white.withOpacity(0.7),
+              color: AppColors.white.withValues(alpha: 0.7),
               height: 1,
             ),
       ),

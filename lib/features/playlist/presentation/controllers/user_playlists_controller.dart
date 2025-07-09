@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../providers.dart';
 import 'user_playlists_state.dart';
@@ -26,7 +25,7 @@ class UserPlaylistsController extends _$UserPlaylistsController {
 
     result.when(
       success: (success) => state = UserPlaylistsState.fetched(
-        playlists: success.items.whereNotNull().toList(),
+        playlists: success.items.nonNulls.toList(),
         total: success.total,
         count: success.items.length,
         page: 0,
@@ -60,7 +59,7 @@ class UserPlaylistsController extends _$UserPlaylistsController {
         success: (success) {
           final updatedPlaylists = [
             ...playlists,
-            ...success.items.whereNotNull(),
+            ...success.items.nonNulls,
           ];
           state = UserPlaylistsState.fetched(
             playlists: updatedPlaylists,

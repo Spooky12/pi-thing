@@ -6,9 +6,8 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentUserModelImpl _$$CurrentUserModelImplFromJson(
-        Map<String, dynamic> json) =>
-    _$CurrentUserModelImpl(
+CurrentUserModel _$CurrentUserModelFromJson(Map<String, dynamic> json) =>
+    CurrentUserModel(
       id: json['id'] as String,
       country: json['country'] as String,
       displayName: json['display_name'] as String?,
@@ -24,8 +23,7 @@ _$CurrentUserModelImpl _$$CurrentUserModelImplFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$CurrentUserModelImplToJson(
-        _$CurrentUserModelImpl instance) =>
+Map<String, dynamic> _$CurrentUserModelToJson(CurrentUserModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'country': instance.country,
@@ -38,9 +36,8 @@ Map<String, dynamic> _$$CurrentUserModelImplToJson(
       'runtimeType': instance.$type,
     };
 
-_$PublicUserModelImpl _$$PublicUserModelImplFromJson(
-        Map<String, dynamic> json) =>
-    _$PublicUserModelImpl(
+PublicUserModel _$PublicUserModelFromJson(Map<String, dynamic> json) =>
+    PublicUserModel(
       id: json['id'] as String,
       displayName: json['display_name'] as String?,
       images: (json['images'] as List<dynamic>)
@@ -53,8 +50,7 @@ _$PublicUserModelImpl _$$PublicUserModelImplFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$PublicUserModelImplToJson(
-        _$PublicUserModelImpl instance) =>
+Map<String, dynamic> _$PublicUserModelToJson(PublicUserModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'display_name': instance.displayName,

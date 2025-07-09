@@ -6,7 +6,7 @@ part 'lyrics.freezed.dart';
 part 'lyrics.g.dart';
 
 @freezed
-class LyricsModel with _$LyricsModel {
+abstract class LyricsModel with _$LyricsModel {
   const factory LyricsModel({
     required int id,
     required bool instrumental,

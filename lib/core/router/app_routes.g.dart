@@ -21,7 +21,7 @@ RouteBase get $homeShellRoute => StatefulShellRouteData.$route(
             GoRouteData.$route(
               path: '/',
               name: 'home',
-              factory: $HomeBranchRouteExtension._fromState,
+              factory: _$HomeBranchRoute._fromState,
             ),
           ],
         ),
@@ -30,7 +30,7 @@ RouteBase get $homeShellRoute => StatefulShellRouteData.$route(
             GoRouteData.$route(
               path: '/playlists',
               name: 'playlists',
-              factory: $PlaylistsBranchRouteExtension._fromState,
+              factory: _$PlaylistsBranchRoute._fromState,
             ),
           ],
         ),
@@ -42,84 +42,104 @@ extension $HomeShellRouteExtension on HomeShellRoute {
       const HomeShellRoute();
 }
 
-extension $HomeBranchRouteExtension on HomeBranchRoute {
+mixin _$HomeBranchRoute on GoRouteData {
   static HomeBranchRoute _fromState(GoRouterState state) =>
       const HomeBranchRoute();
 
+  @override
   String get location => GoRouteData.$location(
         '/',
       );
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $PlaylistsBranchRouteExtension on PlaylistsBranchRoute {
+mixin _$PlaylistsBranchRoute on GoRouteData {
   static PlaylistsBranchRoute _fromState(GoRouterState state) =>
       const PlaylistsBranchRoute();
 
+  @override
   String get location => GoRouteData.$location(
         '/playlists',
       );
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
 RouteBase get $loginRoute => GoRouteData.$route(
       path: '/login',
       name: 'login',
-      factory: $LoginRouteExtension._fromState,
+      factory: _$LoginRoute._fromState,
     );
 
-extension $LoginRouteExtension on LoginRoute {
+mixin _$LoginRoute on GoRouteData {
   static LoginRoute _fromState(GoRouterState state) => const LoginRoute();
 
+  @override
   String get location => GoRouteData.$location(
         '/login',
       );
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
 RouteBase get $splashRoute => GoRouteData.$route(
       path: '/splash',
       name: 'splash',
-      factory: $SplashRouteExtension._fromState,
+      factory: _$SplashRoute._fromState,
     );
 
-extension $SplashRouteExtension on SplashRoute {
+mixin _$SplashRoute on GoRouteData {
   static SplashRoute _fromState(GoRouterState state) => const SplashRoute();
 
+  @override
   String get location => GoRouteData.$location(
         '/splash',
       );
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }

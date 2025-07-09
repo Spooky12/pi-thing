@@ -6,7 +6,7 @@ part 'actions.freezed.dart';
 part 'actions.g.dart';
 
 @freezed
-class ActionsModel with _$ActionsModel {
+abstract class ActionsModel with _$ActionsModel {
   const factory ActionsModel({
     @Default(true)
     @JsonKey(name: 'interrupting_playback', readValue: _readDisallowedValue)

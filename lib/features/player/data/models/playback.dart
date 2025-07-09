@@ -10,7 +10,7 @@ part 'playback.freezed.dart';
 part 'playback.g.dart';
 
 @freezed
-class PlaybackModel with _$PlaybackModel {
+abstract class PlaybackModel with _$PlaybackModel {
   const factory PlaybackModel({
     @JsonKey(name: 'is_playing') required bool isPlaying,
     required DeviceModel device,

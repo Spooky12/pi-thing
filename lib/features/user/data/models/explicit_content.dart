@@ -6,7 +6,7 @@ part 'explicit_content.freezed.dart';
 part 'explicit_content.g.dart';
 
 @freezed
-class ExplicitContentModel with _$ExplicitContentModel {
+abstract class ExplicitContentModel with _$ExplicitContentModel {
   const factory ExplicitContentModel({
     @JsonKey(name: 'filter_enabled') required bool filterEnabled,
     @JsonKey(name: 'filter_locked') required bool filterLocked,

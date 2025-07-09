@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,31 +9,53 @@ part of 'artist.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ArtistEntity {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get uri => throw _privateConstructorUsedError;
-  String get href => throw _privateConstructorUsedError;
-  ExternalUrlsEntity get externalUrls => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get uri;
+  String get href;
+  ExternalUrlsEntity get externalUrls;
 
   /// Create a copy of ArtistEntity
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ArtistEntityCopyWith<ArtistEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$ArtistEntityCopyWithImpl<ArtistEntity>(
+          this as ArtistEntity, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ArtistEntity &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.href, href) || other.href == href) &&
+            (identical(other.externalUrls, externalUrls) ||
+                other.externalUrls == externalUrls));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, uri, href, externalUrls);
+
+  @override
+  String toString() {
+    return 'ArtistEntity(id: $id, name: $name, uri: $uri, href: $href, externalUrls: $externalUrls)';
+  }
 }
 
 /// @nodoc
-abstract class $ArtistEntityCopyWith<$Res> {
+abstract mixin class $ArtistEntityCopyWith<$Res> {
   factory $ArtistEntityCopyWith(
-          ArtistEntity value, $Res Function(ArtistEntity) then) =
-      _$ArtistEntityCopyWithImpl<$Res, ArtistEntity>;
+          ArtistEntity value, $Res Function(ArtistEntity) _then) =
+      _$ArtistEntityCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -46,14 +68,11 @@ abstract class $ArtistEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ArtistEntityCopyWithImpl<$Res, $Val extends ArtistEntity>
-    implements $ArtistEntityCopyWith<$Res> {
-  _$ArtistEntityCopyWithImpl(this._value, this._then);
+class _$ArtistEntityCopyWithImpl<$Res> implements $ArtistEntityCopyWith<$Res> {
+  _$ArtistEntityCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ArtistEntity _self;
+  final $Res Function(ArtistEntity) _then;
 
   /// Create a copy of ArtistEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -66,28 +85,28 @@ class _$ArtistEntityCopyWithImpl<$Res, $Val extends ArtistEntity>
     Object? href = null,
     Object? externalUrls = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
       href: null == href
-          ? _value.href
+          ? _self.href
           : href // ignore: cast_nullable_to_non_nullable
               as String,
       externalUrls: null == externalUrls
-          ? _value.externalUrls
+          ? _self.externalUrls
           : externalUrls // ignore: cast_nullable_to_non_nullable
               as ExternalUrlsEntity,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of ArtistEntity
@@ -95,79 +114,16 @@ class _$ArtistEntityCopyWithImpl<$Res, $Val extends ArtistEntity>
   @override
   @pragma('vm:prefer-inline')
   $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
-    return $ExternalUrlsEntityCopyWith<$Res>(_value.externalUrls, (value) {
-      return _then(_value.copyWith(externalUrls: value) as $Val);
+    return $ExternalUrlsEntityCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$SimpleArtistEntityImplCopyWith<$Res>
-    implements $ArtistEntityCopyWith<$Res> {
-  factory _$$SimpleArtistEntityImplCopyWith(_$SimpleArtistEntityImpl value,
-          $Res Function(_$SimpleArtistEntityImpl) then) =
-      __$$SimpleArtistEntityImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String uri,
-      String href,
-      ExternalUrlsEntity externalUrls});
 
-  @override
-  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
-}
-
-/// @nodoc
-class __$$SimpleArtistEntityImplCopyWithImpl<$Res>
-    extends _$ArtistEntityCopyWithImpl<$Res, _$SimpleArtistEntityImpl>
-    implements _$$SimpleArtistEntityImplCopyWith<$Res> {
-  __$$SimpleArtistEntityImplCopyWithImpl(_$SimpleArtistEntityImpl _value,
-      $Res Function(_$SimpleArtistEntityImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ArtistEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? uri = null,
-    Object? href = null,
-    Object? externalUrls = null,
-  }) {
-    return _then(_$SimpleArtistEntityImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as String,
-      href: null == href
-          ? _value.href
-          : href // ignore: cast_nullable_to_non_nullable
-              as String,
-      externalUrls: null == externalUrls
-          ? _value.externalUrls
-          : externalUrls // ignore: cast_nullable_to_non_nullable
-              as ExternalUrlsEntity,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SimpleArtistEntityImpl implements SimpleArtistEntity {
-  const _$SimpleArtistEntityImpl(
+class SimpleArtistEntity implements ArtistEntity {
+  const SimpleArtistEntity(
       {required this.id,
       required this.name,
       required this.uri,
@@ -185,16 +141,19 @@ class _$SimpleArtistEntityImpl implements SimpleArtistEntity {
   @override
   final ExternalUrlsEntity externalUrls;
 
+  /// Create a copy of ArtistEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ArtistEntity.simple(id: $id, name: $name, uri: $uri, href: $href, externalUrls: $externalUrls)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $SimpleArtistEntityCopyWith<SimpleArtistEntity> get copyWith =>
+      _$SimpleArtistEntityCopyWithImpl<SimpleArtistEntity>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SimpleArtistEntityImpl &&
+            other is SimpleArtistEntity &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.uri, uri) || other.uri == uri) &&
@@ -207,58 +166,23 @@ class _$SimpleArtistEntityImpl implements SimpleArtistEntity {
   int get hashCode =>
       Object.hash(runtimeType, id, name, uri, href, externalUrls);
 
-  /// Create a copy of ArtistEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SimpleArtistEntityImplCopyWith<_$SimpleArtistEntityImpl> get copyWith =>
-      __$$SimpleArtistEntityImplCopyWithImpl<_$SimpleArtistEntityImpl>(
-          this, _$identity);
-}
-
-abstract class SimpleArtistEntity implements ArtistEntity {
-  const factory SimpleArtistEntity(
-          {required final String id,
-          required final String name,
-          required final String uri,
-          required final String href,
-          required final ExternalUrlsEntity externalUrls}) =
-      _$SimpleArtistEntityImpl;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get uri;
-  @override
-  String get href;
-  @override
-  ExternalUrlsEntity get externalUrls;
-
-  /// Create a copy of ArtistEntity
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SimpleArtistEntityImplCopyWith<_$SimpleArtistEntityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  String toString() {
+    return 'ArtistEntity.simple(id: $id, name: $name, uri: $uri, href: $href, externalUrls: $externalUrls)';
+  }
 }
 
 /// @nodoc
-abstract class _$$FullArtistEntityImplCopyWith<$Res>
+abstract mixin class $SimpleArtistEntityCopyWith<$Res>
     implements $ArtistEntityCopyWith<$Res> {
-  factory _$$FullArtistEntityImplCopyWith(_$FullArtistEntityImpl value,
-          $Res Function(_$FullArtistEntityImpl) then) =
-      __$$FullArtistEntityImplCopyWithImpl<$Res>;
+  factory $SimpleArtistEntityCopyWith(
+          SimpleArtistEntity value, $Res Function(SimpleArtistEntity) _then) =
+      _$SimpleArtistEntityCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
       String name,
-      List<String> genres,
-      List<ImageEntity> images,
-      int popularity,
       String uri,
       String href,
       ExternalUrlsEntity externalUrls});
@@ -268,68 +192,63 @@ abstract class _$$FullArtistEntityImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FullArtistEntityImplCopyWithImpl<$Res>
-    extends _$ArtistEntityCopyWithImpl<$Res, _$FullArtistEntityImpl>
-    implements _$$FullArtistEntityImplCopyWith<$Res> {
-  __$$FullArtistEntityImplCopyWithImpl(_$FullArtistEntityImpl _value,
-      $Res Function(_$FullArtistEntityImpl) _then)
-      : super(_value, _then);
+class _$SimpleArtistEntityCopyWithImpl<$Res>
+    implements $SimpleArtistEntityCopyWith<$Res> {
+  _$SimpleArtistEntityCopyWithImpl(this._self, this._then);
+
+  final SimpleArtistEntity _self;
+  final $Res Function(SimpleArtistEntity) _then;
 
   /// Create a copy of ArtistEntity
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? genres = null,
-    Object? images = null,
-    Object? popularity = null,
     Object? uri = null,
     Object? href = null,
     Object? externalUrls = null,
   }) {
-    return _then(_$FullArtistEntityImpl(
+    return _then(SimpleArtistEntity(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      genres: null == genres
-          ? _value._genres
-          : genres // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      images: null == images
-          ? _value._images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<ImageEntity>,
-      popularity: null == popularity
-          ? _value.popularity
-          : popularity // ignore: cast_nullable_to_non_nullable
-              as int,
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as String,
       href: null == href
-          ? _value.href
+          ? _self.href
           : href // ignore: cast_nullable_to_non_nullable
               as String,
       externalUrls: null == externalUrls
-          ? _value.externalUrls
+          ? _self.externalUrls
           : externalUrls // ignore: cast_nullable_to_non_nullable
               as ExternalUrlsEntity,
     ));
+  }
+
+  /// Create a copy of ArtistEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsEntityCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
   }
 }
 
 /// @nodoc
 
-class _$FullArtistEntityImpl implements FullArtistEntity {
-  const _$FullArtistEntityImpl(
+class FullArtistEntity implements ArtistEntity {
+  const FullArtistEntity(
       {required this.id,
       required this.name,
       required final List<String> genres,
@@ -346,7 +265,6 @@ class _$FullArtistEntityImpl implements FullArtistEntity {
   @override
   final String name;
   final List<String> _genres;
-  @override
   List<String> get genres {
     if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
@@ -354,14 +272,12 @@ class _$FullArtistEntityImpl implements FullArtistEntity {
   }
 
   final List<ImageEntity> _images;
-  @override
   List<ImageEntity> get images {
     if (_images is EqualUnmodifiableListView) return _images;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_images);
   }
 
-  @override
   final int popularity;
   @override
   final String uri;
@@ -370,16 +286,19 @@ class _$FullArtistEntityImpl implements FullArtistEntity {
   @override
   final ExternalUrlsEntity externalUrls;
 
+  /// Create a copy of ArtistEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ArtistEntity.full(id: $id, name: $name, genres: $genres, images: $images, popularity: $popularity, uri: $uri, href: $href, externalUrls: $externalUrls)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $FullArtistEntityCopyWith<FullArtistEntity> get copyWith =>
+      _$FullArtistEntityCopyWithImpl<FullArtistEntity>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FullArtistEntityImpl &&
+            other is FullArtistEntity &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other._genres, _genres) &&
@@ -404,45 +323,101 @@ class _$FullArtistEntityImpl implements FullArtistEntity {
       href,
       externalUrls);
 
+  @override
+  String toString() {
+    return 'ArtistEntity.full(id: $id, name: $name, genres: $genres, images: $images, popularity: $popularity, uri: $uri, href: $href, externalUrls: $externalUrls)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $FullArtistEntityCopyWith<$Res>
+    implements $ArtistEntityCopyWith<$Res> {
+  factory $FullArtistEntityCopyWith(
+          FullArtistEntity value, $Res Function(FullArtistEntity) _then) =
+      _$FullArtistEntityCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      List<String> genres,
+      List<ImageEntity> images,
+      int popularity,
+      String uri,
+      String href,
+      ExternalUrlsEntity externalUrls});
+
+  @override
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls;
+}
+
+/// @nodoc
+class _$FullArtistEntityCopyWithImpl<$Res>
+    implements $FullArtistEntityCopyWith<$Res> {
+  _$FullArtistEntityCopyWithImpl(this._self, this._then);
+
+  final FullArtistEntity _self;
+  final $Res Function(FullArtistEntity) _then;
+
   /// Create a copy of ArtistEntity
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FullArtistEntityImplCopyWith<_$FullArtistEntityImpl> get copyWith =>
-      __$$FullArtistEntityImplCopyWithImpl<_$FullArtistEntityImpl>(
-          this, _$identity);
-}
-
-abstract class FullArtistEntity implements ArtistEntity {
-  const factory FullArtistEntity(
-      {required final String id,
-      required final String name,
-      required final List<String> genres,
-      required final List<ImageEntity> images,
-      required final int popularity,
-      required final String uri,
-      required final String href,
-      required final ExternalUrlsEntity externalUrls}) = _$FullArtistEntityImpl;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  List<String> get genres;
-  List<ImageEntity> get images;
-  int get popularity;
-  @override
-  String get uri;
-  @override
-  String get href;
-  @override
-  ExternalUrlsEntity get externalUrls;
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? genres = null,
+    Object? images = null,
+    Object? popularity = null,
+    Object? uri = null,
+    Object? href = null,
+    Object? externalUrls = null,
+  }) {
+    return _then(FullArtistEntity(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      genres: null == genres
+          ? _self._genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      images: null == images
+          ? _self._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<ImageEntity>,
+      popularity: null == popularity
+          ? _self.popularity
+          : popularity // ignore: cast_nullable_to_non_nullable
+              as int,
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      href: null == href
+          ? _self.href
+          : href // ignore: cast_nullable_to_non_nullable
+              as String,
+      externalUrls: null == externalUrls
+          ? _self.externalUrls
+          : externalUrls // ignore: cast_nullable_to_non_nullable
+              as ExternalUrlsEntity,
+    ));
+  }
 
   /// Create a copy of ArtistEntity
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FullArtistEntityImplCopyWith<_$FullArtistEntityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $ExternalUrlsEntityCopyWith<$Res> get externalUrls {
+    return $ExternalUrlsEntityCopyWith<$Res>(_self.externalUrls, (value) {
+      return _then(_self.copyWith(externalUrls: value));
+    });
+  }
 }
+
+// dart format on

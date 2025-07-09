@@ -6,8 +6,8 @@ part of 'actions.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ActionsModelImpl _$$ActionsModelImplFromJson(Map<String, dynamic> json) =>
-    _$ActionsModelImpl(
+_ActionsModel _$ActionsModelFromJson(Map<String, dynamic> json) =>
+    _ActionsModel(
       interruptingPlayback:
           _readDisallowedValue(json, 'interrupting_playback') as bool? ?? true,
       pausing: _readDisallowedValue(json, 'pausing') as bool? ?? true,
@@ -28,7 +28,7 @@ _$ActionsModelImpl _$$ActionsModelImplFromJson(Map<String, dynamic> json) =>
           _readDisallowedValue(json, 'transferring_playback') as bool? ?? true,
     );
 
-Map<String, dynamic> _$$ActionsModelImplToJson(_$ActionsModelImpl instance) =>
+Map<String, dynamic> _$ActionsModelToJson(_ActionsModel instance) =>
     <String, dynamic>{
       'interrupting_playback': instance.interruptingPlayback,
       'pausing': instance.pausing,

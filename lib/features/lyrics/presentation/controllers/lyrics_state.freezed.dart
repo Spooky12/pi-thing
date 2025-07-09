@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,185 +9,109 @@ part of 'lyrics_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
-mixin _$LyricsState {}
+mixin _$LyricsState {
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LyricsState);
+  }
 
-/// @nodoc
-abstract class $LyricsStateCopyWith<$Res> {
-  factory $LyricsStateCopyWith(
-          LyricsState value, $Res Function(LyricsState) then) =
-      _$LyricsStateCopyWithImpl<$Res, LyricsState>;
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'LyricsState()';
+  }
 }
 
 /// @nodoc
-class _$LyricsStateCopyWithImpl<$Res, $Val extends LyricsState>
-    implements $LyricsStateCopyWith<$Res> {
-  _$LyricsStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of LyricsState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$LyricsStateLoadingImplCopyWith<$Res> {
-  factory _$$LyricsStateLoadingImplCopyWith(_$LyricsStateLoadingImpl value,
-          $Res Function(_$LyricsStateLoadingImpl) then) =
-      __$$LyricsStateLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LyricsStateLoadingImplCopyWithImpl<$Res>
-    extends _$LyricsStateCopyWithImpl<$Res, _$LyricsStateLoadingImpl>
-    implements _$$LyricsStateLoadingImplCopyWith<$Res> {
-  __$$LyricsStateLoadingImplCopyWithImpl(_$LyricsStateLoadingImpl _value,
-      $Res Function(_$LyricsStateLoadingImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LyricsState
-  /// with the given fields replaced by the non-null parameter values.
+class $LyricsStateCopyWith<$Res> {
+  $LyricsStateCopyWith(LyricsState _, $Res Function(LyricsState) __);
 }
 
 /// @nodoc
 
-class _$LyricsStateLoadingImpl implements LyricsStateLoading {
-  const _$LyricsStateLoadingImpl();
+class LyricsStateLoading implements LyricsState {
+  const LyricsStateLoading();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LyricsStateLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'LyricsState.loading()';
   }
+}
+
+/// @nodoc
+
+class LyricsStateSynced implements LyricsState, LyricsStateLoaded {
+  const LyricsStateSynced(this.lyrics);
+
+  final String lyrics;
+
+  /// Create a copy of LyricsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $LyricsStateSyncedCopyWith<LyricsStateSynced> get copyWith =>
+      _$LyricsStateSyncedCopyWithImpl<LyricsStateSynced>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LyricsStateLoadingImpl);
+        (other.runtimeType == runtimeType &&
+            other is LyricsStateSynced &&
+            (identical(other.lyrics, lyrics) || other.lyrics == lyrics));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class LyricsStateLoading implements LyricsState {
-  const factory LyricsStateLoading() = _$LyricsStateLoadingImpl;
-}
-
-/// @nodoc
-abstract class _$$LyricsStateSyncedImplCopyWith<$Res> {
-  factory _$$LyricsStateSyncedImplCopyWith(_$LyricsStateSyncedImpl value,
-          $Res Function(_$LyricsStateSyncedImpl) then) =
-      __$$LyricsStateSyncedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String lyrics});
-}
-
-/// @nodoc
-class __$$LyricsStateSyncedImplCopyWithImpl<$Res>
-    extends _$LyricsStateCopyWithImpl<$Res, _$LyricsStateSyncedImpl>
-    implements _$$LyricsStateSyncedImplCopyWith<$Res> {
-  __$$LyricsStateSyncedImplCopyWithImpl(_$LyricsStateSyncedImpl _value,
-      $Res Function(_$LyricsStateSyncedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LyricsState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? lyrics = null,
-  }) {
-    return _then(_$LyricsStateSyncedImpl(
-      null == lyrics
-          ? _value.lyrics
-          : lyrics // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$LyricsStateSyncedImpl implements LyricsStateSynced {
-  const _$LyricsStateSyncedImpl(this.lyrics);
-
-  @override
-  final String lyrics;
+  int get hashCode => Object.hash(runtimeType, lyrics);
 
   @override
   String toString() {
     return 'LyricsState.synced(lyrics: $lyrics)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LyricsStateSyncedImpl &&
-            (identical(other.lyrics, lyrics) || other.lyrics == lyrics));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, lyrics);
-
-  /// Create a copy of LyricsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LyricsStateSyncedImplCopyWith<_$LyricsStateSyncedImpl> get copyWith =>
-      __$$LyricsStateSyncedImplCopyWithImpl<_$LyricsStateSyncedImpl>(
-          this, _$identity);
-}
-
-abstract class LyricsStateSynced implements LyricsState, LyricsStateLoaded {
-  const factory LyricsStateSynced(final String lyrics) =
-      _$LyricsStateSyncedImpl;
-
-  String get lyrics;
-
-  /// Create a copy of LyricsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LyricsStateSyncedImplCopyWith<_$LyricsStateSyncedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LyricsStatePlainImplCopyWith<$Res> {
-  factory _$$LyricsStatePlainImplCopyWith(_$LyricsStatePlainImpl value,
-          $Res Function(_$LyricsStatePlainImpl) then) =
-      __$$LyricsStatePlainImplCopyWithImpl<$Res>;
+abstract mixin class $LyricsStateSyncedCopyWith<$Res>
+    implements $LyricsStateCopyWith<$Res> {
+  factory $LyricsStateSyncedCopyWith(
+          LyricsStateSynced value, $Res Function(LyricsStateSynced) _then) =
+      _$LyricsStateSyncedCopyWithImpl;
   @useResult
   $Res call({String lyrics});
 }
 
 /// @nodoc
-class __$$LyricsStatePlainImplCopyWithImpl<$Res>
-    extends _$LyricsStateCopyWithImpl<$Res, _$LyricsStatePlainImpl>
-    implements _$$LyricsStatePlainImplCopyWith<$Res> {
-  __$$LyricsStatePlainImplCopyWithImpl(_$LyricsStatePlainImpl _value,
-      $Res Function(_$LyricsStatePlainImpl) _then)
-      : super(_value, _then);
+class _$LyricsStateSyncedCopyWithImpl<$Res>
+    implements $LyricsStateSyncedCopyWith<$Res> {
+  _$LyricsStateSyncedCopyWithImpl(this._self, this._then);
+
+  final LyricsStateSynced _self;
+  final $Res Function(LyricsStateSynced) _then;
 
   /// Create a copy of LyricsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? lyrics = null,
   }) {
-    return _then(_$LyricsStatePlainImpl(
+    return _then(LyricsStateSynced(
       null == lyrics
-          ? _value.lyrics
+          ? _self.lyrics
           : lyrics // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -196,168 +120,63 @@ class __$$LyricsStatePlainImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LyricsStatePlainImpl implements LyricsStatePlain {
-  const _$LyricsStatePlainImpl(this.lyrics);
+class LyricsStatePlain implements LyricsState, LyricsStateLoaded {
+  const LyricsStatePlain(this.lyrics);
 
-  @override
   final String lyrics;
 
-  @override
-  String toString() {
-    return 'LyricsState.plain(lyrics: $lyrics)';
-  }
+  /// Create a copy of LyricsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $LyricsStatePlainCopyWith<LyricsStatePlain> get copyWith =>
+      _$LyricsStatePlainCopyWithImpl<LyricsStatePlain>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LyricsStatePlainImpl &&
+            other is LyricsStatePlain &&
             (identical(other.lyrics, lyrics) || other.lyrics == lyrics));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, lyrics);
 
-  /// Create a copy of LyricsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LyricsStatePlainImplCopyWith<_$LyricsStatePlainImpl> get copyWith =>
-      __$$LyricsStatePlainImplCopyWithImpl<_$LyricsStatePlainImpl>(
-          this, _$identity);
-}
-
-abstract class LyricsStatePlain implements LyricsState, LyricsStateLoaded {
-  const factory LyricsStatePlain(final String lyrics) = _$LyricsStatePlainImpl;
-
-  String get lyrics;
-
-  /// Create a copy of LyricsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LyricsStatePlainImplCopyWith<_$LyricsStatePlainImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$LyricsStateInstrumentalImplCopyWith<$Res> {
-  factory _$$LyricsStateInstrumentalImplCopyWith(
-          _$LyricsStateInstrumentalImpl value,
-          $Res Function(_$LyricsStateInstrumentalImpl) then) =
-      __$$LyricsStateInstrumentalImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LyricsStateInstrumentalImplCopyWithImpl<$Res>
-    extends _$LyricsStateCopyWithImpl<$Res, _$LyricsStateInstrumentalImpl>
-    implements _$$LyricsStateInstrumentalImplCopyWith<$Res> {
-  __$$LyricsStateInstrumentalImplCopyWithImpl(
-      _$LyricsStateInstrumentalImpl _value,
-      $Res Function(_$LyricsStateInstrumentalImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LyricsState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LyricsStateInstrumentalImpl implements LyricsStateInstrumental {
-  const _$LyricsStateInstrumentalImpl();
-
   @override
   String toString() {
-    return 'LyricsState.instrumental()';
+    return 'LyricsState.plain(lyrics: $lyrics)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LyricsStateInstrumentalImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class LyricsStateInstrumental
-    implements LyricsState, LyricsStateLoaded {
-  const factory LyricsStateInstrumental() = _$LyricsStateInstrumentalImpl;
 }
 
 /// @nodoc
-abstract class _$$LyricsStateEmptyImplCopyWith<$Res> {
-  factory _$$LyricsStateEmptyImplCopyWith(_$LyricsStateEmptyImpl value,
-          $Res Function(_$LyricsStateEmptyImpl) then) =
-      __$$LyricsStateEmptyImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LyricsStateEmptyImplCopyWithImpl<$Res>
-    extends _$LyricsStateCopyWithImpl<$Res, _$LyricsStateEmptyImpl>
-    implements _$$LyricsStateEmptyImplCopyWith<$Res> {
-  __$$LyricsStateEmptyImplCopyWithImpl(_$LyricsStateEmptyImpl _value,
-      $Res Function(_$LyricsStateEmptyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LyricsState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LyricsStateEmptyImpl implements LyricsStateEmpty {
-  const _$LyricsStateEmptyImpl();
-
-  @override
-  String toString() {
-    return 'LyricsState.empty()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LyricsStateEmptyImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class LyricsStateEmpty implements LyricsState, LyricsStateLoaded {
-  const factory LyricsStateEmpty() = _$LyricsStateEmptyImpl;
-}
-
-/// @nodoc
-abstract class _$$LyricsStateErrorImplCopyWith<$Res> {
-  factory _$$LyricsStateErrorImplCopyWith(_$LyricsStateErrorImpl value,
-          $Res Function(_$LyricsStateErrorImpl) then) =
-      __$$LyricsStateErrorImplCopyWithImpl<$Res>;
+abstract mixin class $LyricsStatePlainCopyWith<$Res>
+    implements $LyricsStateCopyWith<$Res> {
+  factory $LyricsStatePlainCopyWith(
+          LyricsStatePlain value, $Res Function(LyricsStatePlain) _then) =
+      _$LyricsStatePlainCopyWithImpl;
   @useResult
-  $Res call({String message});
+  $Res call({String lyrics});
 }
 
 /// @nodoc
-class __$$LyricsStateErrorImplCopyWithImpl<$Res>
-    extends _$LyricsStateCopyWithImpl<$Res, _$LyricsStateErrorImpl>
-    implements _$$LyricsStateErrorImplCopyWith<$Res> {
-  __$$LyricsStateErrorImplCopyWithImpl(_$LyricsStateErrorImpl _value,
-      $Res Function(_$LyricsStateErrorImpl) _then)
-      : super(_value, _then);
+class _$LyricsStatePlainCopyWithImpl<$Res>
+    implements $LyricsStatePlainCopyWith<$Res> {
+  _$LyricsStatePlainCopyWithImpl(this._self, this._then);
+
+  final LyricsStatePlain _self;
+  final $Res Function(LyricsStatePlain) _then;
 
   /// Create a copy of LyricsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? message = null,
+    Object? lyrics = null,
   }) {
-    return _then(_$LyricsStateErrorImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
+    return _then(LyricsStatePlain(
+      null == lyrics
+          ? _self.lyrics
+          : lyrics // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -365,46 +184,106 @@ class __$$LyricsStateErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LyricsStateErrorImpl implements LyricsStateError {
-  const _$LyricsStateErrorImpl(this.message);
+class LyricsStateInstrumental implements LyricsState, LyricsStateLoaded {
+  const LyricsStateInstrumental();
 
   @override
-  final String message;
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LyricsStateInstrumental);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
-    return 'LyricsState.error(message: $message)';
+    return 'LyricsState.instrumental()';
   }
+}
+
+/// @nodoc
+
+class LyricsStateEmpty implements LyricsState, LyricsStateLoaded {
+  const LyricsStateEmpty();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LyricsStateEmpty);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'LyricsState.empty()';
+  }
+}
+
+/// @nodoc
+
+class LyricsStateError implements LyricsState {
+  const LyricsStateError(this.message);
+
+  final String message;
+
+  /// Create a copy of LyricsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $LyricsStateErrorCopyWith<LyricsStateError> get copyWith =>
+      _$LyricsStateErrorCopyWithImpl<LyricsStateError>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LyricsStateErrorImpl &&
+            other is LyricsStateError &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of LyricsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LyricsStateErrorImplCopyWith<_$LyricsStateErrorImpl> get copyWith =>
-      __$$LyricsStateErrorImplCopyWithImpl<_$LyricsStateErrorImpl>(
-          this, _$identity);
+  String toString() {
+    return 'LyricsState.error(message: $message)';
+  }
 }
 
-abstract class LyricsStateError implements LyricsState {
-  const factory LyricsStateError(final String message) = _$LyricsStateErrorImpl;
+/// @nodoc
+abstract mixin class $LyricsStateErrorCopyWith<$Res>
+    implements $LyricsStateCopyWith<$Res> {
+  factory $LyricsStateErrorCopyWith(
+          LyricsStateError value, $Res Function(LyricsStateError) _then) =
+      _$LyricsStateErrorCopyWithImpl;
+  @useResult
+  $Res call({String message});
+}
 
-  String get message;
+/// @nodoc
+class _$LyricsStateErrorCopyWithImpl<$Res>
+    implements $LyricsStateErrorCopyWith<$Res> {
+  _$LyricsStateErrorCopyWithImpl(this._self, this._then);
+
+  final LyricsStateError _self;
+  final $Res Function(LyricsStateError) _then;
 
   /// Create a copy of LyricsState
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LyricsStateErrorImplCopyWith<_$LyricsStateErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(LyricsStateError(
+      null == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

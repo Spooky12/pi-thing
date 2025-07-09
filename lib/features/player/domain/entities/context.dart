@@ -7,7 +7,7 @@ part 'context.freezed.dart';
 enum ContextType { playlist, album, artist, show, collection }
 
 @freezed
-class ContextEntity with _$ContextEntity {
+abstract class ContextEntity with _$ContextEntity {
   const factory ContextEntity({
     required ContextType? type,
     required String href,

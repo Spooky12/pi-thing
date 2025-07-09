@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,126 +9,71 @@ part of 'device.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-DeviceModel _$DeviceModelFromJson(Map<String, dynamic> json) {
-  return _DeviceModel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$DeviceModel {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get type;
   @JsonKey(name: 'is_active')
-  bool get isActive => throw _privateConstructorUsedError;
+  bool get isActive;
   @JsonKey(name: 'is_restricted')
-  bool get isRestricted => throw _privateConstructorUsedError;
+  bool get isRestricted;
   @JsonKey(name: 'is_private_session')
-  bool get isPrivateSession => throw _privateConstructorUsedError;
+  bool get isPrivateSession;
   @JsonKey(name: 'volume_percent')
-  int? get volumePercent => throw _privateConstructorUsedError;
+  int? get volumePercent;
   @JsonKey(name: 'supports_volume')
-  bool get supportsVolume => throw _privateConstructorUsedError;
-
-  /// Serializes this DeviceModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get supportsVolume;
 
   /// Create a copy of DeviceModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $DeviceModelCopyWith<DeviceModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DeviceModelCopyWith<$Res> {
-  factory $DeviceModelCopyWith(
-          DeviceModel value, $Res Function(DeviceModel) then) =
-      _$DeviceModelCopyWithImpl<$Res, DeviceModel>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String type,
-      @JsonKey(name: 'is_active') bool isActive,
-      @JsonKey(name: 'is_restricted') bool isRestricted,
-      @JsonKey(name: 'is_private_session') bool isPrivateSession,
-      @JsonKey(name: 'volume_percent') int? volumePercent,
-      @JsonKey(name: 'supports_volume') bool supportsVolume});
-}
-
-/// @nodoc
-class _$DeviceModelCopyWithImpl<$Res, $Val extends DeviceModel>
-    implements $DeviceModelCopyWith<$Res> {
-  _$DeviceModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of DeviceModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $DeviceModelCopyWith<DeviceModel> get copyWith =>
+      _$DeviceModelCopyWithImpl<DeviceModel>(this as DeviceModel, _$identity);
+
+  /// Serializes this DeviceModel to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? type = null,
-    Object? isActive = null,
-    Object? isRestricted = null,
-    Object? isPrivateSession = null,
-    Object? volumePercent = freezed,
-    Object? supportsVolume = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      isActive: null == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isRestricted: null == isRestricted
-          ? _value.isRestricted
-          : isRestricted // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isPrivateSession: null == isPrivateSession
-          ? _value.isPrivateSession
-          : isPrivateSession // ignore: cast_nullable_to_non_nullable
-              as bool,
-      volumePercent: freezed == volumePercent
-          ? _value.volumePercent
-          : volumePercent // ignore: cast_nullable_to_non_nullable
-              as int?,
-      supportsVolume: null == supportsVolume
-          ? _value.supportsVolume
-          : supportsVolume // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DeviceModel &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
+            (identical(other.isRestricted, isRestricted) ||
+                other.isRestricted == isRestricted) &&
+            (identical(other.isPrivateSession, isPrivateSession) ||
+                other.isPrivateSession == isPrivateSession) &&
+            (identical(other.volumePercent, volumePercent) ||
+                other.volumePercent == volumePercent) &&
+            (identical(other.supportsVolume, supportsVolume) ||
+                other.supportsVolume == supportsVolume));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, type, isActive,
+      isRestricted, isPrivateSession, volumePercent, supportsVolume);
+
+  @override
+  String toString() {
+    return 'DeviceModel(id: $id, name: $name, type: $type, isActive: $isActive, isRestricted: $isRestricted, isPrivateSession: $isPrivateSession, volumePercent: $volumePercent, supportsVolume: $supportsVolume)';
   }
 }
 
 /// @nodoc
-abstract class _$$DeviceModelImplCopyWith<$Res>
-    implements $DeviceModelCopyWith<$Res> {
-  factory _$$DeviceModelImplCopyWith(
-          _$DeviceModelImpl value, $Res Function(_$DeviceModelImpl) then) =
-      __$$DeviceModelImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $DeviceModelCopyWith<$Res> {
+  factory $DeviceModelCopyWith(
+          DeviceModel value, $Res Function(DeviceModel) _then) =
+      _$DeviceModelCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -142,12 +87,11 @@ abstract class _$$DeviceModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DeviceModelImplCopyWithImpl<$Res>
-    extends _$DeviceModelCopyWithImpl<$Res, _$DeviceModelImpl>
-    implements _$$DeviceModelImplCopyWith<$Res> {
-  __$$DeviceModelImplCopyWithImpl(
-      _$DeviceModelImpl _value, $Res Function(_$DeviceModelImpl) _then)
-      : super(_value, _then);
+class _$DeviceModelCopyWithImpl<$Res> implements $DeviceModelCopyWith<$Res> {
+  _$DeviceModelCopyWithImpl(this._self, this._then);
+
+  final DeviceModel _self;
+  final $Res Function(DeviceModel) _then;
 
   /// Create a copy of DeviceModel
   /// with the given fields replaced by the non-null parameter values.
@@ -163,37 +107,37 @@ class __$$DeviceModelImplCopyWithImpl<$Res>
     Object? volumePercent = freezed,
     Object? supportsVolume = null,
   }) {
-    return _then(_$DeviceModelImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
       isActive: null == isActive
-          ? _value.isActive
+          ? _self.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool,
       isRestricted: null == isRestricted
-          ? _value.isRestricted
+          ? _self.isRestricted
           : isRestricted // ignore: cast_nullable_to_non_nullable
               as bool,
       isPrivateSession: null == isPrivateSession
-          ? _value.isPrivateSession
+          ? _self.isPrivateSession
           : isPrivateSession // ignore: cast_nullable_to_non_nullable
               as bool,
       volumePercent: freezed == volumePercent
-          ? _value.volumePercent
+          ? _self.volumePercent
           : volumePercent // ignore: cast_nullable_to_non_nullable
               as int?,
       supportsVolume: null == supportsVolume
-          ? _value.supportsVolume
+          ? _self.supportsVolume
           : supportsVolume // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -202,8 +146,8 @@ class __$$DeviceModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DeviceModelImpl extends _DeviceModel {
-  const _$DeviceModelImpl(
+class _DeviceModel extends DeviceModel {
+  const _DeviceModel(
       {required this.id,
       required this.name,
       required this.type,
@@ -213,9 +157,8 @@ class _$DeviceModelImpl extends _DeviceModel {
       @JsonKey(name: 'volume_percent') required this.volumePercent,
       @JsonKey(name: 'supports_volume') required this.supportsVolume})
       : super._();
-
-  factory _$DeviceModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DeviceModelImplFromJson(json);
+  factory _DeviceModel.fromJson(Map<String, dynamic> json) =>
+      _$DeviceModelFromJson(json);
 
   @override
   final String id;
@@ -239,16 +182,26 @@ class _$DeviceModelImpl extends _DeviceModel {
   @JsonKey(name: 'supports_volume')
   final bool supportsVolume;
 
+  /// Create a copy of DeviceModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'DeviceModel(id: $id, name: $name, type: $type, isActive: $isActive, isRestricted: $isRestricted, isPrivateSession: $isPrivateSession, volumePercent: $volumePercent, supportsVolume: $supportsVolume)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DeviceModelCopyWith<_DeviceModel> get copyWith =>
+      __$DeviceModelCopyWithImpl<_DeviceModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$DeviceModelToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeviceModelImpl &&
+            other is _DeviceModel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type) &&
@@ -269,64 +222,87 @@ class _$DeviceModelImpl extends _DeviceModel {
   int get hashCode => Object.hash(runtimeType, id, name, type, isActive,
       isRestricted, isPrivateSession, volumePercent, supportsVolume);
 
-  /// Create a copy of DeviceModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$DeviceModelImplCopyWith<_$DeviceModelImpl> get copyWith =>
-      __$$DeviceModelImplCopyWithImpl<_$DeviceModelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DeviceModelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'DeviceModel(id: $id, name: $name, type: $type, isActive: $isActive, isRestricted: $isRestricted, isPrivateSession: $isPrivateSession, volumePercent: $volumePercent, supportsVolume: $supportsVolume)';
   }
 }
 
-abstract class _DeviceModel extends DeviceModel {
-  const factory _DeviceModel(
-      {required final String id,
-      required final String name,
-      required final String type,
-      @JsonKey(name: 'is_active') required final bool isActive,
-      @JsonKey(name: 'is_restricted') required final bool isRestricted,
-      @JsonKey(name: 'is_private_session') required final bool isPrivateSession,
-      @JsonKey(name: 'volume_percent') required final int? volumePercent,
-      @JsonKey(name: 'supports_volume')
-      required final bool supportsVolume}) = _$DeviceModelImpl;
-  const _DeviceModel._() : super._();
+/// @nodoc
+abstract mixin class _$DeviceModelCopyWith<$Res>
+    implements $DeviceModelCopyWith<$Res> {
+  factory _$DeviceModelCopyWith(
+          _DeviceModel value, $Res Function(_DeviceModel) _then) =
+      __$DeviceModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String type,
+      @JsonKey(name: 'is_active') bool isActive,
+      @JsonKey(name: 'is_restricted') bool isRestricted,
+      @JsonKey(name: 'is_private_session') bool isPrivateSession,
+      @JsonKey(name: 'volume_percent') int? volumePercent,
+      @JsonKey(name: 'supports_volume') bool supportsVolume});
+}
 
-  factory _DeviceModel.fromJson(Map<String, dynamic> json) =
-      _$DeviceModelImpl.fromJson;
+/// @nodoc
+class __$DeviceModelCopyWithImpl<$Res> implements _$DeviceModelCopyWith<$Res> {
+  __$DeviceModelCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get type;
-  @override
-  @JsonKey(name: 'is_active')
-  bool get isActive;
-  @override
-  @JsonKey(name: 'is_restricted')
-  bool get isRestricted;
-  @override
-  @JsonKey(name: 'is_private_session')
-  bool get isPrivateSession;
-  @override
-  @JsonKey(name: 'volume_percent')
-  int? get volumePercent;
-  @override
-  @JsonKey(name: 'supports_volume')
-  bool get supportsVolume;
+  final _DeviceModel _self;
+  final $Res Function(_DeviceModel) _then;
 
   /// Create a copy of DeviceModel
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DeviceModelImplCopyWith<_$DeviceModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? type = null,
+    Object? isActive = null,
+    Object? isRestricted = null,
+    Object? isPrivateSession = null,
+    Object? volumePercent = freezed,
+    Object? supportsVolume = null,
+  }) {
+    return _then(_DeviceModel(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      isActive: null == isActive
+          ? _self.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isRestricted: null == isRestricted
+          ? _self.isRestricted
+          : isRestricted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isPrivateSession: null == isPrivateSession
+          ? _self.isPrivateSession
+          : isPrivateSession // ignore: cast_nullable_to_non_nullable
+              as bool,
+      volumePercent: freezed == volumePercent
+          ? _self.volumePercent
+          : volumePercent // ignore: cast_nullable_to_non_nullable
+              as int?,
+      supportsVolume: null == supportsVolume
+          ? _self.supportsVolume
+          : supportsVolume // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
+
+// dart format on

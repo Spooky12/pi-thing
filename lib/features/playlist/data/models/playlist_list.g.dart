@@ -6,9 +6,8 @@ part of 'playlist_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PlaylistListModelImpl _$$PlaylistListModelImplFromJson(
-        Map<String, dynamic> json) =>
-    _$PlaylistListModelImpl(
+_PlaylistListModel _$PlaylistListModelFromJson(Map<String, dynamic> json) =>
+    _PlaylistListModel(
       items: (json['items'] as List<dynamic>)
           .map((e) => e == null
               ? null
@@ -19,8 +18,7 @@ _$PlaylistListModelImpl _$$PlaylistListModelImplFromJson(
       total: (json['total'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$PlaylistListModelImplToJson(
-        _$PlaylistListModelImpl instance) =>
+Map<String, dynamic> _$PlaylistListModelToJson(_PlaylistListModel instance) =>
     <String, dynamic>{
       'items': instance.items,
       'limit': instance.limit,

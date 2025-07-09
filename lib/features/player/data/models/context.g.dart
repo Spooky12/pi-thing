@@ -6,8 +6,8 @@ part of 'context.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ContextModelImpl _$$ContextModelImplFromJson(Map<String, dynamic> json) =>
-    _$ContextModelImpl(
+_ContextModel _$ContextModelFromJson(Map<String, dynamic> json) =>
+    _ContextModel(
       type: $enumDecodeNullable(_$ContextTypeEnumMap, json['type']),
       href: json['href'] as String,
       externalUrls: ExternalUrlsModel.fromJson(
@@ -15,7 +15,7 @@ _$ContextModelImpl _$$ContextModelImplFromJson(Map<String, dynamic> json) =>
       uri: json['uri'] as String,
     );
 
-Map<String, dynamic> _$$ContextModelImplToJson(_$ContextModelImpl instance) =>
+Map<String, dynamic> _$ContextModelToJson(_ContextModel instance) =>
     <String, dynamic>{
       'type': _$ContextTypeEnumMap[instance.type],
       'href': instance.href,

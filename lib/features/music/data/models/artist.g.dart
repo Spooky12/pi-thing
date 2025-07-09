@@ -6,9 +6,8 @@ part of 'artist.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SimpleArtistModelImpl _$$SimpleArtistModelImplFromJson(
-        Map<String, dynamic> json) =>
-    _$SimpleArtistModelImpl(
+SimpleArtistModel _$SimpleArtistModelFromJson(Map<String, dynamic> json) =>
+    SimpleArtistModel(
       id: json['id'] as String,
       name: json['name'] as String,
       uri: json['uri'] as String,
@@ -18,8 +17,7 @@ _$SimpleArtistModelImpl _$$SimpleArtistModelImplFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$SimpleArtistModelImplToJson(
-        _$SimpleArtistModelImpl instance) =>
+Map<String, dynamic> _$SimpleArtistModelToJson(SimpleArtistModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -29,9 +27,8 @@ Map<String, dynamic> _$$SimpleArtistModelImplToJson(
       'runtimeType': instance.$type,
     };
 
-_$FullArtistModelImpl _$$FullArtistModelImplFromJson(
-        Map<String, dynamic> json) =>
-    _$FullArtistModelImpl(
+FullArtistModel _$FullArtistModelFromJson(Map<String, dynamic> json) =>
+    FullArtistModel(
       id: json['id'] as String,
       name: json['name'] as String,
       genres:
@@ -47,8 +44,7 @@ _$FullArtistModelImpl _$$FullArtistModelImplFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$FullArtistModelImplToJson(
-        _$FullArtistModelImpl instance) =>
+Map<String, dynamic> _$FullArtistModelToJson(FullArtistModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

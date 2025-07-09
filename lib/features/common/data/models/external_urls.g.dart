@@ -6,14 +6,12 @@ part of 'external_urls.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ExternalUrlsModelImpl _$$ExternalUrlsModelImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ExternalUrlsModelImpl(
+_ExternalUrlsModel _$ExternalUrlsModelFromJson(Map<String, dynamic> json) =>
+    _ExternalUrlsModel(
       spotify: json['spotify'] as String,
     );
 
-Map<String, dynamic> _$$ExternalUrlsModelImplToJson(
-        _$ExternalUrlsModelImpl instance) =>
+Map<String, dynamic> _$ExternalUrlsModelToJson(_ExternalUrlsModel instance) =>
     <String, dynamic>{
       'spotify': instance.spotify,
     };

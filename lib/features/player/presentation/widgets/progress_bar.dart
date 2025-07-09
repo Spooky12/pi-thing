@@ -294,7 +294,8 @@ class _RenderProgressBar extends RenderBox {
     final rect = offset & size;
 
     // Paint background bar
-    final backgroundPaint = Paint()..color = Colors.white.withOpacity(0.6);
+    final backgroundPaint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.6);
     canvas.drawRRect(
       RRect.fromRectAndRadius(
         Rect.fromLTWH(

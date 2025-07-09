@@ -10,7 +10,7 @@ part 'album.freezed.dart';
 part 'album.g.dart';
 
 @freezed
-class AlbumModel with _$AlbumModel {
+abstract class AlbumModel with _$AlbumModel {
   const factory AlbumModel({
     required String id,
     required String name,

@@ -31,8 +31,10 @@ class PlaylistWidget extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: _borderRadius,
-        splashColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.18),
-        hoverColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.06),
+        splashColor:
+            Theme.of(context).colorScheme.onPrimary.withValues(alpha: 0.18),
+        hoverColor:
+            Theme.of(context).colorScheme.onPrimary.withValues(alpha: 0.06),
         child: Padding(
           padding: const EdgeInsets.all(padding),
           child: ConstrainedBox(
@@ -65,7 +67,7 @@ class PlaylistWidget extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontFamily: AppFontFamilly.interTight,
                         fontVariations: const [FontVariation('wght', 300)],
-                        color: AppColors.white.withOpacity(0.85),
+                        color: AppColors.white.withValues(alpha: 0.85),
                         height: 1.2,
                         letterSpacing: 0,
                       ),
