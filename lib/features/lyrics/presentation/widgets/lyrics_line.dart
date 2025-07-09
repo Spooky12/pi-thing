@@ -23,7 +23,7 @@ class LyricLine extends StatelessWidget {
         line,
         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
           color: switch (type) {
-            LyricLineType.before => AppColors.white.withOpacity(0.6),
+            LyricLineType.before => AppColors.white.withValues(alpha: 0.6),
             LyricLineType.current || LyricLineType.plain => AppColors.white,
             LyricLineType.after => AppColors.black,
           },

@@ -151,7 +151,7 @@ class _PlaylistsTabBar extends StatelessWidget {
         _PlaylistTab(context.t.playlists.uniquelyYours),
         _PlaylistTab(context.t.playlists.discover),
       ],
-      unselectedLabelColor: AppColors.white.withOpacity(0.8),
+      unselectedLabelColor: AppColors.white.withValues(alpha: 0.8),
       isScrollable: true,
       tabAlignment: TabAlignment.start,
       labelStyle: Theme.of(context).textTheme.headlineLarge?.copyWith(

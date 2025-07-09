@@ -55,7 +55,7 @@ class TrackInfos extends StatelessWidget {
                 fontSize: 38,
                 fontFamily: AppFontFamilly.interTight,
                 fontVariations: const [FontVariation('wght', 300)],
-                color: AppColors.white.withOpacity(0.8),
+                color: AppColors.white.withValues(alpha: 0.8),
                 height: 1.2,
               ),
         ),
