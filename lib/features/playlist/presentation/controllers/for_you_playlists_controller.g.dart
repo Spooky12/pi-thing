@@ -6,22 +6,57 @@ part of 'for_you_playlists_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$forYouPlaylistsControllerHash() =>
-    r'71dd7c354414b9af752a480d82e65d3ce5c4cf23';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [ForYouPlaylistsController].
 @ProviderFor(ForYouPlaylistsController)
-final forYouPlaylistsControllerProvider = AutoDisposeNotifierProvider<
-    ForYouPlaylistsController, ForYouPlaylistsState>.internal(
-  ForYouPlaylistsController.new,
-  name: r'forYouPlaylistsControllerProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$forYouPlaylistsControllerHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const forYouPlaylistsControllerProvider = ForYouPlaylistsControllerProvider._();
 
-typedef _$ForYouPlaylistsController = AutoDisposeNotifier<ForYouPlaylistsState>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class ForYouPlaylistsControllerProvider
+    extends $NotifierProvider<ForYouPlaylistsController, ForYouPlaylistsState> {
+  const ForYouPlaylistsControllerProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'forYouPlaylistsControllerProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$forYouPlaylistsControllerHash();
+
+  @$internal
+  @override
+  ForYouPlaylistsController create() => ForYouPlaylistsController();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(ForYouPlaylistsState value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<ForYouPlaylistsState>(value),
+    );
+  }
+}
+
+String _$forYouPlaylistsControllerHash() =>
+    r'ba24908ad1ede84207e87a178ffff2b5dda6cdcd';
+
+abstract class _$ForYouPlaylistsController
+    extends $Notifier<ForYouPlaylistsState> {
+  ForYouPlaylistsState build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<ForYouPlaylistsState, ForYouPlaylistsState>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<ForYouPlaylistsState, ForYouPlaylistsState>,
+        ForYouPlaylistsState,
+        Object?,
+        Object?>;
+    element.handleValue(ref, created);
+  }
+}

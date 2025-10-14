@@ -6,53 +6,126 @@ part of 'providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(sharedPrefs)
+const sharedPrefsProvider = SharedPrefsProvider._();
+
+final class SharedPrefsProvider extends $FunctionalProvider<SharedPreferences,
+    SharedPreferences, SharedPreferences> with $Provider<SharedPreferences> {
+  const SharedPrefsProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'sharedPrefsProvider',
+          isAutoDispose: false,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$sharedPrefsHash();
+
+  @$internal
+  @override
+  $ProviderElement<SharedPreferences> $createElement(
+          $ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  SharedPreferences create(Ref ref) {
+    return sharedPrefs(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(SharedPreferences value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<SharedPreferences>(value),
+    );
+  }
+}
+
 String _$sharedPrefsHash() => r'250f0c2a781bcb0965a37c42769b429a17d61e41';
 
-/// See also [sharedPrefs].
-@ProviderFor(sharedPrefs)
-final sharedPrefsProvider = Provider<SharedPreferences>.internal(
-  sharedPrefs,
-  name: r'sharedPrefsProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$sharedPrefsHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+@ProviderFor(dio)
+const dioProvider = DioProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef SharedPrefsRef = ProviderRef<SharedPreferences>;
+final class DioProvider extends $FunctionalProvider<Dio, Dio, Dio>
+    with $Provider<Dio> {
+  const DioProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'dioProvider',
+          isAutoDispose: false,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$dioHash();
+
+  @$internal
+  @override
+  $ProviderElement<Dio> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  Dio create(Ref ref) {
+    return dio(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(Dio value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<Dio>(value),
+    );
+  }
+}
+
 String _$dioHash() => r'7fc49fdbe852dd856b0e500831d890344f83f6ec';
 
-/// See also [dio].
-@ProviderFor(dio)
-final dioProvider = Provider<Dio>.internal(
-  dio,
-  name: r'dioProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$dioHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef DioRef = ProviderRef<Dio>;
-String _$spotifyDioHash() => r'dc6da0d296d59f4014dcf3b8e443dc9f03f6ec4f';
-
-/// See also [spotifyDio].
 @ProviderFor(spotifyDio)
-final spotifyDioProvider = Provider<Dio>.internal(
-  spotifyDio,
-  name: r'spotifyDioProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$spotifyDioHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const spotifyDioProvider = SpotifyDioProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef SpotifyDioRef = ProviderRef<Dio>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class SpotifyDioProvider extends $FunctionalProvider<Dio, Dio, Dio>
+    with $Provider<Dio> {
+  const SpotifyDioProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'spotifyDioProvider',
+          isAutoDispose: false,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$spotifyDioHash();
+
+  @$internal
+  @override
+  $ProviderElement<Dio> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  Dio create(Ref ref) {
+    return spotifyDio(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(Dio value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<Dio>(value),
+    );
+  }
+}
+
+String _$spotifyDioHash() => r'dc6da0d296d59f4014dcf3b8e443dc9f03f6ec4f';

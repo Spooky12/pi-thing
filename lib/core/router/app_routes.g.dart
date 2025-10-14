@@ -21,7 +21,7 @@ RouteBase get $homeShellRoute => StatefulShellRouteData.$route(
             GoRouteData.$route(
               path: '/',
               name: 'home',
-              factory: _$HomeBranchRoute._fromState,
+              factory: $HomeBranchRoute._fromState,
             ),
           ],
         ),
@@ -30,7 +30,7 @@ RouteBase get $homeShellRoute => StatefulShellRouteData.$route(
             GoRouteData.$route(
               path: '/playlists',
               name: 'playlists',
-              factory: _$PlaylistsBranchRoute._fromState,
+              factory: $PlaylistsBranchRoute._fromState,
             ),
           ],
         ),
@@ -42,7 +42,7 @@ extension $HomeShellRouteExtension on HomeShellRoute {
       const HomeShellRoute();
 }
 
-mixin _$HomeBranchRoute on GoRouteData {
+mixin $HomeBranchRoute on GoRouteData {
   static HomeBranchRoute _fromState(GoRouterState state) =>
       const HomeBranchRoute();
 
@@ -65,7 +65,7 @@ mixin _$HomeBranchRoute on GoRouteData {
   void replace(BuildContext context) => context.replace(location);
 }
 
-mixin _$PlaylistsBranchRoute on GoRouteData {
+mixin $PlaylistsBranchRoute on GoRouteData {
   static PlaylistsBranchRoute _fromState(GoRouterState state) =>
       const PlaylistsBranchRoute();
 
@@ -91,10 +91,10 @@ mixin _$PlaylistsBranchRoute on GoRouteData {
 RouteBase get $loginRoute => GoRouteData.$route(
       path: '/login',
       name: 'login',
-      factory: _$LoginRoute._fromState,
+      factory: $LoginRoute._fromState,
     );
 
-mixin _$LoginRoute on GoRouteData {
+mixin $LoginRoute on GoRouteData {
   static LoginRoute _fromState(GoRouterState state) => const LoginRoute();
 
   @override
@@ -119,10 +119,10 @@ mixin _$LoginRoute on GoRouteData {
 RouteBase get $splashRoute => GoRouteData.$route(
       path: '/splash',
       name: 'splash',
-      factory: _$SplashRoute._fromState,
+      factory: $SplashRoute._fromState,
     );
 
-mixin _$SplashRoute on GoRouteData {
+mixin $SplashRoute on GoRouteData {
   static SplashRoute _fromState(GoRouterState state) => const SplashRoute();
 
   @override
