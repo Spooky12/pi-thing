@@ -6,40 +6,89 @@ part of 'providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(musicRemoteDataSource)
+const musicRemoteDataSourceProvider = MusicRemoteDataSourceProvider._();
+
+final class MusicRemoteDataSourceProvider extends $FunctionalProvider<
+    MusicRemoteDataSource,
+    MusicRemoteDataSource,
+    MusicRemoteDataSource> with $Provider<MusicRemoteDataSource> {
+  const MusicRemoteDataSourceProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'musicRemoteDataSourceProvider',
+          isAutoDispose: false,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$musicRemoteDataSourceHash();
+
+  @$internal
+  @override
+  $ProviderElement<MusicRemoteDataSource> $createElement(
+          $ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  MusicRemoteDataSource create(Ref ref) {
+    return musicRemoteDataSource(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(MusicRemoteDataSource value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<MusicRemoteDataSource>(value),
+    );
+  }
+}
+
 String _$musicRemoteDataSourceHash() =>
     r'c94c4efccda9c6901b1848e29776672b460b3310';
 
-/// See also [musicRemoteDataSource].
-@ProviderFor(musicRemoteDataSource)
-final musicRemoteDataSourceProvider = Provider<MusicRemoteDataSource>.internal(
-  musicRemoteDataSource,
-  name: r'musicRemoteDataSourceProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$musicRemoteDataSourceHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef MusicRemoteDataSourceRef = ProviderRef<MusicRemoteDataSource>;
-String _$musicRepositoryHash() => r'b86bef53fc3a81b9c98ead6f02dadb4482f269b0';
-
-/// See also [musicRepository].
 @ProviderFor(musicRepository)
-final musicRepositoryProvider = Provider<MusicRepository>.internal(
-  musicRepository,
-  name: r'musicRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$musicRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const musicRepositoryProvider = MusicRepositoryProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef MusicRepositoryRef = ProviderRef<MusicRepository>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class MusicRepositoryProvider extends $FunctionalProvider<MusicRepository,
+    MusicRepository, MusicRepository> with $Provider<MusicRepository> {
+  const MusicRepositoryProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'musicRepositoryProvider',
+          isAutoDispose: false,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$musicRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<MusicRepository> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  MusicRepository create(Ref ref) {
+    return musicRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(MusicRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<MusicRepository>(value),
+    );
+  }
+}
+
+String _$musicRepositoryHash() => r'b86bef53fc3a81b9c98ead6f02dadb4482f269b0';

@@ -6,22 +6,56 @@ part of 'user_playlists_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userPlaylistsControllerHash() =>
-    r'4a1933f4bb9a354ed68b921b557dd37978546a8d';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [UserPlaylistsController].
 @ProviderFor(UserPlaylistsController)
-final userPlaylistsControllerProvider = AutoDisposeNotifierProvider<
-    UserPlaylistsController, UserPlaylistsState>.internal(
-  UserPlaylistsController.new,
-  name: r'userPlaylistsControllerProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$userPlaylistsControllerHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const userPlaylistsControllerProvider = UserPlaylistsControllerProvider._();
 
-typedef _$UserPlaylistsController = AutoDisposeNotifier<UserPlaylistsState>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class UserPlaylistsControllerProvider
+    extends $NotifierProvider<UserPlaylistsController, UserPlaylistsState> {
+  const UserPlaylistsControllerProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'userPlaylistsControllerProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$userPlaylistsControllerHash();
+
+  @$internal
+  @override
+  UserPlaylistsController create() => UserPlaylistsController();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(UserPlaylistsState value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<UserPlaylistsState>(value),
+    );
+  }
+}
+
+String _$userPlaylistsControllerHash() =>
+    r'49a7aaa960f6ec1c3a2593a5e9fd8d9703fd1047';
+
+abstract class _$UserPlaylistsController extends $Notifier<UserPlaylistsState> {
+  UserPlaylistsState build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<UserPlaylistsState, UserPlaylistsState>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<UserPlaylistsState, UserPlaylistsState>,
+        UserPlaylistsState,
+        Object?,
+        Object?>;
+    element.handleValue(ref, created);
+  }
+}

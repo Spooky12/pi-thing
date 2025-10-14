@@ -49,14 +49,14 @@ class HomeShellRoute extends StatefulShellRouteData {
       );
 }
 
-class HomeBranchRoute extends GoRouteData with _$HomeBranchRoute {
+class HomeBranchRoute extends GoRouteData with $HomeBranchRoute {
   const HomeBranchRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const PlayerBranchPage();
 }
 
-class PlaylistsBranchRoute extends GoRouteData with _$PlaylistsBranchRoute {
+class PlaylistsBranchRoute extends GoRouteData with $PlaylistsBranchRoute {
   const PlaylistsBranchRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
@@ -64,7 +64,7 @@ class PlaylistsBranchRoute extends GoRouteData with _$PlaylistsBranchRoute {
 }
 
 @TypedGoRoute<LoginRoute>(path: '/login', name: 'login')
-class LoginRoute extends GoRouteData with _$LoginRoute {
+class LoginRoute extends GoRouteData with $LoginRoute {
   const LoginRoute();
 
   @override
@@ -72,7 +72,7 @@ class LoginRoute extends GoRouteData with _$LoginRoute {
 }
 
 @TypedGoRoute<SplashRoute>(path: '/splash', name: 'splash')
-class SplashRoute extends GoRouteData with _$SplashRoute {
+class SplashRoute extends GoRouteData with $SplashRoute {
   const SplashRoute();
 
   @override

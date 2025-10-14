@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:palette_generator/palette_generator.dart';
 
+import '../../../../core/utils/get_color_from_image.dart';
 import '../../../common/domain/entities/image.dart';
 import '../controllers/player_controller.dart';
 import '../controllers/player_state.dart';
@@ -67,14 +67,11 @@ class __AnimatedBackgroundState extends State<_AnimatedBackground> {
       setState(() => colors = []);
       return;
     }
-    final paletteGenerator = await PaletteGenerator.fromImageProvider(
+    colors = await getColorsFromImage(
       CachedNetworkImageProvider(widget.image!.url),
-      filters: [avoidBlackWhitePaletteFilter],
-      maximumColorCount: 12,
     );
-    setState(() {
-      colors = paletteGenerator.colors.toList();
-    });
+
+    setState(() {});
   }
 
   bool avoidBlackWhitePaletteFilter(HSLColor color) {

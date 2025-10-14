@@ -20,7 +20,7 @@ class PlaylistsBranchPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final discoverControllerProvider = CategoryPlaylistsControllerProvider(
+    final discoverControllerProvider = categoryPlaylistsControllerProvider(
       SpotifyConstants.discoverCategoryId,
     );
     ref

@@ -6,23 +6,115 @@ part of 'saved_tracks_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(SavedTracksController)
+const savedTracksControllerProvider = SavedTracksControllerProvider._();
+
+final class SavedTracksControllerProvider extends $NotifierProvider<
+    SavedTracksController,
+    Map<
+        String,
+        (
+          bool,
+          DateTime,
+        )>> {
+  const SavedTracksControllerProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'savedTracksControllerProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$savedTracksControllerHash();
+
+  @$internal
+  @override
+  SavedTracksController create() => SavedTracksController();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(
+      Map<
+              String,
+              (
+                bool,
+                DateTime,
+              )>
+          value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<
+          Map<
+              String,
+              (
+                bool,
+                DateTime,
+              )>>(value),
+    );
+  }
+}
+
 String _$savedTracksControllerHash() =>
     r'b8b27e05b32c2a150411daeaa71cb30786c3d5b5';
 
-/// See also [SavedTracksController].
-@ProviderFor(SavedTracksController)
-final savedTracksControllerProvider = AutoDisposeNotifierProvider<
-    SavedTracksController, Map<String, (bool, DateTime)>>.internal(
-  SavedTracksController.new,
-  name: r'savedTracksControllerProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$savedTracksControllerHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-typedef _$SavedTracksController
-    = AutoDisposeNotifier<Map<String, (bool, DateTime)>>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+abstract class _$SavedTracksController extends $Notifier<
+    Map<
+        String,
+        (
+          bool,
+          DateTime,
+        )>> {
+  Map<
+      String,
+      (
+        bool,
+        DateTime,
+      )> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<
+        Map<
+            String,
+            (
+              bool,
+              DateTime,
+            )>,
+        Map<
+            String,
+            (
+              bool,
+              DateTime,
+            )>>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<
+            Map<
+                String,
+                (
+                  bool,
+                  DateTime,
+                )>,
+            Map<
+                String,
+                (
+                  bool,
+                  DateTime,
+                )>>,
+        Map<
+            String,
+            (
+              bool,
+              DateTime,
+            )>,
+        Object?,
+        Object?>;
+    element.handleValue(ref, created);
+  }
+}
